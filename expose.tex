@@ -1,0 +1,60 @@
+\documentclass{article} %in article gibt es keine kapitel, book,
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\author{Fabian Hoffmann}
+\title{
+Multimediaprojekt 1 \\Exposé}
+\begin{document}
+\maketitle
+\newpage
+\section{Projektidee}
+Die Idee des Projekts mit dem Arbeitstitel "Tandem" ist die Erstellung einer Webapplikation die als Vermittlungsplattform zum gegenseitigen Lehren dient. NutzerInnen lernen sich kennen und treffen sich um sich gegenseitig etwas bei zu bringen. \\Die angestrebte Zielgruppe besteht aus StudentInnen der Fachhochschule Salzburg.
+\\Das Ziel ist es eine funktionstüchtige Plattform zu erstellen, die es ermöglicht MitstudentInnen zu finden denen man seine Fähigkeiten beibringen und im Gegenzug ihre Fähigkeiten erlernen kann.
+
+
+\section{Umsetzungsplan}
+Die Applikation wird Desktopbrowser und mobile Endgeräte verfügbar sein. Über Smartphones und Tablets wird keine gesonderte Version erstellt, lediglich auf die Bildschirmgröße angepasst. Außerdem wird das "Balkenmenü" durch ein Dropdownmenü ersetzt.\\
+Das Frontend wird mit HTML5 und CSS3 voll funktionsfähig sein. Zur Verbesserung der NutzerInnenfreundlichkeit wird darüber hinaus JavaScript(jQuery und AJAX) eingesetzt. Die Benutzeroberfläche ist schlicht gehalten, auf Sidebars wird komplett verzichtet. Die Applikation besteht aus einer Single Page Indexseite, die nur für nicht eingeloggte Benutzer sichtbar ist.
+Registrierten und eingeloggten NutzerInnen stehen folgende Seiten zur Verfügung: Eine Indexseite auf der nach Lernpartnern gesucht werden kann und abgehaltene Treffen bestätigt werden können, ihre eigene Profilseite, Seiten zur Bearbeitung ihres Profils und ihrer Suchanfragen und Angebote.\\
+Das Backend wird mit PHP/SQL umgesetzt. Seitenteile, wie Header, Menü und Footer, werden nur einmal geschrieben und in die einzelnen Seiten inkludiert um Coderedundanz zu vermeiden und den Wartungsaufwand zu verringern.
+\subsection{Grad der Umsetzung}
+Das ist die Applikation zeitgerecht und funktionsfähig fertig zu stellen. Daher beschränkt sich die Umsetzung auf die Anmeldung/Login, Profil bearbeiten, Account löschen, die Vermittlungsfunktion zwischen NutzerInnen, Erstellen von "Meetings" und deren Bewertung. \\
+Karten- und Socialnetwork-API's sind für die erste Version nicht vorgesehen, könnten das Nutzungserlebnis aber noch steigern. \\
+Tandem wird vorerst nur für StudentInnen der FH-Salzburg angeboten. Zur Anmeldung ist eine FHS Mailadresse notwendig. 
+
+
+\subsection{Zeitplan}
+\begin{tabular}{|c|l|}
+\hline 
+23.04. & Usermanagement fertig, grundlegendes Frontend \\ 
+\hline 
+28.04. & Vermittlungsfunktion  fertig \\ 
+\hline 
+05.05. & Backend funktioniert \\ 
+\hline 
+12.05. & Frontend fertig \\ 
+\hline 
+19.05. & Codesäuberung/-optimierung \& Fehlerbehebungen \\ 
+\hline 
+19.-27.05. & Puffer \\ 
+\hline 
+28.05. & Abgabe \\ 
+\hline 
+\end{tabular} 
+\\
+\\
+
+\section{Selbsteinschätzung}
+\subsection{Stärken}
+In Sachen Frontendgestaltung und -programmierung sehe ich meine Stärken. Auch denke ich, dass mein PHP/MySql-Fähigkeiten für das Projekt ausreichen.
+
+\subsection{Schwächen}
+
+Schwierigkeiten sehe ich im Bereich Sicherheit, denn ich habe keine Erfahrungen mit Verschlüsselungsverfahren oder Sessionsicherheit. Aufgrund meiner geringen Programmiererfahrung wird meine Umsetzung wahrscheinlich teilweise umständlich und schwer nachvollziehbar sein. Außerdem ist es für mich schwierig mich nicht mit Kleinigkeiten aufzuhalten. Schwer fällt mir auch die Umsetzung eines responsive Designs, ohne die NutzerInnenfreundlichkeit zu vermindern.
+
+\section{Erwarteter Lernfortschritt}
+Ich erwarte mir eine Verbesserung meiner PHP- und Datenbankfähigkeiten, da die Applikation für meine Vorkenntnisse sehr komplex ist und ich bis zu Beginn dieses Semesters kaum Backenderfahrung gesammelt habe. 
+Außerdem glaube ich, dass ich eine selbstständige und termingerechte Umsetzung eines Projekts lerne.
+\end{document}

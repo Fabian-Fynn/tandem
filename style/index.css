@@ -1,0 +1,156 @@
+#slogin{
+	padding:10px;
+	margin-right:55px;
+	margin-top:-50px;
+	float:right;
+	z-index:-1;
+	position:relative;
+	background:#2aabe2;
+}
+
+#add_err{
+	margin:-19px 0 5px 5px;
+	height:19px;
+	z-index:-2000;
+	
+}
+#loginForm{
+	background:#2aabe2;
+	height:25px;
+	z-index:1000;
+}
+
+.intro{
+	margin-bottom:0px;
+	display:none;
+}
+
+.inner {
+		width: 960px;
+		margin: 0 auto;
+		position: relative;
+		min-height: 50px;
+		padding:30px 0;
+		font-size: 18px;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+		padding:30px 0;
+		clear:both;
+	}
+
+.section {
+	width: 100%;
+	z-index: 10;
+	position: relative;
+	margin: 0 auto;
+	float:left;
+
+}
+
+
+.section .outer{
+	
+	padding:10px;
+}
+
+.section .inner{
+	max-width:800px;
+	margin:0 auto;
+	padding:10px;
+}
+
+.s1 {
+	padding-top:50px;
+	min-height: 500px;
+}
+
+
+.s2 {
+	min-height: 500px;
+	-webkit-box-shadow: inset 0px 2px 5px 0px #222;
+	-moz-box-shadow:    inset 0px 2px 5px 0px #222;
+	box-shadow:         inset 0px 2px 5px 0px #222;
+}
+
+.s2 .outer{
+	background: #2e353f;
+}
+
+.s3 {
+	min-height: 500px;
+	-webkit-box-shadow: inset 0px 3px 3px 0px #222;
+	-moz-box-shadow:    inset 0px 3px 3px 0px #222;
+	box-shadow:         inset 0px 3px 3px 0px #222;
+}
+
+
+.s4 {
+	background: #2e353f;
+	margin-bottom:0;
+	padding-bottom:20px;
+	color: white;
+	-webkit-box-shadow: inset 0px 2px 5px 0px #222;
+	-moz-box-shadow:    inset 0px 2px 5px 0px #222;
+	box-shadow:         inset 0px 2px 5px 0px #222;
+}
+
+#register .inner{
+	width:960px;
+	margin:0 auto;
+	color:#fff;
+}
+#register h1{
+	text-align:center;
+	color:#fff;
+}
+#regForm{
+	float:left;
+	width:60%;
+}
+#altLogin{
+	float:right;
+	width:35%;
+}
+
+
+/* Forms */
+
+.pwConfirmRow{
+	height:30px;
+	vertical-align:middle;
+}
+#pwConfirmCell input{
+	float:left;
+
+	
+}
+#pwIndicator{
+	float:left;
+	margin:5px 0 0 5px;
+	
+}
+
+
+
+#register form{
+	
+}
+
+
+@media only screen and (min-width: 960px) {
+.intro {
+	font-size:60px;
+	text-align:center;
+	padding-top:100px;
+    height:500px;
+    width:100%;
+	background-image: url("../img/bg.png");
+	background-repeat:repeat;
+	color: rgb(227, 227, 227);
+	margin-bottom:40px;
+	 -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+	display:block;
+	
+}
+}
+
