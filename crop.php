@@ -19,8 +19,8 @@
 
 		$targ_w = $targ_h = 500;
 	  $jpeg_quality = 90;
-	  $src = "img/".$_SESSION['uploadfile'];
-	  unset($_SESSION['filname']);
+	  $src = "img/profilePics/".$_SESSION['uploadfile'];
+	  unset($_SESSION['uploadfile']);
 
 	  $srcParts = pathinfo($src);
 
@@ -98,7 +98,7 @@
 		<div class="userName"><h1>Profil bearbeiten</h1></div>
 		<article class="left">
 			<h2>Cropper</h2>
-			<img src="img/<?php echo $filename; ?>" id="cropbox">
+			<img src="img/profilePics/<?php echo $filename; ?>" id="cropbox">
 			 <p><form action="crop.php" method="post" onsubmit="return checkCoords();">
       <input type="hidden" id="x" name="x" />
       <input type="hidden" id="y" name="y" />

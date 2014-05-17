@@ -78,7 +78,7 @@
 <div class="wrap">
 		
 	<section class="profileTop">
-		<div class="userName"><h1><?php echo ($person->firstname." ".$person->surname) ?></h1><p>Credits: <?php echo ($person->credits) ?></p></div>
+		<div class="userName"><h1><?php echo ($person->firstname." ".$person->surname) ?></h1></div>
 		<article class="left"><div class="profilePicContainer">
 				<div class="profilePic"><img src="img/profilePics/<?php echo $avatar ?>"></div>
 

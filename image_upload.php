@@ -11,8 +11,10 @@
 	$id = $_SESSION['id'];
 	if ($_SERVER['REQUEST_METHOD'] == 'POST')
   {
+
+    $avatar = $dbh->query("SELECT avatar FROM user WHERE id=$id");
     
-      $uploaddir = dirname( $_SERVER["SCRIPT_FILENAME"] ) . "/img/";
+      $uploaddir = dirname( $_SERVER["SCRIPT_FILENAME"] ) . "/img/profilePics/";
    
       if(!isset($_FILES['image']))
         throw new Exception("filesize");
@@ -32,11 +34,12 @@
     
      
     $uploadfile = $uploaddir . $imgname;
-     
+    //echo($avatar->avatar);
+    //if(unlink("img/profilePics/".$avatar->avatar))
+     // echo("<script>alert(".$avatar->avatar.");</script>");
     if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
-      echo "Datei erfolgreich hochgeladen nach <a href='upload/'>upload/</a>\n";
       $_SESSION['uploadfile'] = $imgname;
-      resize("img/".$imgname, "img/".$imgname, 500, 500, false);
+      resize("img/profilePics/".$imgname, "img/profilePics/".$imgname, 500, 500, false);
       header("Location:crop.php");
     } else {
       throw new Exception("saveError");
@@ -112,15 +115,16 @@
   
   if($_SERVER['REQUEST_METHOD'] == 'POST'):
    ?>
-    <img src="img/temp_<?php echo ($id.$ext); ?>"  id="cropbox"/>
+    <img src="img/profilePics/temp_<?php echo ($id.$ext); ?>"  id="cropbox"/>
 
 <?php
   endif;
   else:
     ?>
-  
+
   <article class="left">
     <?php echo($error); ?>
+    <a href="image_upload.php"><button>Zurück</button></a>
   </article>
 
   <?php
