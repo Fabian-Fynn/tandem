@@ -7,14 +7,26 @@
 	$id = $_SESSION['id'];
 	if ($_SERVER['REQUEST_METHOD'] == 'POST')
   {
-    $uploaddir = dirname( $_SERVER["SCRIPT_FILENAME"] ) . "/img/";
- 
-    $filename = basename($_FILES['image']['name']);
-    $ext = substr($filename, -4);
-     
+    try{
+      $uploaddir = dirname( $_SERVER["SCRIPT_FILENAME"] ) . "/img/";
+   
+      if(!isset($_FILES['image']))
+        throw new Exception("filesize",1);
+
+        
+      $filename = basename($_FILES['image']['name']);
+      $ext = substr($filename, -4);
+       
+
+    }
+    catch(Exception $e)
+    {
+      die("Das Bild ist zu groß. Bitte wähle ein anderes.");
+      exit;
+    }
     
     $imgname = "temp_".$id.$ext;
-    if( $ext != '.jpg' && $ext != '.png' && $ext != '.gif' ) {
+    if( $ext != '.jpg' && $ext != '.png' && $ext != '.JPG' && $ext != '.PNG' ) {
        die("ich darf nur jpg-Dateien hochladen, nicht " . substr($filename, -3) );
       exit;
     }
@@ -23,6 +35,9 @@
      
     if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
       echo "Datei erfolgreich hochgeladen nach <a href='upload/'>upload/</a>\n";
+      $_SESSION['uploadfile'] = $imgname;
+      resize("img/".$imgname, "img/".$imgname, 500, 500, false);
+      header("Location:crop.php");
     } else {
       echo "Problem beim Speichern der Datei.\n";
     }
@@ -42,16 +57,33 @@
 			
     <form method="post" action="image_upload.php" id="picForm" enctype="multipart/form-data">
       
-      <input name="image" type="file">
+      <input name="image" type="file" id="fileToUpload">
       
-      <p><input type="submit" value="Senden">
+      <p><input type="submit" value="Senden" id="submit"></p>
+      <div style="float: left;height:auto; width:auto;"><p id="error"></p></div>
     </form>
+<script>
 
+ $('#fileToUpload').bind('change', function() {
+
+  //this.files[0].size gets the size of your file.
+  if(this.files[0].size > 1000000)
+    {
+      $('#submit').attr("disabled", "disabled");
+      $('#error').html("Das Bild ist leider zu groß");
+    }
+    else
+    {
+      $('#submit').removeAttr("disabled");
+      $('#error').html(""); 
+    }
+
+});  </script>
 <?php
   
   if($_SERVER['REQUEST_METHOD'] == 'POST')
     { ?>
-    <img src="img/temp_<?php echo ($id.$ext); ?>" onload="cropper()" id="tempPic"/>
+    <img src="img/temp_<?php echo ($id.$ext); ?>"  id="cropbox"/>
 
 <?php
   }
@@ -62,20 +94,6 @@
 	</section>
 	
 </div>
-<script>
-function cropper(){
-new Lasso.Crop('tempPic',{
-  ratio: [1,1],
-  preset: [235, 140, 505, 340],
-  min: [50,50],
-  handleSize : 8,
-  opacity : .6,
-  color: '#7389AE',
-  border : 'img/crop.gif'
-});
-}
-
- </script>
 <?php
     include "footer.php";
 ?>

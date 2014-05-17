@@ -1,4 +1,3 @@
-
 <?php
 	include "menu.php";
 	if(! isset($_SESSION['id']))
@@ -24,7 +23,7 @@
     
 ?>
 	<div class = "wrap">
-		<h1>Willkommen, <?php echo $user ?> !</h1>
+		<h1>Willkommen, <?php echo $user ?>!</h1>
 		<br><br>
 		<?php 
 			if(Count($matches) > 1): ?>
@@ -37,7 +36,7 @@
 		?>
 		<a href="profil.php?id=<?php echo($match->id) ?>">
 		<div class = "homeMatch">
-			<img src="http://multimediatechnology.at/~fhs36101/mmp1/profilePics/<?php echo ($match->avatar)  ?>">
+			<img src="img/profilePics/<?php echo ($match->avatar)  ?>">
 			<p><?php echo($match->firstname." ".$match->surname) ?></p>
 		</div>
 		</a>
@@ -104,6 +103,8 @@
 	</div>
 	
 	
+	
 <?php
     include "footer.php";
+
 ?>

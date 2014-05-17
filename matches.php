@@ -36,7 +36,7 @@
 			?>
 		<a href="profil.php?id=<?php echo($match->id) ?>">
 		<div class = "match">
-			<img src="http://multimediatechnology.at/~fhs36101/mmp1/profilePics/<?php echo ($match->avatar)  ?>">
+			<img src="img/profilePics/<?php echo ($match->avatar)?>">
 			<p><?php echo($match->firstname." ".$match->surname) ?></p>
 			<?php 
 			unset($offer);

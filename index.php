@@ -9,9 +9,6 @@
 
 	
 <div class = "wrapIndex">
-<br>
-<br>
-<br>
 
 	<div class="section s1" id="about">
 		<div class="outer">

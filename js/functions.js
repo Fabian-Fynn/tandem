@@ -1,5 +1,3 @@
-
-
 var loginvisible = false;
 function loginslide () {
 	if(loginvisible === false){
@@ -67,27 +65,26 @@ $(document).ready(function(){
 			data: "partner="+partner+"&reqAct="+reqAct,
 		   success: function(html){ 
 			if(html!='false')    {
-				if($("#submitRequest").val() == " Buddyanfrage senden "){
+				if($("#reqAct").val() == "send"){
 			 		$("#submitRequest").val(" Anfrage abbrechen ");
 			 		//$("#add_err").html(html);											////////////////////////////
 			 		$("#reqAct").val("abort");
 			 	}
-			 	else if($("#submitRequest").val() == " Anfrage abbrechen "){
+			 	else if($("#reqAct").val() == "abort" || $("#reqAct").val() == "unfriend"){
 			 		$("#submitRequest").val(" Buddyanfrage senden ");
 			 		//$("#add_err").html(html);											////////////////////////////
 			 		$("#reqAct").val("send");
 			 	}
-			 	else if($("#reqAct").val() == "abbrechenListe"){
+			 	else if($("#reqAct").val() == "abortList"){
 			 		$("#request_" + partner).remove();
 			 	}
 			 	else if($("#reqAct").val() == "accept"){
-			 		$("#submitRequest").val(" Als Buddy entfernen ");
+			 		$("#submitRequest").val(" Anfrage angenommen ");
+			 		$("#submitRequest").attr("disabled", "disabled");
 			 	}
 			 	else
 			 	{
-			 		$("#submitRequest").val(" Buddyanfrage senden ");
-			 		$("#reqAct").val("unfriend");
-			 		$("#reqAbort").hide();
+			 		
 			 	}
 			}
 			else    {
@@ -103,7 +100,7 @@ $(document).ready(function(){
 		return false;
 	});
 });
-
+/*
 function abortRequest(partner)
 {
 		   $.ajax({
@@ -125,7 +122,7 @@ function acceptRequest(partner)
 				data: "partner="+partner,
 			   	success: function(html){ 
 					if(html!='false')    
-					 	$("#request_" + partner).html("Anfrage angenommen"); 	
+					 	$("#requestForm_" + partner+" submit").value("Anfrage angenommen"); 	
 				}
 			});
-}
+}*/

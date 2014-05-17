@@ -11,11 +11,16 @@
 
  	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        $date = date('Y-m-d H:i:s');
+       	if($isfemale == 0)
+            $avatar = "male_avatar.png";
+        else
+        	$avatar = "female_avatar.png";
+
        $sth = $dbh->prepare(
 		  "INSERT INTO user
-			(id, firstname,surname,email,is_female,password,register_date)
+			(id, firstname,surname,email,is_female,password,register_date,avatar)
 			  VALUES
-			(NULL,   ?,     ?,      ?,    ?,              ?,?)");
+			(NULL,   ?,     ?,      ?,    ?,              ?,?,?)");
 		$array = $_POST;
 		if(formValid(false))
 		{
@@ -26,7 +31,8 @@
 				$_POST['email'],
 				$_POST['isfemale'],
 				$_POST['password'],
-				$date
+				$date,
+				$avatar
 			  )
 			); 
 			$id = $dbh->lastInsertId(); 

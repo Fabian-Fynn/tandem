@@ -316,8 +316,6 @@
       $img.width($origimg.width());
       $img.height($origimg.height());
       $origimg.after($img).hide();
-      
-
     } else {
       $img = $origimg.css(img_css).show();
       img_mode = false;

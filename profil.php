@@ -80,7 +80,8 @@
 	<section class="profileTop">
 		<div class="userName"><h1><?php echo ($person->firstname." ".$person->surname) ?></h1><p>Credits: <?php echo ($person->credits) ?></p></div>
 		<article class="left"><div class="profilePicContainer">
-				<div class="profilePic"><img src="http://multimediatechnology.at/~fhs36101/mmp1/profilePics/<?php echo $avatar  ?>"></div>
+				<div class="profilePic"><img src="img/profilePics/<?php echo $avatar ?>"></div>
+
 				<?php if($ownProfile): ?>
 					<div class="profileInfo"><a href="image_upload.php">Profilbild bearbeiten</a></div> 
 					<div class="profileInfo"><a href="person_edit.php">Profil bearbeiten</a></div>

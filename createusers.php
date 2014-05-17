@@ -16,9 +16,9 @@
 
 		$sth = $dbh->prepare(
 			  "INSERT INTO user
-				(id, firstname,surname,email,is_female,password,register_date)
+				(id, firstname,surname,email,is_female,password,register_date, avatar)
 				  VALUES
-				(NULL,  ?,     ?,      ?,    ?,              ?,?)");
+				(NULL,  ?,     ?,      ?,    ?,              ?,?,?)");
 		$stho = $dbh->prepare(
 			  "INSERT INTO offer
 				(id, course, teacher)
@@ -33,17 +33,17 @@
 		//create user
 		
 		$id=5;
-		while($id < $_POST['amount'])
+		while($id <= $_POST['amount'])
 		{
-			$genderRand = rand(1,20);
-			if($genderRand > 10)
-				$gender = 1;
+			$isfemaleRand = rand(1,20);
+			if($isfemaleRand > 10)
+				$isfemale = 1;
 			else
-				$gender = 0;
+				$isfemale = 0;
 
 
 			
-			if($gender == 0)
+			if($isfemale == 0)
 			{
 				$firstnameNr = rand(0,count($firstMale)-1);
 				$firstname = $firstMale[$firstnameNr];
@@ -58,15 +58,20 @@
 			$surname = $surnames[rand(0, count($surnames)-1)];
 			$email = $id."@test.at";
 			$password = "asdf";
+			if($isfemale == 0)
+	            $avatar = "male_avatar.png";
+	        else
+	        	$avatar = "female_avatar.png";
 			//$username = $firstname.$id;
 			$sth->execute(
 				array(
 					$firstname,
 					$surname,
 					$email,
-					$gender,
+					$isfemale,
 					$password,
-					$date
+					$date,
+					$avatar
 				)
 				); 
 
@@ -103,7 +108,7 @@
 					)
 				); 
 			}
-			//echo($gender." ".$firstname." ".$surname." ".$email."<br>");	
+			//echo($isfemale." ".$firstname." ".$surname." ".$email."<br>");	
 
 			$id++;
 

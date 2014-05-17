@@ -50,7 +50,7 @@
 		<h1>Fremde Anfragen</h1>
 
 		<?php 
-			if(Count($oRequests) > 0): ?>
+			if(Count($oRequests) > -1): ?>
 
 		<?php 
 		
@@ -58,9 +58,26 @@
 			?>
 		
 		<div class = "request">
-			<img src="http://multimediatechnology.at/~fhs36101/mmp1/profilePics/<?php echo ($r->avatar)  ?>">
+			<img src="img/profilePics/<?php echo ($r->avatar)?>">
 			<a href="profil.php?id=<?php echo($r->id) ?>"><p><?php echo($r->firstname." ".$r->surname) ?></p></a>
-			<a class="req" href="profil.php?id=<?php echo($r->id) ?>" ><button onclick='acceptRequest(<?php echo($r->id); ?>)'> Annehmen </button></a>
+
+			<form id="acceptForm_<?php echo($r->id); ?>" action="request.php" method="post">
+				<div id="sendRequest">
+				<input type="hidden" name="partner" id="partner" value="<?php echo($r->id); ?>">
+				<input type="hidden" name="reqAct" id="reqAct" value="accept">
+		        <input type="submit" value=" Anfrage annehmen " class="submit" id="submitRequest" >
+				</div>
+					<div id="add_err"></div>
+			</form>
+			<form id="abortForm_<?php echo($r->id); ?>" action="request.php" method="post">
+				<div id="sendRequest">
+				<input type="hidden" name="partner" id="partner" value="<?php echo($r->id); ?>">
+				<input type="hidden" name="reqAct" id="reqAct" value="abort">
+		        <input type="submit" value=" Anfrage ablehnen " class="submit" id="submitRequest" >
+				</div>
+					<div id="add_err"></div>
+			</form>
+			
 		</div>
 		
 		<?php
@@ -82,25 +99,33 @@
 		<h1>Deine Anfragen</h1>
 
 		<?php 
-			if(Count($mRequests) > 0): ?>
-
+		//$mRequestst = (array)$mRequests;
+			//if(empty($mRequestst)): ?>
+			
 		<?php 
-		
+		$requestCount = 0;
 		foreach ($mRequests as $r):
+			$requestCount++;
 			?>
-		
 		<div class = "request" id="request_<?php echo($r->id); ?>">
-			<img src="http://multimediatechnology.at/~fhs36101/mmp1/profilePics/<?php echo ($r->avatar)  ?>">
+			<img src="img/profilePics/<?php echo ($r->avatar)?>">
 			<a href="profil.php?id=<?php echo($r->id) ?>"><p><?php echo($r->firstname." ".$r->surname) ?></p></a>
-			<a class="req" href="profil.php?id=<?php echo($r->id) ?>" ><button onclick='abortRequest(<?php echo($r->id); ?>)'> Anfrage abbrechen </button></a>
+			<form id="abortForm_<?php echo($r->id); ?>" action="request.php" method="post">
+				<div id="sendRequest">
+				<input type="hidden" name="partner" id="partner" value="<?php echo($r->id); ?>">
+				<input type="hidden" name="reqAct" id="reqAct" value="abortList">
+		        <input type="submit" value=" Anfrage abbrechen " class="submit" id="submitRequest" >
+				</div>
+					<div id="add_err"></div>
+			</form>
 		</div>
 	
 		<?php
 		endforeach; 
-		else:
-
+		//else:
+		if($requestCount == 0 ):
 		?>
-		<p>Du hast noch keine Buddies!</p>
+		<p>Du hast momentan keine Anfrage</p>
 
 
 
@@ -113,23 +138,28 @@
 	<div class="requestblock">
 		<h1>Deine Buddies</h1>
 		<?php 
-			if($buddylist != null): ?>
+
+		if(isset($buddies)):
+			 ?>
 
 			
 			<br><br>
 		<?php 
-		
+		$requestCount = 0;
 		foreach ($buddies as $buddy):
-			?>
+			
+			$requestCount++;
+		?>
 		<a href="profil.php?id=<?php echo($buddy->id) ?>">
 		<div class = "match">
-			<img src="http://multimediatechnology.at/~fhs36101/mmp1/profilePics/<?php echo ($buddy->avatar)  ?>">
+			<img src="img/profilePics/<?php echo ($buddy->avatar)?>">
 			<p><?php echo($buddy->firstname." ".$buddy->surname) ?></p>
 			
 		</div>
 		</a>
 		<?php
 		endforeach; 
+		
 		else:
 
 		?>

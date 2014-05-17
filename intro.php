@@ -1,13 +1,14 @@
 <?php include "head.php" ?>
 <link rel="stylesheet" href="style/indexNav.css">
 </head>
- <div class="intro" >
-<br><br><br><br><br>Tandem
-	 </div>
 
+ <div class="around"><div class="intro" ><div class="title">
+		<h1>TANDEM</h1></div>
+	 </div>
+</div>
 <div class="subMenu" >
 	 	<div class="outer"><div class="inner">
-	 		<a href="#" id="intro" class="subNavBtn">Home</a> 
+	 		<a href="#" id="around" class="subNavBtn">TANDEM</a> 
 			<a href="#about" id="s1" class="subNavBtn">Section 1</a>
 			<a href="#features" id="s2" class="subNavBtn">Section 2</a>
 			<a href="#" id="s3" class="subNavBtn">Section 3</a>
