@@ -3,14 +3,23 @@ function loginslide () {
 	if(loginvisible === false){
 		$('#slogin').animate({marginTop:"0px"});
 		loginvisible = true;
+		$('#blogin').css('background-color','#FF4961');
 	}
 	else{
-		$('#slogin').animate({marginTop:"-50px"});
-		loginvisible = false;
+		$('#slogin').animate({marginTop:"-50px"}, 250);
+		setTimeout( function() {
+         		$('#blogin').css('background-color','#fff');
+    		}, 240);
 		$("#add_err").animate({marginTop:"-19px"},250);
 		setTimeout( function() { $("#add_err").html(""); }, 100);
 		$("#loginForm").trigger("reset");
+		loginvisible = false;
+
+		
+		
 	}
+
+	
 }
 
 function JsSwitch () {

@@ -9,12 +9,13 @@
 <div class="subMenu" >
 	 	<div class="outer"><div class="inner">
 	 		<a href="#" id="around" class="subNavBtn">TANDEM</a> 
-			<a href="#about" id="s1" class="subNavBtn">Section 1</a>
-			<a href="#features" id="s2" class="subNavBtn">Section 2</a>
-			<a href="#" id="s3" class="subNavBtn">Section 3</a>
-			<a href="#register" id="s4" class="subNavBtn end">Registrieren</a>
-			<a href="#register" id="blogin" class="subNavBtn smint-disable" onclick="loginslide()">Login</a>
-			
+	 		<div id="menuwrapper">
+				<a href="#about" id="s1" class="subNavBtn">Section 1</a>
+				<a href="#features" id="s2" class="subNavBtn">Section 2</a>
+				<a href="#" id="s3" class="subNavBtn">Section 3</a>
+				<a href="#register" id="s4" class="subNavBtn end">Registrieren</a>
+				<a href="#register" id="blogin" class="subNavBtn smint-disable" onmouseover="loginslide()" >Login</a>
+			</div>
 		</div>
 			
 		</div>

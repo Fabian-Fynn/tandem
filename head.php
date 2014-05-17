@@ -8,9 +8,10 @@
 	<link rel="stylesheet" href="style/main.css">
 	<link rel="stylesheet" href="style/index.css">
 	<link rel="stylesheet" href="style/">
-	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,700,900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="style/jquery.Jcrop.css" type="text/css" />
 	
 

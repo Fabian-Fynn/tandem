@@ -1,12 +1,12 @@
 
 #slogin{
 	padding:10px;
-	margin-right:55px;
+	margin-right:67px;
 	margin-top:-50px;
 	float:right;
 	z-index:-1;
 	position:relative;
-	background:#2aabe2;
+	background:#FF4961;
 }
 
 #add_err{
@@ -16,7 +16,7 @@
 	
 }
 #loginForm{
-	background:#2aabe2;
+	//background:#2aabe2;
 	height:25px;
 	z-index:1000;
 }
@@ -68,7 +68,7 @@
 		min-height: 50px;
 		padding:30px 0;
 		font-size: 18px;
-		font-family: 'Open Sans', sans-serif;
+		//font-family: 'Open Sans', sans-serif;
 		font-weight: 300;
 		padding:30px 0;
 		clear:900;
@@ -100,15 +100,16 @@
 	min-height: 500px;
 	//position:relative;
 	z-index: 10;
-	background-color: rgb(227, 227, 227);
+	background:#2aa8e2;
+	//background-color: rgb(227, 227, 227);
 }
 
 
 .s2 {
 	min-height: 500px;
-	-webkit-box-shadow: inset 0px 2px 5px 0px #222;
-	-moz-box-shadow:    inset 0px 2px 5px 0px #222;
-	box-shadow:         inset 0px 2px 5px 0px #222;
+	//-webkit-box-shadow: inset 0px 2px 5px 0px #222;
+	//-moz-box-shadow:    inset 0px 2px 5px 0px #222;
+	//box-shadow:         inset 0px 2px 5px 0px #222;
 }
 
 .s2 .outer{
@@ -117,9 +118,9 @@
 
 .s3 {
 	min-height: 500px;
-	-webkit-box-shadow: inset 0px 3px 3px 0px #222;
-	-moz-box-shadow:    inset 0px 3px 3px 0px #222;
-	box-shadow:         inset 0px 3px 3px 0px #222;
+	//-webkit-box-shadow: inset 0px 3px 3px 0px #222;
+	//-moz-box-shadow:    inset 0px 3px 3px 0px #222;
+	//box-shadow:         inset 0px 3px 3px 0px #222;
 	background-color: rgb(227, 227, 227);
 }
 
@@ -127,11 +128,10 @@
 .s4 {
 	background: #2e353f;
 	margin-bottom:0;
-	padding-bottom:20px;
 	color: white;
-	-webkit-box-shadow: inset 0px 2px 5px 0px #222;
-	-moz-box-shadow:    inset 0px 2px 5px 0px #222;
-	box-shadow:         inset 0px 2px 5px 0px #222;
+	//-webkit-box-shadow: inset 0px 2px 5px 0px #222;
+	//-moz-box-shadow:    inset 0px 2px 5px 0px #222;
+	//box-shadow:         inset 0px 2px 5px 0px #222;
 }
 
 #register .inner{
