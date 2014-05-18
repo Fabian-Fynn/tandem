@@ -12,8 +12,8 @@ User,
 Matches+Buddies,
  ☐ User nicht anzeigen wenn Buddy
  ☐ Am server -> bei requestanfrage ablehnen: nicht entfernt..
-
-
+ ☐ offerbearb + pic zurück button
+   
 
 Home,
  ☐ Tipps
@@ -42,7 +42,7 @@ Allgemein,
 Style,
  ☐ Login slider
  ☐ intro größer
- ☐ logged-in styles
+ ✔ logged-in styles @done (14-05-18 21:12)
 
 
 

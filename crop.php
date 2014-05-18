@@ -20,7 +20,7 @@
 		$targ_w = $targ_h = 500;
 	  $jpeg_quality = 90;
 	  $src = "img/profilePics/".$_SESSION['uploadfile'];
-	  unset($_SESSION['uploadfile']);
+	  //unset($_SESSION['uploadfile']);
 
 	  $srcParts = pathinfo($src);
 
@@ -64,7 +64,7 @@
 
 	}
 ?>
-
+<script src="js/jquery.Jcrop.js"></script>
 <script type="text/javascript">
 
   window.onload = function(){

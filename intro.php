@@ -1,5 +1,7 @@
 <?php include "head.php" ?>
+<link rel="stylesheet" href="style/index.css">
 <link rel="stylesheet" href="style/indexNav.css">
+
 </head>
 
  <div id="around"><div class="intro" ><div class="title">
@@ -14,7 +16,7 @@
 				<a href="#s2"  rel="m_PageScroll2id" class="subNavBtn s2">Section 2</a>
 				<a href="#s3"  rel="m_PageScroll2id" class="subNavBtn s3">Section 3</a>
 				<a href="#register"  rel="m_PageScroll2id" class="subNavBtn register">Registrieren</a>
-				<a href="#register"  rel="m_PageScroll2id" class="subNavBtn" onmouseover="loginslide()" >Login</a>
+				<a href="#register" id="loginButton" class="subNavBtn" onmouseover="loginslide()" onclick="javascript:" >Login</a>
 			</div>
 		</div>
 			
@@ -62,17 +64,12 @@ $(window).scroll(function() {
     }
 });
 
-function checkvisability(element){
-	var s = element.offset().top;
-	highlighter = "."+element.attr('id');
+
 	
-	var scrollY = $(window).scrollTop();
-    if (scrollY > s-100 && scrollY < s+element.height()-51) {
-        $(highlighter).addClass("highlighted");
-    }
-    else
-    	$(highlighter).removeClass("highlighted");	
-}
+	window.onload = function(){
+	    $('#loginButton').attr("href", "#");
+	};
+
 
 /* Code by Devin Sturgeon */
 $(function() {

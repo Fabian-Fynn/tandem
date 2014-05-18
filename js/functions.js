@@ -112,6 +112,18 @@ $(document).ready(function(){
 		return false;
 	});
 });
+
+function checkvisability(element){
+	var s = element.offset().top;
+	highlighter = "."+element.attr('id');
+	
+	var scrollY = $(window).scrollTop();
+    if (scrollY > s-100 && scrollY < s+element.height()-51) {
+        $(highlighter).addClass("highlighted");
+    }
+    else
+    	$(highlighter).removeClass("highlighted");	
+}
 /*
 function abortRequest(partner)
 {

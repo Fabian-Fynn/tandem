@@ -6,11 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Tandem - Lernplattform für Studenten der FH-Salzburg </title>
 	<link rel="stylesheet" href="style/main.css">
-	<link rel="stylesheet" href="style/index.css">
-	<link rel="stylesheet" href="style/">
-	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+	
 	<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,700,900' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="style/jquery.Jcrop.css" type="text/css" />
 	
@@ -20,7 +17,7 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/functions.js"></script>
-	<script src="js/jquery.Jcrop.js"></script>
+	
 	
 	<script>
 		
@@ -48,12 +45,4 @@
 		});
 
 	</script>
-	<?php 
-	$page = basename($_SERVER['PHP_SELF'], ".php");
-	if($page != "image_upload")
-	{
-	?>	
 	
-	<?php
-}
-?>
