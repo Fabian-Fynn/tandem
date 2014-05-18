@@ -44,7 +44,7 @@
 
 <div id="title"><div class="logo">
 		<h1>TANDEM</h1></div>
-		<div class="more"><a href="#s1">Erfahre mehr</a></div>
+		<div class="more"><a href="#s1">mehr</a><img src="img/icons/down.png" alt="down"></div>
 	</div>
  <div id="around"><div class="intro" >
 	 </div>
