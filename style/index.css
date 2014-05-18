@@ -27,7 +27,7 @@
 	position:fixed;
 
 }
-.around{
+#around{
 	
 	height:600px;
 }
@@ -40,10 +40,16 @@
 	font-family: 'Alegreya Sans SC', sans-serif;
 	font-weight: bolder;
 	
-	color: white;  /* Fallback: assume this color ON TOP of image */
-   	background: url("../img/intro/intro5.jpg") no-repeat;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
+	color: #fff;/* Fallback: assume this color ON TOP of image */
+	 -webkit-text-fill-color: transparent;
+	 background: -webkit-linear-gradient(transparent, transparent), url("../img/intro/intro5.jpg") no-repeat;
+	 background: -o-linear-gradient(transparent, transparent);
+	 -webkit-background-clip: text;
+	/*color: white;  
+   	background:  url("../img/intro/intro5.jpg") no-repeat;
+    -webkit-background-clip: text;
+   	-webkit-text-fill-color: transparent;
+   	background-clip: text;*/
   	 background-size: 100%;
 	background-position: 50% -470px;
 	//border:1px solid #fff;
@@ -80,7 +86,7 @@
 	position: relative;
 	margin: 0 auto;
 	float:left;
-
+	background:#fff;
 }
 
 
@@ -95,37 +101,43 @@
 	padding:10px;
 }
 
-.s1 {
+#s1 {
 	padding-top:50px;
 	min-height: 500px;
 	//position:relative;
 	z-index: 10;
-	background:#2aa8e2;
+	background:#fff;
 	//background-color: rgb(227, 227, 227);
 }
 
 
-.s2 {
+#s2 {
 	min-height: 500px;
 	//-webkit-box-shadow: inset 0px 2px 5px 0px #222;
 	//-moz-box-shadow:    inset 0px 2px 5px 0px #222;
 	//box-shadow:         inset 0px 2px 5px 0px #222;
+	color:#333;
+
 }
 
-.s2 .outer{
-	background: #2e353f;
+#s2 h1, #s2 h2{
+	color:#333;
 }
 
-.s3 {
+#s2 .outer{
+	background: #2AA8E2;
+}
+
+#s3 {
 	min-height: 500px;
 	//-webkit-box-shadow: inset 0px 3px 3px 0px #222;
 	//-moz-box-shadow:    inset 0px 3px 3px 0px #222;
 	//box-shadow:         inset 0px 3px 3px 0px #222;
-	background-color: rgb(227, 227, 227);
+	background-color: #fff;
 }
 
 
-.s4 {
+#s4 {
 	background: #2e353f;
 	margin-bottom:0;
 	color: white;
@@ -133,15 +145,18 @@
 	//-moz-box-shadow:    inset 0px 2px 5px 0px #222;
 	//box-shadow:         inset 0px 2px 5px 0px #222;
 }
-
+#register{
+	background: #666;
+	color:#fff;
+}
 #register .inner{
 	width:960px;
 	margin:0 auto;
-	color:#fff;
+	
 }
 #register h1{
 	text-align:center;
-	color:#fff;
+	color:#fff;	
 }
 #regForm{
 	float:left;
@@ -206,5 +221,7 @@
 	display:block;
 	
 }
-
+a.mPS2id-highlight{ 
+    background: #ff0; 
+}
 }

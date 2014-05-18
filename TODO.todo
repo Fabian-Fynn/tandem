@@ -1,10 +1,48 @@
 ///////////////////////////
 TODO:
- 
+
+Index,
+ ☐ Content
+ ☐ Impressum
+ ☐ Footer
+
+User,
+ ☐ Stadt,Studiengang
+
+Matches+Buddies,
+ ☐ User nicht anzeigen wenn Buddy
+ ☐ Am server -> bei requestanfrage ablehnen: nicht entfernt..
 
 
 
+Home,
+ ☐ Tipps
+ ☐ 
 
+Allgemein,
+  ☐ upload fix delete + temp
+  ☐ person delete cascade + pic
+  ☐ User löschen -> Beziehungen löschen
+
+  ☐ Interner Be Logo im Menü
+  ☐ Emailbestätigung
+  ☐ PW hashen
+
+  ☐ PWrichtlinien
+  ☐ Favicon
+  ☐ Bilder
+  ☐ check FHS email + dublikate
+  ☐ Unnützes entfernen
+  ☐ menü verschwindet bei bestimmter zoomstufe
+
+  ☐ Formularvalid überflüssig bei prepared statements
+
+
+
+Style,
+ ☐ Login slider
+ ☐ intro größer
+ ☐ logged-in styles
 
 
 
@@ -26,8 +64,8 @@ CSS:
   red  #FF4961
        #CC142D
   green #CCC412
-  blue  #2AA8E2
-  pink  #FF4961
+  blue  #2AA8E2 !
+  pink  #FF4961 !
 
 
 

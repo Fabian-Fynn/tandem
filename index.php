@@ -10,7 +10,7 @@
 	
 <div class = "wrapIndex">
 
-	<div class="section s1" id="about">
+	<div class="section" id="s1">
 		<div class="outer">
 			<div class="inner">
 				<h1>Section 1</h1>
@@ -20,7 +20,7 @@
 
 	</div>
 
-	<div class="section s2" id="features">
+	<div class="section" id="s2">
 		<div class="outer">
 			<div class="inner">
 				<h1>Section 2</h1>
@@ -34,7 +34,7 @@
 
 	</div>
 
-	<div class="section s3">
+	<div id="s3"class="section">
 		<div class="outer">
 			<div class="inner">
 				<h1>Section 3</h1>

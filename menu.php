@@ -1,17 +1,5 @@
 <?php
 	include "head.php";
-	$page = basename($_SERVER['PHP_SELF'], ".php");
-	if($page === "image_upload")
-	{
-	?>	
-
-	 <link rel="stylesheet" href="style/imgPicker.css">
-<?php	
-}
-	
-
-
-
 ?>
 	<link rel="stylesheet" href="style/nav.css">
 </head>

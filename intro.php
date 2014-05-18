@@ -2,19 +2,19 @@
 <link rel="stylesheet" href="style/indexNav.css">
 </head>
 
- <div class="around"><div class="intro" ><div class="title">
+ <div id="around"><div class="intro" ><div class="title">
 		<h1>TANDEM</h1></div>
 	 </div>
 </div>
 <div class="subMenu" >
 	 	<div class="outer"><div class="inner">
-	 		<a href="#" id="around" class="subNavBtn">TANDEM</a> 
+	 		<a href="#around" id="around" rel="m_PageScroll2id" class="subNavBtn">TANDEM</a> 
 	 		<div id="menuwrapper">
-				<a href="#about" id="s1" class="subNavBtn">Section 1</a>
-				<a href="#features" id="s2" class="subNavBtn">Section 2</a>
-				<a href="#" id="s3" class="subNavBtn">Section 3</a>
-				<a href="#register" id="s4" class="subNavBtn end">Registrieren</a>
-				<a href="#register" id="blogin" class="subNavBtn smint-disable" onmouseover="loginslide()" >Login</a>
+				<a href="#s1"  rel="m_PageScroll2id" class="subNavBtn s1">Section 1</a>
+				<a href="#s2"  rel="m_PageScroll2id" class="subNavBtn s2">Section 2</a>
+				<a href="#s3"  rel="m_PageScroll2id" class="subNavBtn s3">Section 3</a>
+				<a href="#register"  rel="m_PageScroll2id" class="subNavBtn register">Registrieren</a>
+				<a href="#register"  rel="m_PageScroll2id" class="subNavBtn" onmouseover="loginslide()" >Login</a>
 			</div>
 		</div>
 			
@@ -42,6 +42,56 @@
 	</ul>
 	<a href="#" id="pull"><img src="img/nav-brand.png"></a>
 </nav>
+<script>
 
+$(window).scroll(function() {
+   
+    if(!(document.body.scrollHeight - $(this).scrollTop()  <= $(this).height()+100))
+    {
+    	$(".register").removeClass("highlighted");
+		checkvisability($("#s1"));
+		checkvisability($("#s2"));
+		checkvisability($("#s3"));
 
-	<!--<div class="arrow"></div>-->
+	}else
+	{
+		$(".s1").removeClass("highlighted");
+		$(".s2").removeClass("highlighted");
+		$(".s3").removeClass("highlighted");
+		$(".register").addClass("highlighted");
+    }
+});
+
+function checkvisability(element){
+	var s = element.offset().top;
+	highlighter = "."+element.attr('id');
+	
+	var scrollY = $(window).scrollTop();
+    if (scrollY > s-100 && scrollY < s+element.height()-51) {
+        $(highlighter).addClass("highlighted");
+    }
+    else
+    	$(highlighter).removeClass("highlighted");	
+}
+
+/* Code by Devin Sturgeon */
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+	        || location.hostname == this.hostname) {
+
+	        var target = $(this.hash);
+	        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	           if (target.length) {
+	             $('html,body').animate({
+	                 scrollTop: (target.offset().top -50)
+	            }, 1000);
+	            return false;
+	        }
+	    }
+	});
+});
+
+	</script>
+
+	

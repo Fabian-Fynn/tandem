@@ -20,7 +20,6 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/functions.js"></script>
-	<script src="js/jquery.smint.js"></script>
 	<script src="js/jquery.Jcrop.js"></script>
 	
 	<script>
@@ -54,22 +53,7 @@
 	if($page != "image_upload")
 	{
 	?>	
-	<script type="text/javascript">
-		
-		$(document).ready( function() {
-
-			//if(loginvisible === false)
-			//	$('#login :input').attr("disabled", true);
-			
-			
-			
-			$('.subMenu').smint({
-    			'scrollSpeed' : 1000
-    		});
-			
-			
-		});
-	</script>
+	
 	<?php
 }
 ?>

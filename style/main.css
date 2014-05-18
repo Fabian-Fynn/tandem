@@ -9,7 +9,7 @@ body {
 
     width:100%;
     height:auto;
-	position:absolute;
+	//position:absolute;
     top:0;
    //font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     //font-family: 'Ubuntu', sans-serif;
@@ -18,7 +18,7 @@ body {
     font-family: 'Nunito', sans-serif;
 	font-size: 100%;
     line-height: 1.5em;
-    color: #222;
+    color: #666;
   	//background:#05f;
 	 //background-color: rgb(227, 227, 227);
     //-webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
@@ -38,7 +38,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #222;
+    color: #666;
     font-weight: 400;
     line-height: 1.3em;
 	
@@ -321,6 +321,7 @@ footer{
 	margin-top:75px;
 	padding:0;
 	float:left;
+	border-top:1px solid #ccc;
 }
 
 footer .container{
