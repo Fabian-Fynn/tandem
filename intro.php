@@ -4,13 +4,10 @@
 
 </head>
 
- <div id="around"><div class="intro" ><div class="title">
-		<h1>TANDEM</h1></div>
-	 </div>
-</div>
+
 <div class="subMenu" >
 	 	<div class="outer"><div class="inner">
-	 		<a href="#around" id="around" rel="m_PageScroll2id" class="subNavBtn">TANDEM</a> 
+	 		<a href="#title" id="around" rel="m_PageScroll2id" class="subNavBtn">TANDEM</a> 
 	 		<div id="menuwrapper">
 				<a href="#s1"  rel="m_PageScroll2id" class="subNavBtn s1">Section 1</a>
 				<a href="#s2"  rel="m_PageScroll2id" class="subNavBtn s2">Section 2</a>
@@ -44,6 +41,14 @@
 	</ul>
 	<a href="#" id="pull"><img src="img/nav-brand.png"></a>
 </nav>
+
+<div id="title"><div class="logo">
+		<h1>TANDEM</h1></div>
+		<div class="more"><a href="#s1">Erfahre mehr</a></div>
+	</div>
+ <div id="around"><div class="intro" >
+	 </div>
+</div>
 <script>
 
 $(window).scroll(function() {

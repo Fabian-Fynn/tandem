@@ -7,7 +7,7 @@
 	<title>Tandem - Lernplattform für Studenten der FH-Salzburg </title>
 	<link rel="stylesheet" href="style/main.css">
 	
-	<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,700,900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,300,400,700,900' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="style/jquery.Jcrop.css" type="text/css" />
 	

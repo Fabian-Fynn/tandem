@@ -311,23 +311,23 @@ a.req {
 /*footer*/
 
 footer{
+	position: relative;
+	bottom:0px;
 	height:155px;
 	background:#2aa8e2;
-	//-webkit-box-shadow: inset 0px 3px 3px 0px #222;
-	//-moz-box-shadow:    inset 0px 3px 3px 0px #222;
-	//box-shadow:         inset 0px 3px 3px 0px #222;
 	width:100%;
 	margin:0;
-	margin-top:75px;
 	padding:0;
 	float:left;
 	border-top:1px solid #ccc;
+	z-index:1000;
 }
 
 footer .container{
 	height:100%;
 	width:960px;
 	margin:0 auto;
+	opacity: 1;
 }
 footer .left{
 	width:65%;

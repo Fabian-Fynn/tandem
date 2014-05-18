@@ -24,11 +24,7 @@
 		<div class="outer">
 			<div class="inner">
 				<h1>Section 2</h1>
-					<br><br><br><br><br><br><br><br>
-					<br><br><br><br><br><br><br><br><br><br>
-					<br><br><br><br><br><br><br><br><br><br>
-					<br><br><br><br><br><br><br><br><br><br>
-					<br><br><br><br><br><br><br><br><br><br>
+					
 			</div>
 		</div>
 
@@ -95,6 +91,7 @@
 		</div>
 
 	</div>
+</div>
 	
 	
 <?php
