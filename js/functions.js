@@ -37,8 +37,11 @@ function checkPasswordMatch() {
         $("#pwIndicator").attr("src","img/check.png");
 }
 
+
+
 $(document).ready(function(){
-	
+
+	$(".subMenu").css('top', '0px');
 	 $("#submitLogin").click(function(){	
 		  email=$("#email").val();
 		  password=$("#pwd").val();
