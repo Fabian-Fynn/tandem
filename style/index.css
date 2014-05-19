@@ -1,4 +1,7 @@
 
+h3{
+	font-size: .95vw;
+}
 #slogin{
 	padding:10px;
 	margin-right:67px;
@@ -41,23 +44,22 @@ a#around{
 #title h1{
 	
 	margin:auto;
-	font-size: 15vh;
-	//margin-top:70vh;
-	//color:#FFF;
-	//color: rgba(255, 255, 255, 1.0);
+	font-size: 7vw;
 	font-family: 'Alegreya Sans SC', sans-serif;
 	font-weight: 100;
-	
 	color: #fff;/* Fallback: assume this color ON TOP of image */
-	 //-webkit-text-fill-color: transparent;
-	 //background: -webkit-linear-gradient(transparent, transparent), url("../img/intro/intro5.jpg") no-repeat;
-	 //background: -o-linear-gradient(transparent, transparent);
-	 //-webkit-background-clip: text;
-  	// background-size: 100%;
-	//background-position: 50% -470px;
-	//border:1px solid #fff;
-	//text-shadow: 1px 1 black;
 }
+
+#title h2{
+	margin:auto;
+	font-size: 4vw;
+	font-weight: 100;
+	color: #fff;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	text-align: center;
+}
+
+
 #title{
 	position:relative;
 	top:0px;
@@ -81,9 +83,17 @@ a#around{
 	opacity: 0.8;
 }
 
+#catch{
+	position:relative;
+	top:50vh;
+	width:50vw;
+	height: auto;
+	margin:0 auto;
+	opacity: 0.8;
+}
 .more{
 	position:relative;
-	top:75vh;
+	top:65vh;
 	width:3.8vw;
 	height: auto;
 	margin:0 auto;
@@ -135,6 +145,7 @@ a#around{
 
 #s1 {
 	padding-top:50px;
+	padding-bottom: 80px;
 	min-height: 500px;
 	//position:relative;
 	z-index: 10;
@@ -149,12 +160,12 @@ a#around{
 	//-moz-box-shadow:    inset 0px 2px 5px 0px #222;
 	//box-shadow:         inset 0px 2px 5px 0px #222;
 	//color:#333;
-	background:#FF4961;
-	opacity: 0.4;
+	background:rgba(255, 73, 97, 0.4);
+	
 }
 
 #s2 h1, #s2 h2{
-	color:#333;
+	color:#fff;
 }
 
 
@@ -198,7 +209,45 @@ a#around{
 	width:35%;
 }
 
+.img{
+	
+}
 
+img.img{
+	width:25%;
+}
+
+.img.triad{
+	width:100%;
+	height:50px;
+	font-size: 1vw;
+	text-align: center;
+	font-weight: bold;
+}
+.img.triad img{
+	width:80%;
+}
+.img.triad .left{
+	float:left;
+	
+	width:33%;
+}
+.img.triad .center{
+	
+	float:left;
+	
+	width:33%;
+
+}
+.img.triad .right{
+	float:left;
+	
+	width:33%;
+
+}
+.img img{
+	width:100%;
+}
 /* Forms */
 
 .pwConfirmRow{

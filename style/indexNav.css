@@ -250,16 +250,17 @@
 		z-index:100;
 		//color:#333;
 		border-bottom: 1px solid #ccc;
+		height:60px;
 	}
 	
 	.subNavBtn {
 		display: block;
-		height: 35px;
+		height: 45px;
 		width: auto;
 		float: left;
-		margin: 0px 0px 0 0;
+		margin: 4px 0px 0 0;
 		text-decoration: none;
-		font-size: 14px;
+		font-size: 20px;
 		padding: 15px 2% 0 2%;
 		text-align: center;
 		//color: #333;
@@ -271,7 +272,7 @@
 	
 	#menuwrapper{
 
-		width:380px;
+		width:60%;
 		float:right;
 		
 	}

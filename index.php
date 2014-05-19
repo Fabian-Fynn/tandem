@@ -13,17 +13,25 @@
 	<div class="section" id="s1">
 		<div class="outer">
 			<div class="inner">
-				<h1>Section 1</h1>
-				<br><br><br><br><br><br><br><br><br><br>
+				<h1>What is TANDEM?</h1>
+
+				
+				<h3>TANDEM connects students of University of Applied Sciences Salzburg</h3>
+				<div class="img triad">
+				<div class="left"><img src="img/icons/people.png" alt="Study">Meet new people</div>
+				
+				<div class="center"><img src="img/icons/success.png" alt="Study">gain knowledge</div>
+				
+				<div class="right"><img src="img/icons/share.png" alt="Study">share your's</div>
 			</div>
 		</div>
 
 	</div>
-
+	</div>
 	<div class="section" id="s2">
 		<div class="outer">
 			<div class="inner">
-				<h1>Section 2</h1>
+				<h1>Share your expertise</h1>
 					
 			</div>
 		</div>
@@ -34,6 +42,7 @@
 		<div class="outer">
 			<div class="inner">
 				<h1>Section 3</h1>
+				<img class="img right" src="img/icons/study1.png" alt="Study">
 					<br><br><br><br><br><br><br>
 			</div>
 		</div>
