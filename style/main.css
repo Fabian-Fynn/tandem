@@ -6,7 +6,7 @@ html {
 
 body {
     margin: 0 auto;
-
+	height:100%;
     width:100%;
     height:auto;
 	//position:absolute;
@@ -26,12 +26,19 @@ body {
     //box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
     -webkit-font-smoothing: antialiased;
 }
+.siteContainer{
+	position: relative;
+	height:100%;
+}
 .wrap{
+	position: relative;
 	max-width:1000px;
 	margin:0 auto;
 	margin-top:100px;
 	padding-left:50px;
 	padding-right:50px;
+	padding-bottom:200px;
+	height:100%;
 	//background:#206;
 	//clear:left;
 	position:relative;
@@ -68,7 +75,6 @@ img {
     border: none;
     display: block;
     margin: 1.3em auto;
-    max-width: 95%;
 }
 
 
@@ -233,20 +239,44 @@ float:left;
 .match{
 	width: 300px;
 	height:300px;
-	border:1px solid #2AA8E2;
+	border:1px solid rgba(220, 220, 220, 1);
 	float:left;
-	margin:2px;
-
+	margin:8px;
+	line-height: 20px;
 }
 .match img{
-	width:200px;
+	width:300px;
+	margin:0;
+}
+
+.match .name{
+	position:relative;
+	bottom: 50px;
+	height:50px;
+	padding:5px;
+	background: rgba(220, 220, 220, 0.7);
+	font-size: 20px;
+	color: #333;
+	width:100%;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	text-align: center;
+	display:block;
+	vertical-align: middle;
+
+	
+}
+
+.match a{
+	color:#333;
+	text-decoration: none;
 }
 
 /*buddies*/
 
 .requestblock{
 	height:auto;
-	width:45%;
+	width:100%;
 	position: relative;
 	display:block;
 	margin-bottom: 20px;
@@ -256,10 +286,15 @@ float:left;
 
 .request{
 	height:80px;
-	width:100%;
+	width:65%;
 	
 	position: relative;
 	
+}
+
+.request input{
+	margin-top: 16px;
+	float:right;
 }
 
 .request img{
@@ -282,13 +317,11 @@ a.req {
 .homeMatch{
 	width: 194px;
 	height:194px;
-	border:1px solid #2AA8E2;
-	float:left;
 	margin:2px;
 
 }
 .homeMatch img{
-	width:80px;
+	width:100%;
 }
 
 /*imagecrop*/
@@ -300,13 +333,21 @@ a.req {
 	max-width:500px;
 }
 
-#picForm input{
-	float:left;
-	}
 
-#picForm input#submit{
-	float:right;
+
+#fileToUpload{
+	width:100%;
+}
+.buttons{
 	margin-top: 40px;
+	float:left;
+	width:auto;
+	
+}
+
+.buttons a, .buttons #submit{
+	float:left;
+	margin-right: 10px;
 }
 /*footer*/
 

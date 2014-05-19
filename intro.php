@@ -49,6 +49,7 @@
  <div id="around"><div class="intro" >
 	 </div>
 </div>
+<div class="siteContainer">
 <script>
 
 $(window).scroll(function() {

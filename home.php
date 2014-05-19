@@ -35,9 +35,9 @@
 			foreach ($matchedPeople as $match):
 		?>
 		<a href="profil.php?id=<?php echo($match->id) ?>">
-		<div class = "homeMatch">
+		<div class = "match homeMatch">
 			<img src="img/profilePics/<?php echo ($match->avatar)  ?>">
-			<p><?php echo($match->firstname." ".$match->surname) ?></p>
+			<div class="name"><?php echo($match->firstname." ".$match->surname) ?></div>
 		</div>
 		</a>
 		<?php
@@ -100,11 +100,12 @@
 				?>
 			</div>
 		*/?>
+	
+	
 	</div>
-	
-	
 	
 <?php
     include "footer.php";
 
 ?>
+

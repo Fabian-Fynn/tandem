@@ -8,33 +8,12 @@
 
 	$id = $_SESSION['id'];
 	
-	/* Get others Requests */
+		/* Get others Requests */
 	$oRequests = $dbh->query("Select u.* FROM user u, partner p WHERE u.id = p.personA AND p.personB = $id AND p.status = 0");
 	/* Get my Requests */
 	$mRequests = $dbh->query("Select u.* FROM user u, partner p WHERE u.id = p.personB AND p.personA = $id AND p.status = 0");
 
-	
-
-	/* Get Buddies */
-	$buddies1 = $dbh->query("Select personA as id FROM partner WHERE personB = $id AND status = 1");
-	$buddies2 = $dbh->query("Select personB as id FROM partner WHERE personA = $id AND status = 1");
-
-    $allBuddies = new AppendIterator;
-    $allBuddies->append(new IteratorIterator($buddies1));
-    $allBuddies->append(new IteratorIterator($buddies2));
-
-    
-	$buddylist = "";
-	foreach ($allBuddies as $buddy) 
-		$buddylist .= ",".$buddy->id;
-
-    $buddylist = substr($buddylist, 1);
-	if($buddylist != null)
-    {
-	   $buddies = $dbh->query("Select * FROM user WHERE id IN ($buddylist)");
-	   
-	   
-	}
+	$buddies = getBuddies($dbh, $id);
 	
 ?>
 <script>
@@ -44,7 +23,6 @@
 	};
 	
 </script>
-
 	<div class = "wrap">
 		<div class="requestblock">
 		<h1>Fremde Anfragen</h1>
@@ -153,7 +131,7 @@
 		<a href="profil.php?id=<?php echo($buddy->id) ?>">
 		<div class = "match">
 			<img src="img/profilePics/<?php echo ($buddy->avatar)?>">
-			<p><?php echo($buddy->firstname." ".$buddy->surname) ?></p>
+			<div class="name"><?php echo($buddy->firstname." ".$buddy->surname) ?></div>
 			
 		</div>
 		</a>

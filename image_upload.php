@@ -87,9 +87,10 @@
     <form method="post" action="image_upload.php" id="picForm" enctype="multipart/form-data">
       
       <input name="image" type="file" id="fileToUpload">
-      
-      <p><input type="submit" value="Senden" id="submit"></p>
+      <div class="buttons">
+      <a href="profil.php"><input type="button" value=" Abbrechen "></a><input type="submit" value="Senden" id="submit">
       <div style="float: left;height:auto; width:auto;"><p id="error"></p></div>
+      </div>
     </form>
 <script>
 

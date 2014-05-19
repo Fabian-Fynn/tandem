@@ -57,7 +57,8 @@
 
 			$surname = $surnames[rand(0, count($surnames)-1)];
 			$email = $id."@test.at";
-			$password = "asdf";
+			
+			$password = hashPasswordSecure("asdf");
 			if($isfemale == 0)
 	            $avatar = "male_avatar.png";
 	        else
@@ -117,25 +118,29 @@
 	}
 
 ?>
-<div class = "wrap">
-		
-	<section class="profileTop">
-		<div class="userName"><h1>Profil bearbeiten</h1></div>
-		<article class="left">
-			<h2>Randomusergenerator</h2>
-			<form action="createusers.php" method="post" >
-				<label for="amount" >Menge:</label> 
-				<input type="text" name="amount">
+	<div class = "wrap">
+			
+		<section class="profileTop">
+			<div class="userName"><h1>Profil bearbeiten</h1></div>
+			<article class="left">
+				<h2>Randomusergenerator</h2>
+				<form action="createusers.php" method="post" >
+					<label for="amount" >Menge:</label> 
+					<input type="text" name="amount">
+					<input type="submit">
+				</form>
+			</article>
+			<article class="right">
+			<h2>RandomuserDeleter</h2>
+			<form action="deleterandomusers.php" method="post" >
+				<label for="amount" >Alle Löschen</label> 
+				
 				<input type="submit">
 			</form>
 		</article>
-		<article class="right">
-		<h2>RandomuserDeleter</h2>
-		<form action="deleterandomusers.php" method="post" >
-			<label for="amount" >Alle Löschen</label> 
-			
-			<input type="submit">
-		</form>
-	</article>
-	</section>
-</div>
+		</section>
+	</div>
+
+<?php
+	include 'footer.php'
+?>

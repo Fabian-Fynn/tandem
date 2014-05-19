@@ -121,31 +121,32 @@
     //bSearch => alle die suchen was ich anbiete
     //bOffer => alle die anbieten was ich suche
 
-   function GetBuddies($dbh)
+   function GetBuddies($dbh, $id)
 	{
-		$status = 1;
-		$id = $_SESSION['id'];
-   		$buddies1 = $dbh->query("Select personA as id FROM partner WHERE personB = $id AND status = 1");
-		$buddies2 = $dbh->query("Select personB as id FROM partner WHERE personA = $id AND status = 1");
-
-	    $allBuddies = new AppendIterator;
-	    $allBuddies->append(new IteratorIterator($buddies1));
-	    $allBuddies->append(new IteratorIterator($buddies2));
-
-	    echo(Count($buddies2)."||");
-	    if(Count($allBuddies) > 0)
-	    {
-	    	$buddylist = "";
-	    	foreach ($allBuddies as $buddy) {
-	    		$buddylist .= ",".$buddy->id;
-	    	}
-		    $buddylist = substr($buddylist, 1);
-
-		   $buddies = $dbh->query("Select * FROM user WHERE id IN ($buddylist)");
-		   
 	
-		}
-		
+	
+
+	/* Get Buddies */
+	$buddies1 = $dbh->query("Select personA as id FROM partner WHERE personB = $id AND status = 1");
+	$buddies2 = $dbh->query("Select personB as id FROM partner WHERE personA = $id AND status = 1");
+
+    $allBuddies = new AppendIterator;
+    $allBuddies->append(new IteratorIterator($buddies1));
+    $allBuddies->append(new IteratorIterator($buddies2));
+
+    
+	$buddylist = "";
+	foreach ($allBuddies as $buddy) 
+		$buddylist .= ",".$buddy->id;
+
+    $buddylist = substr($buddylist, 1);
+	if($buddylist != null)
+    {
+	   return $dbh->query("Select * FROM user WHERE id IN ($buddylist)");
+	   
+	   
+	}
+	return null;
 	}
 
 
