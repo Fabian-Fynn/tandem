@@ -55,22 +55,22 @@
 	
 	if($isbuddy):
 	{
-		$buddyButton = " Als Buddy entfernen ";
+		$buddyButton = " Add as Buddy ";
 		$reqAct = "unfriend";
 	}
 	elseif($isMyRequest):
 	{
-		$buddyButton = " Anfrage abbrechen ";
+		$buddyButton = " Abort ";
 		$reqAct = "abort";
 	}
 	elseif($isOthersRequest):
 	{
-		$buddyButton = " Anfrage annehmen ";
+		$buddyButton = " Accept ";
 		$reqAct = "accept";	
 	}
 	else:
 	{
-		$buddyButton = " Buddyanfrage senden ";
+		$buddyButton = " Add as Buddy ";
 		$reqAct = "send";	
 	}
 	endif;
@@ -83,14 +83,14 @@
 				<div class="profilePic"><img src="img/profilePics/<?php echo $avatar ?>"></div>
 
 				<?php if($ownProfile): ?>
-					<div class="profileInfo"><a href="image_upload.php">Profilbild bearbeiten</a></div> 
-					<div class="profileInfo"><a href="person_edit.php">Profil bearbeiten</a></div>
+					<div class="profileInfo"><a href="image_upload.php">Change Profilepicture</a></div> 
+					<div class="profileInfo"><a href="person_edit.php">Edit Profile</a></div>
 				<?php endif; ?>
 				
 				<?php
 					if($person->studienfach != null)
 					{
-						echo ('<div class="profileInfo"><strong>Studiengang</strong></div>');
+						echo ('<div class="profileInfo"><strong>Course of Studies</strong></div>');
 						echo ('<div class="profileInfo">'.$person->studienfach);
 					}
 					if($person->studienjahr != null)
@@ -103,15 +103,15 @@
 					}
 					if($person->city != null)
 					{
-						echo ('<div class="profileInfo"><strong>Wohnort</strong></div>');
+						echo ('<div class="profileInfo"><strong>Residence</strong></div>');
 						echo ('<div class="profileInfo">'.$person->city);
 					}
 					if($isbuddy)
 					{
-						echo ('<div class="profileInfo"><strong>Kontaktiere '.$person->firstname.'</strong>');
+						echo ('<div class="profileInfo"><strong>Contact '.$person->firstname.'</strong>');
 						echo ('<div class="profileInfo"><a href="mailto:'.$person->email.'">'.$person->email.'</a>');
 					}
-					echo ('<div class="profileInfo"><strong>Mitglied seit</strong></div>');
+					echo ('<div class="profileInfo"><strong>Member since</strong></div>');
 					echo ('<div class="profileInfo">'.$date->format('d. m. Y'));
 				?>
 			
@@ -135,7 +135,7 @@
 					<div id="add_err"></div>
 			</form>
 			<?php if($isOthersRequest): ?>
-				<a class="req" id="reqAbort" href="request.php?partner=<?php echo($id) ?>&reqAct=<?php echo($reqAct); ?>" ><button onclick='abortRequest(<?php echo($id); ?>)'> Anfrage abbrechen </button></a>
+				<a class="req" id="reqAbort" href="request.php?partner=<?php echo($id) ?>&reqAct=<?php echo($reqAct); ?>" ><button onclick='abortRequest(<?php echo($id); ?>)'> Abort </button></a>
 			<?php endif; ?>
 			<script>
 				window.onload = function(){
@@ -148,13 +148,13 @@
 				if($isbuddy):
 			?>
 
-				<h2> Ihr seit Buddies!</h2>
+				<h2> Your are Conneted!</h2>
 			<?php
 				endif;
 				endif;
 			?>			
 			<div class="description">
-				<h2>Über mich</h2>
+				<h2>About me</h2>
 					<?php
 						if($person->description != null)
 						{
@@ -162,12 +162,12 @@
 						}
 						else
 						{
-							echo ('<div class="profileInfo">Leider habe ich noch keine Beschreibung hinzugefügt.</div>');
+							echo ('<div class="profileInfo">I\'m too cool to share this Info</div>');
 						}
 					?>
 			</div>
 			<div class="offer">
-				<h2 style='margin-bottom:-5px'>Ich biete</h2><?php if($ownProfile): ?><div class="profileInfo"><a href="offer_edit.php?request=o">bearbeiten</a></div><?php endif; ?>
+				<h2 style='margin-bottom:-5px'>I offer</h2><?php if($ownProfile): ?><div class="profileInfo"><a href="offer_edit.php?request=o">edit</a></div><?php endif; ?>
 				<?php
 						$currentCat = '';
 						foreach($offer as $oCourse){
@@ -181,7 +181,7 @@
 				?>
 			</div>
 			<div class="search">
-				<h2 style='margin-bottom:-5px'>Ich suche</h2><?php if($ownProfile): ?><div class="profileInfo"><a href="offer_edit.php?request=s">bearbeiten</a></div><?php endif; ?>
+				<h2 style='margin-bottom:-5px'>I look for</h2><?php if($ownProfile): ?><div class="profileInfo"><a href="offer_edit.php?request=s">edit</a></div><?php endif; ?>
 				<?php
 						$currentCat = '';
 						foreach($search as $sCourse){

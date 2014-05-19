@@ -81,14 +81,14 @@
 
     if(!isset($e)):
   ?>
-    <div class="userName"><h1>Profilbild hochladen</h1></div>
+    <div class="userName"><h1>Upload Profilepicture</h1></div>
 		<article class="left">
 			
     <form method="post" action="image_upload.php" id="picForm" enctype="multipart/form-data">
       
       <input name="image" type="file" id="fileToUpload">
       <div class="buttons">
-      <a href="profil.php"><input type="button" value=" Abbrechen "></a><input type="submit" value="Senden" id="submit">
+      <a href="profil.php"><input type="button" value=" Cancel "></a><input type="submit" value=" Send " id="submit">
       <div style="float: left;height:auto; width:auto;"><p id="error"></p></div>
       </div>
     </form>
@@ -100,7 +100,7 @@
   if(this.files[0].size > 8000000)
     {
       $('#submit').attr("disabled", "disabled");
-      $('#error').html("Das Bild ist leider zu groß");
+      $('#error').html("The Picture too large");
     }
     else
     {
@@ -122,7 +122,7 @@
 
   <article class="left">
     <?php echo($error); ?>
-    <a href="image_upload.php"><button>Zurück</button></a>
+    <a href="image_upload.php"><button>Back</button></a>
   </article>
 
   <?php

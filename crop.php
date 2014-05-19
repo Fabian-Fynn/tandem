@@ -119,16 +119,16 @@
 <div class = "wrap">
 		<section>
 	
-		<div class="userName"><h1>Profil bearbeiten</h1></div>
+		<div class="userName"><h1>Edit Profilepicture</h1></div>
 		<article class="left">
-			<h2>Cropper</h2>
+			<h2>Choose image section</h2>
 			<img src="img/profilePics/<?php echo $filename; ?>" id="cropbox">
 			 <p><form action="crop.php" method="post" onsubmit="return checkCoords();">
       <input type="hidden" id="x" name="x" />
       <input type="hidden" id="y" name="y" />
       <input type="hidden" id="w" name="w" />
       <input type="hidden" id="h" name="h" />
-      <input type="submit" name="cropNow" value="Fertig" class="btn" />
+      <input type="submit" name="cropNow" value="Send" class="btn" />
   </form></p>
 		</article>
 		<article class="right">

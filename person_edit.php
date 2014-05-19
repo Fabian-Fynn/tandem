@@ -54,24 +54,24 @@
 <div class = "wrap">
 		
 	<section class="profileTop">
-		<div class="userName"><h1>Profil bearbeiten</h1></div>
+		<div class="userName"><h1>Edit Profile</h1></div>
 		<article class="left">
-				<h2>Meine Daten</h2>
+				<h2>My Data</h2>
 			 <form action="person_edit.php" method="post" >
-				<p><label for="isfemale" >Geschlecht:</label> 
+				<p><label for="isfemale" >Gender:</label> 
 					<select name="isfemale">
-					<option value="1" <?php if($person->is_female == 1){echo " selected";} ?>>weiblich</option>
-					<option value="0" <?php if($person->is_female == 0){echo " selected";} ?>>männlich</option>
+					<option value="1" <?php if($person->is_female == 1){echo " selected";} ?>>female</option>
+					<option value="0" <?php if($person->is_female == 0){echo " selected";} ?>>male</option>
 					</select>
 					
 				</p>
 			   
-				<p  ><label for="firstname">Vorname:</label> <input type="text" name="firstname" value="<?php echo $person->firstname; ?>"></p>
-				<p  ><label for="surname">Nachname:</label> <input type="text" name="surname" value="<?php echo $person->surname; ?>"></p>
-				 <p  ><label for="studienfach">Studiengang:</label> <input type="text" name="studienfach" value="<?php echo $person->studienfach; ?>"></p>
-				 <p><label for="studienjahr" >Jahr:</label> 
+				<p  ><label for="firstname">Firstname:</label> <input type="text" name="firstname" value="<?php echo $person->firstname; ?>"></p>
+				<p  ><label for="surname">Lastname:</label> <input type="text" name="surname" value="<?php echo $person->surname; ?>"></p>
+				 <p  ><label for="studienfach">Course of Studies:</label> <input type="text" name="studienfach" value="<?php echo $person->studienfach; ?>"></p>
+				 <p><label for="studienjahr" >Year:</label> 
 					<select name="studienjahr">
-					<option value="">Bitte wählen</option>
+					<option value="">Please choose</option>
 					<option value="2013" <?php if($person->studienjahr == 2013){echo " selected";} ?>>2013</option>
 					<option value="2012" <?php if($person->studienjahr == 2012){echo " selected";} ?>>2012</option>	
 					<option value="2011" <?php if($person->studienjahr == 2011){echo " selected";} ?>>2011</option>
@@ -79,16 +79,16 @@
 					<option value="2009" <?php if($person->studienjahr == 2009){echo " selected";} ?>>2009</option>
 					</select>
 				</p>
-				<p><label for="city">Wohnort:</label> <input type="text" name="city" value="<?php echo $person->city; ?>"></p>
-				<p><label for="description">Über mich:</label> <textarea name="description" id="description" ><?php echo $person->description; ?></textarea></p>
+				<p><label for="city">Residence:</label> <input type="text" name="city" value="<?php echo $person->city; ?>"></p>
+				<p><label for="description">About me:</label> <textarea name="description" id="description" ><?php echo $person->description; ?></textarea></p>
 				
-				<p><input style='float:right' type="submit" value="Daten ändern"><a href='profil.php' style='float:right'><button onclick='location.href=this."profil.php"; return false;'>Abbrechen</button></a></p>
+				<p><input style='float:right' type="submit" value="Change"><a href='profil.php' style='float:right'><button onclick='location.href=this."profil.php"; return false;'>Cancel</button></a></p>
 			</form>
 
 		</article>
 		<article class="right">
-			<h2>Account löschen</h2>	
-			<a href='person_delete.php' ><button onclick='location.href=this."person_delete.php"; return false;'>Account löschen</button></a>
+			<h2>Delete Account</h2>	
+			<a href='person_delete.php' ><button onclick='location.href=this."person_delete.php"; return false;'>Delete Account</button></a>
 		</article>
 	</section>
 	

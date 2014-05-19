@@ -25,7 +25,7 @@
 </script>
 	<div class = "wrap">
 		<div class="requestblock">
-		<h1>Fremde Anfragen</h1>
+		<h1>Other's Requests</h1>
 
 		<?php 
 			if(Count($oRequests) > -1): ?>
@@ -43,7 +43,7 @@
 				<div id="sendRequest">
 				<input type="hidden" name="partner" id="partner" value="<?php echo($r->id); ?>">
 				<input type="hidden" name="reqAct" id="reqAct" value="accept">
-		        <input type="submit" value=" Anfrage annehmen " class="submit" id="submitRequest" >
+		        <input type="submit" value=" Accept " class="submit" id="submitRequest" >
 				</div>
 					<div id="add_err"></div>
 			</form>
@@ -51,7 +51,7 @@
 				<div id="sendRequest">
 				<input type="hidden" name="partner" id="partner" value="<?php echo($r->id); ?>">
 				<input type="hidden" name="reqAct" id="reqAct" value="abort">
-		        <input type="submit" value=" Anfrage ablehnen " class="submit" id="submitRequest" >
+		        <input type="submit" value=" Abort " class="submit" id="submitRequest" >
 				</div>
 					<div id="add_err"></div>
 			</form>
@@ -63,7 +63,7 @@
 		else:
 
 		?>
-		<p>Du hast noch keine Buddies!</p>
+		<p>You have not sent any Requests</p>
 
 
 
@@ -74,7 +74,7 @@
 		?>
 	</div>
 	<div class="requestblock">
-		<h1>Deine Anfragen</h1>
+		<h1>Your Requests</h1>
 
 		<?php 
 		//$mRequestst = (array)$mRequests;
@@ -92,7 +92,7 @@
 				<div id="sendRequest">
 				<input type="hidden" name="partner" id="partner" value="<?php echo($r->id); ?>">
 				<input type="hidden" name="reqAct" id="reqAct" value="abortList">
-		        <input type="submit" value=" Anfrage abbrechen " class="submit" id="submitRequest" >
+		        <input type="submit" value=" Abort " class="submit" id="submitRequest" >
 				</div>
 					<div id="add_err"></div>
 			</form>
@@ -103,7 +103,7 @@
 		//else:
 		if($requestCount == 0 ):
 		?>
-		<p>Du hast momentan keine Anfrage</p>
+		<p>You have no Requests</p>
 
 
 
@@ -114,7 +114,7 @@
 		?>
 	</div>
 	<div class="requestblock">
-		<h1>Deine Buddies</h1>
+		<h1>Your Buddies</h1>
 		<?php 
 
 		if(isset($buddies)):
@@ -141,7 +141,7 @@
 		else:
 
 		?>
-		<p>Du hast noch keine Buddies!</p>
+		<p>You have no Buddies yet!</p>
 
 
 

@@ -23,11 +23,12 @@
     
 ?>
 	<div class = "wrap">
-		<h1>Willkommen, <?php echo $user ?>!</h1>
+		<h1>Welcome, <?php echo $user ?>!</h1>
 		<br><br>
 		<?php 
 			if(Count($matches) > 1): ?>
-		<p>Wir haben <?php echo(Count($matches)-1); ?> Matches für dich gefunden.</p>
+		<p>We found <?php echo(Count($matches)-1); ?> Matches for you.</p>
+		
 		<br>
 
 		<?php 

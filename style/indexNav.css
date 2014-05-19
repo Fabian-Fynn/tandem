@@ -226,7 +226,7 @@
 	.subMenu {
 		position: fixed;
 		top: 0px;
-		height: 50px;
+		height: 60px;
 		z-index: 1000;
 		width: 100%;
 		min-width: 960px;
@@ -250,19 +250,19 @@
 		z-index:100;
 		//color:#333;
 		border-bottom: 1px solid #ccc;
-		height:60px;
+		height:72px;
 	}
 	
 	.subNavBtn {
 		display: block;
-		height: 45px;
+		height: 50px;
 		width: auto;
 		float: left;
-		margin: 4px 0px 0 0;
+		margin: 0;
 		text-decoration: none;
-		font-size: 20px;
-		padding: 15px 2% 0 2%;
-		text-align: center;
+		font-size: 22px;
+		padding: 21px 2% 0 2%;
+		vertical-align: middle;
 		//color: #333;
 		visibility:visible;
 	}
@@ -272,7 +272,7 @@
 	
 	#menuwrapper{
 
-		width:60%;
+		width:70%;
 		float:right;
 		
 	}

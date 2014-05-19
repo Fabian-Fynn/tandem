@@ -61,9 +61,9 @@
 <div class = "wrap">
 		
 	<section class="profileTop">
-		<div class="userName"><h1>Profil bearbeiten</h1></div>
+		<div class="userName"><h1>Edit Offers</h1></div>
 		
-				<h2>Meine Daten</h2>
+				
 			 <form id="courseList" action="offer_edit.php" method="post" >
 				
 			
@@ -89,7 +89,7 @@
 					echo ('<div class="profileInfo"><input type="checkbox" name="offer_'.$c->cId.'" value="'.$c->cId.'"'.$isset.'><pre> '.$c->course.'</pre>  </div>');
 				}
 			?>
-				 <input style='float:right' type="submit" value="Daten ändern">
+				 <input style='float:right' type="submit" value="Send">
 		</form>
 
 		<article class="right">

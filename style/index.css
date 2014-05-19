@@ -155,7 +155,7 @@ a#around{
 
 
 #s2 {
-	min-height: 300px;
+	min-height: 500px;
 	//-webkit-box-shadow: inset 0px 2px 5px 0px #222;
 	//-moz-box-shadow:    inset 0px 2px 5px 0px #222;
 	//box-shadow:         inset 0px 2px 5px 0px #222;
@@ -170,7 +170,7 @@ a#around{
 
 
 #s3 {
-	min-height: 600px;
+	min-height: 700px;
 	//-webkit-box-shadow: inset 0px 3px 3px 0px #222;
 	//-moz-box-shadow:    inset 0px 3px 3px 0px #222;
 	//box-shadow:         inset 0px 3px 3px 0px #222;

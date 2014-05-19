@@ -55,33 +55,33 @@
 		<div class="outer">
 			<div class="inner">	
 				<div id="regForm">
-				<h1>Registrieren</h1>
+				<h1>Register</h1>
 				
 				<form action="person_new.php" method="post">
 					
 		   			<table border="0" cellspacing="5" cellpadding="2">
 						<tr>
-							<td><label for="firstname">Vorname:</label></td> <td><input type="text" name="firstname" required></td>
+							<td><label for="firstname">Firstname:</label></td> <td><input type="text" name="firstname" required></td>
 						</tr>
 						<tr>
-							<td><label for="surname">Nachname:</label></td> <td><input type="text" name="surname" required></td>
+							<td><label for="surname">Lastname:</label></td> <td><input type="text" name="surname" required></td>
 						</tr>
 						<tr>
-							<td><label for="isfemale" >Geschlecht:</label></td>
-							<td><input type="radio" name="isfemale" class="radio" value="1"  required>weiblich
-								<input type="radio" name="isfemale" class="radio" value="0" required>männlich</td>
+							<td><label for="isfemale" >Gender:</label></td>
+							<td><input type="radio" name="isfemale" class="radio" value="1"  required>female
+								<input type="radio" name="isfemale" class="radio" value="0" required>male</td>
 						<tr>
 							<td><label for="email">FHS E-Mail:</label></td> <td><input type="email" id="email" name="email" required></td>
 						</tr>
 						<tr>
-							<td><label for="password">Passwort:</label></td> <td><input id="txtPassword" type="password" name="password" required></td>
+							<td><label for="password">Password:</label></td> <td><input id="txtPassword" type="password" name="password" required></td>
 						</tr>
 						<tr >
-							<td><label for="password">wiederholen:</label></td> <td  id="pwConfirmCell"><input id="txtConfirmPassword" type="password" name="password" onKeyUp="checkPasswordMatch();"  required>
+							<td><label for="password">repeat:</label></td> <td  id="pwConfirmCell"><input id="txtConfirmPassword" type="password" name="password" onKeyUp="checkPasswordMatch();"  required>
 							<img id="pwIndicator"></td>
 						</tr>
 						<tr>
-							<td></td><td ><input type="submit" value="Person hinzufügen"></td>
+							<td></td><td ><input type="submit" value=" Register "></td>
 						</tr>
 					</table>
 				</form>
@@ -91,7 +91,7 @@
 			<form id="alogin" action="login.php" method="post">
 			
 			<input type="email" name="altMail" id="email" placeholder=" E-Mail">
-			<input type="password" name="pwd" id="pwd" placeholder=" Passwort">
+			<input type="password" name="pwd" id="pwd" placeholder=" Password">
 			<input type="submit" value=" Login " class="submit" id="submitLogin">
 			
 			

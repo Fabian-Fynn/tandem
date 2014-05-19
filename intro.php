@@ -9,9 +9,9 @@
 	 	<div class="outer"><div class="inner">
 	 		<a href="#title" id="around" rel="m_PageScroll2id" class="subNavBtn">TANDEM</a> 
 	 		<div id="menuwrapper">
-				<a href="#s1"  rel="m_PageScroll2id" class="subNavBtn s1">what's TANDEM?</a>
-				<a href="#s2"  rel="m_PageScroll2id" class="subNavBtn s2">Section 2</a>
-				<a href="#s3"  rel="m_PageScroll2id" class="subNavBtn s3">Section 3</a>
+				<a href="#s1"  rel="m_PageScroll2id" class="subNavBtn s1">about</a>
+				<a href="#s2"  rel="m_PageScroll2id" class="subNavBtn s2">share</a>
+				<a href="#s3"  rel="m_PageScroll2id" class="subNavBtn s3">gain</a>
 				<a href="#register"  rel="m_PageScroll2id" class="subNavBtn register">register</a>
 				<a href="#register" id="loginButton" class="subNavBtn" onmouseover="loginslide('hover')" onclick="loginslide('click')" >login</a>
 			</div>

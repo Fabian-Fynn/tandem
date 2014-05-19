@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 	include "menu.php";
 	if(! isset($_SESSION['user']))

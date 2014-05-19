@@ -121,11 +121,11 @@
 	<div class = "wrap">
 			
 		<section class="profileTop">
-			<div class="userName"><h1>Profil bearbeiten</h1></div>
+			<div class="userName"><h1>Create Users</h1></div>
 			<article class="left">
 				<h2>Randomusergenerator</h2>
 				<form action="createusers.php" method="post" >
-					<label for="amount" >Menge:</label> 
+					<label for="amount" >Amount:</label> 
 					<input type="text" name="amount">
 					<input type="submit">
 				</form>
@@ -133,7 +133,7 @@
 			<article class="right">
 			<h2>RandomuserDeleter</h2>
 			<form action="deleterandomusers.php" method="post" >
-				<label for="amount" >Alle Löschen</label> 
+				<label for="amount" >Delete all:</label> 
 				
 				<input type="submit">
 			</form>

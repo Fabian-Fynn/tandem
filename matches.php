@@ -33,11 +33,11 @@
 	}
 ?>
 	<div class = "wrap">
-		<h1>Deine Matches!</h1>
+		<h1>Your Matches!</h1>
 		<br><br>
 		<?php 
 			if(Count($matches) > 1): ?>
-		<p>Wir haben <?php echo(Count($matches)-1); ?> Matches für dich gefunden.</p>
+		<p>We found <?php echo(Count($matches)-1); ?> Matches for you.</p>
 		<br>
 
 		<?php 
@@ -69,7 +69,7 @@
 		else:
 
 		?>
-		<p>Wir haben leider keine Matches für dich gefunden.</p>
+		<p>Sorry, we couldn't find any matches :'(</p>
 
 
 

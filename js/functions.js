@@ -57,7 +57,7 @@ $(document).ready(function(){
 				else    {
 					
 					$("#add_err").animate({marginTop:"0px"},250);
-					setTimeout( function() { $("#add_err").html("Benutzername oder Passwort falsch"); }, 80);
+					setTimeout( function() { $("#add_err").html("Wrong Username or Password"); }, 80);
 					
 				}
 			}
@@ -79,12 +79,12 @@ $(document).ready(function(){
 			success: function(html){ 
 				if(html!='false')    {
 					if($("#reqAct").val() == "send"){
-						$("#submitRequest").val(" Anfrage abbrechen ");
+						$("#submitRequest").val(" Abort ");
 			 		//$("#add_err").html(html);											////////////////////////////
 			 		$("#reqAct").val("abort");
 			 	}
 			 	else if($("#reqAct").val() == "abort" || $("#reqAct").val() == "unfriend"){
-			 		$("#submitRequest").val(" Buddyanfrage senden ");
+			 		$("#submitRequest").val(" Add as Buddy ");
 			 		//$("#add_err").html(html);											////////////////////////////
 			 		$("#reqAct").val("send");
 			 	}
@@ -92,7 +92,7 @@ $(document).ready(function(){
 			 		$("#request_" + partner).remove();
 			 	}
 			 	else if($("#reqAct").val() == "accept"){
-			 		$("#submitRequest").val(" Anfrage angenommen ");
+			 		$("#submitRequest").val(" Accept ");
 			 		$("#submitRequest").attr("disabled", "disabled");
 			 	}
 			 	else
