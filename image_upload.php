@@ -12,7 +12,6 @@
 	if ($_SERVER['REQUEST_METHOD'] == 'POST')
   {
 
-    $avatar = $dbh->query("SELECT avatar FROM user WHERE id=$id");
     
       $uploaddir = dirname( $_SERVER["SCRIPT_FILENAME"] ) . "/img/profilePics/";
    
@@ -69,8 +68,6 @@
       }
       
     }
-    finally
-    {
 ?>
 <script type="text/javascript" src="js/mootools.js"></script>
 <script type="text/javascript" src="js/Lasso.js"></script>
@@ -139,6 +136,5 @@
 </div>
 <?php
     include "footer.php";
-  }
 ?>
 

@@ -16,51 +16,75 @@
 	if(isset($_POST['cropNow']))
 	{
 
+		try{
+		  $targ_w = $targ_h = 500;
+		  $jpeg_quality = 90;
+		  $src = "img/profilePics/".$_SESSION['uploadfile'];
+		  unset($_SESSION['uploadfile']);
 
-		$targ_w = $targ_h = 500;
-	  $jpeg_quality = 90;
-	  $src = "img/profilePics/".$_SESSION['uploadfile'];
-	  //unset($_SESSION['uploadfile']);
+		  $stm = $dbh->query("SELECT avatar FROM user WHERE id=$id");
+		  $avatar = $stm->fetch();
+		    //if($avatar->avatar != null)
+		    	 //echo("<script>alert('".$avatar->avatar."');</script>");
+		    unlink("img/profilePics/".$avatar->avatar);
 
-	  $srcParts = pathinfo($src);
-
-	  if($srcParts['extension'] == 'jpg')
-	     $img_r = imagecreatefromjpeg($src);
-	   else if ($srcParts['extension'] == 'png')
-	     $img_r = imagecreatefrompng($src);
-	   else
-	      exit;
-
-	  $dst_r = ImageCreateTrueColor( $targ_w, $targ_h );
-
-	  imagecopyresampled($dst_r,$img_r,0,0,$_POST['x'],$_POST['y'],
-	  $targ_w,$targ_h,$_POST['w'],$_POST['h']);
-
-	  $filename = $_SESSION['id'] . '_profile.'. $srcParts['extension'];
-	  $newSrc = 'img/profilePics/' . $filename;
-
-	  //if $srcParts['extension'] =="jpgp";
-
-	  if($srcParts['extension'] == 'jpg' || $srcParts['extension'] == 'JPG')
-	     imagejpeg($dst_r,$newSrc);
-	   else if ($srcParts['extension'] == 'png' || $srcParts['extension'] == 'PNG')
-	    imagepng($dst_r,$newSrc);
-
-	  imagedestroy($img_r);
+		    
 
 
-		$sth = $dbh->prepare("UPDATE user SET avatar = ? WHERE id = ?;");
 
-		 	$sth->execute(
-					  array(
-						$filename,
-						$id
-						)
-					); 
 
-   		header("Location:profil.php");
-   		exit;
+		      
 
+
+		  $srcParts = pathinfo($src);
+
+		  if($srcParts['extension'] == 'jpg')
+		     $img_r = imagecreatefromjpeg($src);
+		   else if ($srcParts['extension'] == 'png')
+		     $img_r = imagecreatefrompng($src);
+		   else
+		      exit;
+
+		  $dst_r = ImageCreateTrueColor( $targ_w, $targ_h );
+
+		  imagecopyresampled($dst_r,$img_r,0,0,$_POST['x'],$_POST['y'],
+		  $targ_w,$targ_h,$_POST['w'],$_POST['h']);
+
+		  $filename = $_SESSION['id'] . '_profile.'. $srcParts['extension'];
+		  $newSrc = 'img/profilePics/' . $filename;
+
+		  //if $srcParts['extension'] =="jpgp";
+
+		  if($srcParts['extension'] == 'jpg' || $srcParts['extension'] == 'JPG')
+		     imagejpeg($dst_r,$newSrc);
+		   else if ($srcParts['extension'] == 'png' || $srcParts['extension'] == 'PNG')
+		    imagepng($dst_r,$newSrc);
+
+		  imagedestroy($img_r);
+
+
+			$sth = $dbh->prepare("UPDATE user SET avatar = ? WHERE id = ?;");
+
+			 	$sth->execute(
+						  array(
+							$filename,
+							$id
+							)
+						); 
+
+			 	
+			$srcParts = pathinfo($avatar->avatar);
+		    $ext = $srcParts['extension'];
+
+		    unlink("img/profilePics/temp_".$id.".".$ext);
+
+	   		header("Location:profil.php");
+	   		exit;
+	   	}catch(Exeption $e)
+	   	{
+
+	   		echo("<script>alert('".$e."')</script>");
+	   	}
 
 	}
 ?>
