@@ -1,20 +1,21 @@
 var loginvisible = false;
-function loginslide () {
+function loginslide (type) {
 	if(loginvisible === false){
 		$('#slogin').animate({marginTop:"0px"});
 		loginvisible = true;
 		$('#blogin').css('background-color','#FF4961');
 	}
 	else{
-		$('#slogin').animate({marginTop:"-50px"}, 250);
-		setTimeout( function() {
-         		$('#blogin').css('background-color','#fff');
-    		}, 240);
-		$("#add_err").animate({marginTop:"-19px"},250);
-		setTimeout( function() { $("#add_err").html(""); }, 100);
-		$("#loginForm").trigger("reset");
-		loginvisible = false;
-
+		if(type === 'click'){
+			$('#slogin').animate({marginTop:"-50px"}, 250);
+			setTimeout( function() {
+				$('#blogin').css('background-color','#fff');
+			}, 240);
+			$("#add_err").animate({marginTop:"-19px"},250);
+			setTimeout( function() { $("#add_err").html(""); }, 100);
+			$("#loginForm").trigger("reset");
+			loginvisible = false;
+		}
 		
 		
 	}
@@ -29,12 +30,12 @@ function JsSwitch () {
 }
 
 function checkPasswordMatch() {
-    var password = $("#txtPassword").val();
-    var confirmPassword = $("#txtConfirmPassword").val();
-    if (password != confirmPassword)
-        $("#pwIndicator").attr("src","img/delete.png");
-    else
-        $("#pwIndicator").attr("src","img/check.png");
+	var password = $("#txtPassword").val();
+	var confirmPassword = $("#txtConfirmPassword").val();
+	if (password != confirmPassword)
+		$("#pwIndicator").attr("src","img/delete.png");
+	else
+		$("#pwIndicator").attr("src","img/check.png");
 }
 
 
@@ -42,43 +43,43 @@ function checkPasswordMatch() {
 $(document).ready(function(){
 
 	//$(".subMenu").css('top', '0px');
-	 $("#submitLogin").click(function(){	
-		  email=$("#email").val();
-		  password=$("#pwd").val();
-		  $.ajax({
-		   type: "POST",
-		   url: "login.php",
+	$("#submitLogin").click(function(){	
+		email=$("#email").val();
+		password=$("#pwd").val();
+		$.ajax({
+			type: "POST",
+			url: "login.php",
 			data: "mail="+email+"&pwd="+password,
-		   success: function(html){ 
-			if(html=='true')    {
-			 window.location="home.php";
+			success: function(html){ 
+				if(html=='true')    {
+					window.location="home.php";
+				}
+				else    {
+					
+					$("#add_err").animate({marginTop:"0px"},250);
+					setTimeout( function() { $("#add_err").html("Benutzername oder Passwort falsch"); }, 80);
+					
+				}
 			}
-			else    {
- 			
-			$("#add_err").animate({marginTop:"0px"},250);
-				setTimeout( function() { $("#add_err").html("Benutzername oder Passwort falsch"); }, 80);
-			 	
-			}
-		   }
-		   });
+		});
 		return false;
 	});
 });
 
 $(document).ready(function(){
 	
-	 $("#submitRequest").click(function(){	
-	 	
-		  partner=$("#partner").val();
-		  reqAct=$("#reqAct").val();
-		   $.ajax({
-		   type: "POST",
-		   url: "request.php",
+	$("#submitRequest").click(function(){	
+		
+		partner=$("#partner").val();
+		reqAct=$("#reqAct").val();
+		$.ajax({
+			type: "POST",
+			url: "request.php",
 			data: "partner="+partner+"&reqAct="+reqAct,
-		   success: function(html){ 
-			if(html!='false')    {
-				if($("#reqAct").val() == "send"){
-			 		$("#submitRequest").val(" Anfrage abbrechen ");
+			success: function(html){ 
+				if(html!='false')    {
+					if($("#reqAct").val() == "send"){
+						$("#submitRequest").val(" Anfrage abbrechen ");
 			 		//$("#add_err").html(html);											////////////////////////////
 			 		$("#reqAct").val("abort");
 			 	}
@@ -98,19 +99,19 @@ $(document).ready(function(){
 			 	{
 			 		
 			 	}
-			}
-			else    {
- 			
-				$("#add_err").animate({marginTop:"0px"},250);
+			 }
+			 else    {
+			 	
+			 	$("#add_err").animate({marginTop:"0px"},250);
 				//$("#add_err").html("Es ist ein Fehler aufgetreten :(");
-				$("#add_err").html(html);
+					$("#add_err").html(html);
 
+				}
 			}
-		   }
 
-		   });
-		return false;
-	});
+		});
+return false;
+});
 });
 
 function checkvisability(element){
@@ -118,11 +119,11 @@ function checkvisability(element){
 	highlighter = "."+element.attr('id');
 	
 	var scrollY = $(window).scrollTop();
-    if (scrollY > s-100 && scrollY < s+element.height()-51) {
-        $(highlighter).addClass("highlighted");
-    }
-    else
-    	$(highlighter).removeClass("highlighted");	
+	if (scrollY > s-100 && scrollY < s+element.height()-51) {
+		$(highlighter).addClass("highlighted");
+	}
+	else
+		$(highlighter).removeClass("highlighted");	
 }
 /*
 function abortRequest(partner)

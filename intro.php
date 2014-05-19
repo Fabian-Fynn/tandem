@@ -13,7 +13,7 @@
 				<a href="#s2"  rel="m_PageScroll2id" class="subNavBtn s2">Section 2</a>
 				<a href="#s3"  rel="m_PageScroll2id" class="subNavBtn s3">Section 3</a>
 				<a href="#register"  rel="m_PageScroll2id" class="subNavBtn register">Registrieren</a>
-				<a href="#register" id="loginButton" class="subNavBtn" onmouseover="loginslide()" onclick="javascript:" >Login</a>
+				<a href="#register" id="loginButton" class="subNavBtn" onmouseover="loginslide('hover')" onclick="loginslide('click')" >Login</a>
 			</div>
 		</div>
 			
