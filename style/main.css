@@ -8,7 +8,6 @@ body {
     margin: 0 auto;
 	height:100%;
     width:100%;
-    height:auto;
 	//position:absolute;
     top:0;
    //font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif !important;
@@ -29,6 +28,12 @@ body {
 .siteContainer{
 	position: relative;
 	height:100%;
+	margin-top: -150px;
+	padding-top: 150px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+
 }
 .wrap{
 	position: relative;
@@ -37,11 +42,12 @@ body {
 	margin-top:100px;
 	padding-left:50px;
 	padding-right:50px;
-	padding-bottom:200px;
-	height:100%;
+	padding-bottom:-200px;
+	height:100% !important;
 	//background:#206;
 	//clear:left;
 	position:relative;
+	overflow: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -353,15 +359,16 @@ a.req {
 
 footer{
 	position: relative;
-	bottom:0px;
+	//bottom:0px;
 	height:155px;
 	background:#2aa8e2;
 	width:100%;
-	margin:0;
+	margin-top:-155px;
 	padding:0;
-	float:left;
+	clear:both;
+	//float:left;
 	border-top:1px solid #ccc;
-	z-index:1000;
+	//z-index:1000;
 }
 
 footer .container{

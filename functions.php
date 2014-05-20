@@ -116,7 +116,19 @@
     		if($teacher->teacher != $id)
     			array_push($bOffer, $teacher->teacher);
     	}
-    	 return array_intersect($bSearch, $bOffer);
+    	 $allmatches = array_intersect($bSearch, $bOffer);
+
+    	 $buddies = GetBuddies($dbh, $id);
+
+    	$buddyArray[] = $var;
+		foreach ($buddies as $b)
+			{
+
+ 			   array_push($buddyArray, $b->id);
+			}
+
+		return array_diff($allmatches, $buddyArray);
+
 	}
     //bSearch => alle die suchen was ich anbiete
     //bOffer => alle die anbieten was ich suche
@@ -138,18 +150,16 @@
 	$buddylist = "";
 	foreach ($allBuddies as $buddy) 
 		$buddylist .= ",".$buddy->id;
-
-    $buddylist = substr($buddylist, 1);
-	if($buddylist != null)
-    {
-	   return $dbh->query("Select * FROM user WHERE id IN ($buddylist)");
-	   
-	   
+	if($buddylist != "")
+	{
+    	$buddylist = substr($buddylist, 1);
+	   	$sth = $dbh->query("Select * FROM user WHERE id IN ($buddylist)");
+	    return $sth->fetchAll();
 	}
 	return null;
 	}
 
-
+ 
 /* Code by Simon Hintersonnleitner */
 function hashPasswordSecure($pw)
 {

@@ -1,39 +1,39 @@
 
 <?php
-	include "menu.php";
-	if(! isset($_SESSION['id']))
-	{
-		header('Location: index.php');
-	}
+include "menu.php";
+if(! isset($_SESSION['id']))
+{
+	header('Location: index.php');
+}
 
-	$id = $_SESSION['id'];
-	
-		/* Get others Requests */
-	$oRequests = $dbh->query("Select u.* FROM user u, partner p WHERE u.id = p.personA AND p.personB = $id AND p.status = 0");
-	/* Get my Requests */
-	$mRequests = $dbh->query("Select u.* FROM user u, partner p WHERE u.id = p.personB AND p.personA = $id AND p.status = 0");
+$id = $_SESSION['id'];
 
-	$buddies = getBuddies($dbh, $id);
-	
+/* Get others Requests */
+$oRequests = $dbh->query("Select u.* FROM user u, partner p WHERE u.id = p.personA AND p.personB = $id AND p.status = 0");
+/* Get my Requests */
+$mRequests = $dbh->query("Select u.* FROM user u, partner p WHERE u.id = p.personB AND p.personA = $id AND p.status = 0");
+
+$buddies = getBuddies($dbh, $id);
+
 ?>
 <script>
-	
-	window.onload = function(){
-	    $('a.req').click(function (e) {e.preventDefault(); });
-	};
-	
+$(document).ready(function(){
+	$('.submit').click(function (e) {e.preventDefault(); });
+)};
+
 </script>
-	<div class = "wrap">
-		<div class="requestblock">
+<div class = "wrap">
+	<div class="requestblock">
 		<h1>Other's Requests</h1>
 
-		<?php 
-			if(Count($oRequests) > -1): ?>
+
+
 
 		<?php 
-		
+		$requestCount = 0;
 		foreach ($oRequests as $r):
-			?>
+			$requestCount++;
+		?>
 		
 		<div class = "request">
 			<img src="img/profilePics/<?php echo ($r->avatar)?>">
@@ -41,29 +41,29 @@
 
 			<form id="acceptForm_<?php echo($r->id); ?>" action="request.php" method="post">
 				<div id="sendRequest">
-				<input type="hidden" name="partner" id="partner" value="<?php echo($r->id); ?>">
-				<input type="hidden" name="reqAct" id="reqAct" value="accept">
-		        <input type="submit" value=" Accept " class="submit" id="submitRequest" >
+					<input type="hidden" name="partner" id="partner" value="<?php echo($r->id); ?>">
+					<input type="hidden" name="reqAct" id="reqAct" value="accept">
+					<input type="submit" value=" Accept " class="submit" id="submitRequest" >
 				</div>
-					<div id="add_err"></div>
+				<div id="add_err"></div>
 			</form>
 			<form id="abortForm_<?php echo($r->id); ?>" action="request.php" method="post">
 				<div id="sendRequest">
-				<input type="hidden" name="partner" id="partner" value="<?php echo($r->id); ?>">
-				<input type="hidden" name="reqAct" id="reqAct" value="abort">
-		        <input type="submit" value=" Abort " class="submit" id="submitRequest" >
+					<input type="hidden" name="partner" id="partner" value="<?php echo($r->id); ?>">
+					<input type="hidden" name="reqAct" id="reqAct" value="abort">
+					<input type="submit" value=" Abort " class="submit" id="submitRequest" >
 				</div>
-					<div id="add_err"></div>
+				<div id="add_err"></div>
 			</form>
 			
 		</div>
 		
 		<?php
 		endforeach; 
-		else:
+		if($requestCount == 0 ):
 
-		?>
-		<p>You have not sent any Requests</p>
+			?>
+		<p>You have no Requests</p>
 
 
 
@@ -75,35 +75,33 @@
 	</div>
 	<div class="requestblock">
 		<h1>Your Requests</h1>
+ 
 
-		<?php 
-		//$mRequestst = (array)$mRequests;
-			//if(empty($mRequestst)): ?>
-			
 		<?php 
 		$requestCount = 0;
 		foreach ($mRequests as $r):
 			$requestCount++;
-			?>
+		?>
 		<div class = "request" id="request_<?php echo($r->id); ?>">
 			<img src="img/profilePics/<?php echo ($r->avatar)?>">
 			<a href="profil.php?id=<?php echo($r->id) ?>"><p><?php echo($r->firstname." ".$r->surname) ?></p></a>
+
 			<form id="abortForm_<?php echo($r->id); ?>" action="request.php" method="post">
-				<div id="sendRequest">
-				<input type="hidden" name="partner" id="partner" value="<?php echo($r->id); ?>">
-				<input type="hidden" name="reqAct" id="reqAct" value="abortList">
-		        <input type="submit" value=" Abort " class="submit" id="submitRequest" >
+				<div >
+					<input type="hidden" name="partner" id="partner" value="<?php echo($r->id); ?>">
+					<input type="hidden" name="reqAct" id="reqAct" value="abortList">
+					<input type="submit" value=" Abort " class="submit" id="submitRequest" >
 				</div>
-					<div id="add_err"></div>
+				<div id="add_err"></div>
 			</form>
 		</div>
-	
+
 		<?php
 		endforeach; 
 		//else:
 		if($requestCount == 0 ):
-		?>
-		<p>You have no Requests</p>
+			?>
+		<p>You have not sent any Requests</p>
 
 
 
@@ -118,10 +116,10 @@
 		<?php 
 
 		if(isset($buddies)):
-			 ?>
+			?>
 
-			
-			<br><br>
+
+		<br><br>
 		<?php 
 		$requestCount = 0;
 		foreach ($buddies as $buddy):
@@ -129,18 +127,18 @@
 			$requestCount++;
 		?>
 		<a href="profil.php?id=<?php echo($buddy->id) ?>">
-		<div class = "match">
-			<img src="img/profilePics/<?php echo ($buddy->avatar)?>">
-			<div class="name"><?php echo($buddy->firstname." ".$buddy->surname) ?></div>
-			
-		</div>
+			<div class = "match">
+				<img src="img/profilePics/<?php echo ($buddy->avatar)?>">
+				<div class="name"><?php echo($buddy->firstname." ".$buddy->surname) ?></div>
+
+			</div>
 		</a>
 		<?php
 		endforeach; 
 		
 		else:
 
-		?>
+			?>
 		<p>You have no Buddies yet!</p>
 
 
@@ -151,8 +149,8 @@
 		endif;
 		?>
 	</div>
-	</div>
-	
+</div>
+
 <?php
-    include "footer.php";
+include "footer.php";
 ?>

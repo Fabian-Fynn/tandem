@@ -10,26 +10,15 @@
 	$stm = $dbh->query("Select * FROM user WHERE id=$id");
   	$person = $stm->fetch();
 	$user = $person->firstname;
-	$buddies = getBuddies($dbh, $id);
-
 
     $matches = Matches($dbh, $id);
-    
+
     if(sizeof($matches) > 1)
     {
 	    $matchesString = implode(',', $matches);
 	    $matchesString = substr($matchesString, 1);
-	    if(sizeof($buddies) > 1)
-    	{
-		    $buddiesString = implode(',', $buddies);
-		    $buddiesString = substr($buddiesString, 1);
-		    $matchedPeople = $dbh->query("Select * FROM user WHERE id IN ($matchesString)  EXCEPT  ($buddiesString)");
-		}
-		else{
-			$matchedPeople = $dbh->query("Select * FROM user WHERE id IN ($matchesString)");
-		}
-	    
-	    //$matchedOffer = $dbh->query("Select c.name AS name, o.teacher AS teacher FROM offer o, course c, search s WHERE o.teacher IN ($matchesString) AND c.id = o.course AND s.student = $id AND s.course = o.course");
+
+		$matchedPeople = $dbh->query("Select * FROM user WHERE id IN ($matchesString)");
 	}
 ?>
 	<div class = "wrap">

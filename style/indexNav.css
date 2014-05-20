@@ -188,7 +188,9 @@
 
 /* Desktop version */
 @media only screen and (min-width: 960px) {
-
+.clearfix{
+display: none;
+}
 	nav{
 		display:none;
 	}

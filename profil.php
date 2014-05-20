@@ -55,7 +55,7 @@
 	
 	if($isbuddy):
 	{
-		$buddyButton = " Add as Buddy ";
+		$buddyButton = " Delete from Buddies ";
 		$reqAct = "unfriend";
 	}
 	elseif($isMyRequest):
@@ -130,7 +130,7 @@
 				<div id="sendRequest">
 				<input type="hidden" name="partner" id="partner" value="<?php echo($id); ?>">
 				<input type="hidden" name="reqAct" id="reqAct" value="<?php echo($reqAct); ?>">
-		        <input type="submit" value="<?php echo($buddyButton) ?>" class="submit" id="submitRequest" >
+		        <input type="submit" value="<?php echo($buddyButton); ?>" class="submit" id="submitRequest" >
 				</div>
 					<div id="add_err"></div>
 			</form>

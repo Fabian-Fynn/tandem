@@ -28,7 +28,7 @@
 			$status = 1;
 		if($reqAct == "send")
 			$status = 0;
-
+		
 		
 
 		try{
@@ -47,7 +47,7 @@
 				die("Problem with updating Data!" . $e->getMessage() );
 			}
 
-		if($reqAct != "unfriend" && $reqAct != "abort"):
+		if($reqAct != "unfriend" && $reqAct != "abort" && $reqAct != "abortList"):
 
 	       	$sth = $dbh->prepare(
 			  "INSERT INTO partner
@@ -63,7 +63,7 @@
 					$status
 			    )
 			); 	
-			
+			//echo ('false');
 		endif;
 			
 		header('Location: ' . $_SERVER['HTTP_REFERER']);
@@ -71,5 +71,5 @@
 
 
 
-	echo ('false');
+	
 ?>
