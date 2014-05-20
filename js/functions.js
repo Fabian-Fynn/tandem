@@ -1,12 +1,11 @@
 var loginvisible = false;
-function loginslide (type) {
+function loginslide () {
 	if(loginvisible === false){
 		$('#slogin').animate({marginTop:"0px"});
 		loginvisible = true;
 		$('#blogin').css('background-color','#FF4961');
 	}
 	else{
-		if(type === 'click'){
 			$('#slogin').animate({marginTop:"-50px"}, 250);
 			setTimeout( function() {
 				$('#blogin').css('background-color','#fff');
@@ -15,7 +14,7 @@ function loginslide (type) {
 			setTimeout( function() { $("#add_err").html(""); }, 100);
 			$("#loginForm").trigger("reset");
 			loginvisible = false;
-		}
+		
 		
 		
 	}
@@ -119,11 +118,22 @@ function checkvisability(element){
 	highlighter = "."+element.attr('id');
 	
 	var scrollY = $(window).scrollTop();
-	if (scrollY > s-100 && scrollY < s+element.height()-51) {
+	if (scrollY > s-160 && scrollY < s+element.height()-40) {
+		removeAllHighlights($(highlighter));
 		$(highlighter).addClass("highlighted");
 	}
-	else
-		$(highlighter).removeClass("highlighted");	
+	//else
+		
+		//$(highlighter).removeClass("highlighted");	
+}
+
+function removeAllHighlights(element){
+		$(".s1").removeClass("highlighted");
+		$(".s2").removeClass("highlighted");
+		$(".s3").removeClass("highlighted");
+		$(".register").removeClass("highlighted");
+		element.addClass("highlighted");
+
 }
 /*
 function abortRequest(partner)

@@ -13,7 +13,7 @@
 				<a href="#s2"  rel="m_PageScroll2id" class="subNavBtn s2">share</a>
 				<a href="#s3"  rel="m_PageScroll2id" class="subNavBtn s3">gain</a>
 				<a href="#register"  rel="m_PageScroll2id" class="subNavBtn register">register</a>
-				<a href="#register" id="loginButton" class="subNavBtn" onmouseover="loginslide('hover')" onclick="loginslide('click')" >login</a>
+				<a href="#register" id="loginButton" class="subNavBtn" onclick="loginslide()" >login</a>
 			</div>
 		</div>
 			
@@ -32,9 +32,9 @@
 	
 <nav class="clearfix">
 	<ul class="clearfix">
-		<li><a href="#">Home</a></li>
-		<li><a href="#about">About</a></li>
-		<li><a href="#features">Features</a></li>
+		<li><a href="#">TANDEM</a></li>
+		<li><a href="#about">about</a></li>
+		<li><a href="#features">share</a></li>
 		<li><a href="#">Design</a></li>
 		<li><a href="#">Web 2.0</a></li>
 		<li><a href="#">Tools</a></li>	
@@ -58,9 +58,10 @@
 
 $(window).scroll(function() {
    
-    if(!(document.body.scrollHeight - $(this).scrollTop()  <= $(this).height()+100))
+    if(!(document.body.scrollHeight - $(this).scrollTop()  <= $(this).height()+80))
     {
     	$(".register").removeClass("highlighted");
+    	$(".s1").removeClass("highlighted");
 		checkvisability($("#s1"));
 		checkvisability($("#s2"));
 		checkvisability($("#s3"));

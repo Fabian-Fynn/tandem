@@ -70,7 +70,7 @@ a#around{
 	zoom: 1;
 	filter: alpha(opacity=50);
 	//opacity: 0.4;
-	background: rgba(42, 168, 226, 0.4);
+	background: rgba(42, 168, 226, 0.6);
 	
 }
 
@@ -160,7 +160,7 @@ a#around{
 	//-moz-box-shadow:    inset 0px 2px 5px 0px #222;
 	//box-shadow:         inset 0px 2px 5px 0px #222;
 	//color:#333;
-	background:rgba(255, 73, 97, 0.4);
+	background:rgba(255, 73, 97, 0.6);
 	
 }
 

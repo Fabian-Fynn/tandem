@@ -24,7 +24,7 @@
 	position:fixed;
 	top:0px;
 	//background:#2aa8e2;
-	background:fff;
+	background:#fff;
 	//-webkit-box-shadow: 0 5px 5px -2px #4D4D4D;
 	//box-shadow: 0 5px 5px -2px #4D4D4D;
 	width:100%;
@@ -120,6 +120,7 @@
 
 	nav a:hover, nav a:active {
 		background-color: #8c99a4;
+		color:#fff;
 	}
 
 	nav a#pull {
@@ -266,8 +267,9 @@
 		//color: #333;
 		visibility:visible;
 	}
-	#menuwrapper a:hover, #menuwrapper a:active, .highlighted{
+	#menuwrapper a:hover, #menuwrapper a:active, .highlighted, a.highlighted{
 		background: #FF4961;
+		color:#fff;
 	}
 	
 	#menuwrapper{
