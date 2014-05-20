@@ -71,10 +71,10 @@
 							<td><input type="radio" name="isfemale" class="radio" value="1"  required>female
 								<input type="radio" name="isfemale" class="radio" value="0" required>male</td>
 						<tr>
-							<td><label for="email">FHS E-Mail:</label></td> <td><input type="email" id="email" name="email" required></td>
+							<td><label for="email">FHS E-Mail:</label></td> <td><input type="email" id="Regmail" name="email" onblur="checkmail()" placeholder="mmustermann.mmt-b2013@fh-salzburg.ac.at" required></td>
 						</tr>
 						<tr>
-							<td><label for="password">Password:</label></td> <td><input id="txtPassword" type="password" name="password" required></td>
+							<td><label for="password">Password:</label></td> <td><input id="txtPassword" type="password" name="password" pattern=".{5,10}" title="5-10 letters or numbers." required></td>
 						</tr>
 						<tr >
 							<td><label for="password">repeat:</label></td> <td  id="pwConfirmCell"><input id="txtConfirmPassword" type="password" name="password" onKeyUp="checkPasswordMatch();"  required>

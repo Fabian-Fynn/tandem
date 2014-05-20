@@ -44,13 +44,17 @@
 
 <div id="title"><div class="logo">
 		<h1>TANDEM</h1>
-		</div>
+		<img src="img/icons/cap.png" alt="TANDEM">
+		
 		<div id="catch">
 		<h2>Students share Knowledge</h2>
 		</div>
-		<div class="more"><a href="#s1">more</a><img src="img/icons/down.png" alt="down"></div>
+			<div class="more"><a href="#s1" id="more"><div class="more1">more<img src="img/icons/down.png" alt="down"></div></a></div>
+		</div>
+		
+		
 	</div>
- <div id="around"><div class="intro" >
+ <div id="around"><div class="intro" ><img src="img/intro/intro.jpg">
 	 </div>
 </div>
 <div class="siteContainer">
