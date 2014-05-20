@@ -119,7 +119,7 @@
     	 $allmatches = array_intersect($bSearch, $bOffer);
 
     	 $buddies = GetBuddies($dbh, $id);
-
+    	if($buddies != null):
     	$buddyArray[] = $var;
 		foreach ($buddies as $b)
 			{
@@ -127,10 +127,13 @@
  			   array_push($buddyArray, $b->id);
 			}
 
-		return array_diff($allmatches, $buddyArray);
-
-	}
-    //bSearch => alle die suchen was ich anbiete
+		
+			return array_diff($allmatches, $buddyArray);
+	
+	endif;
+	return $allmatches;
+}
+	    //bSearch => alle die suchen was ich anbiete
     //bOffer => alle die anbieten was ich suche
 
    function GetBuddies($dbh, $id)
