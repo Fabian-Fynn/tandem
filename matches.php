@@ -28,9 +28,9 @@
 			if(Count($matches) > 1): ?>
 		<p>We found <?php echo(Count($matches)-1); ?> Matches for you.</p>
 		<br>
-
+		<div class="matchbox">
 		<?php 
-		
+
 		foreach ($matchedPeople as $match):
 			?>
 		<a href="profil.php?id=<?php echo($match->id) ?>">
@@ -67,6 +67,7 @@
 		
 		endif;
 		?>
+		</div>
 	</div>
 	
 	
