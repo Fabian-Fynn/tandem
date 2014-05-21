@@ -8,6 +8,7 @@
     if(isset($_SESSION['error']))
     {
     	$errors = getIndexError($_SESSION['error']);
+    	
     	unset($_SESSION['error']);
     }
     include "intro.php";

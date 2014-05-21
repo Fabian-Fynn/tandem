@@ -284,10 +284,9 @@ function getIndexError($error)
 		array_push($errors, "Your Password is invalid");
 		$error -= 10000;
 	}
-	if($error % 100000 != 0)
+	if($error % 1000000 != 0)
 	{
 		array_push($errors, "An internal error occurred, we are sorry");
-		$error -= 10000;
 	}
 	array_splice($errors, 0, 1);
 	return $errors;
