@@ -4,7 +4,6 @@
 if(isset($_GET['key']))
 {
   $key = $_GET['key'];
-  echo $key;
  
   //fetch userId with key
   $stm = $dbh->prepare("SELECT userId FROM user WHERE activationKey = ?");
