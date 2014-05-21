@@ -240,6 +240,19 @@ a#more {
 	//-moz-box-shadow:    inset 0px 2px 5px 0px #222;
 	//box-shadow:         inset 0px 2px 5px 0px #222;
 }
+#impressum {
+	background: #fff;
+	margin-bottom:0;
+	color: #666;
+	//-webkit-box-shadow: inset 0px 2px 5px 0px #222;
+	//-moz-box-shadow:    inset 0px 2px 5px 0px #222;
+	//box-shadow:         inset 0px 2px 5px 0px #222;
+	
+	padding-bottom: 50px;
+}
+#impressum h2{
+	margin-bottom: 10px;
+}
 #register{
 	background: #666;
 	color:#fff;
@@ -341,6 +354,31 @@ img.img{
 }
 .footer{
 	position: relative;
+}
+#message, #bad{
+	background:rgba(220,220,220, 0.8);
+	padding-top: 20px;
+	padding-bottom: 20px;
+	position: absolute;
+	top:0px;
+	width: 100%;
+}
+#message h1{
+	font-size: 3vw;
+	font-weight: 300;
+	color:#0b0;
+	
+}
+#message p{
+	font-size: 1.5vw;
+	margin-bottom: 10px;
+}
+
+#message.bad h1{
+	color:#b00;
+}
+#message.bad a:link{
+	text-decoration: underline;
 }
 @media only screen and (min-width: 900px) {
 

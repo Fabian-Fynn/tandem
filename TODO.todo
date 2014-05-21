@@ -2,6 +2,7 @@ TODO:
 Index,
  ☐ Content
  ☐ Impressum
+ ✔ register, benachr @done (14-05-21 20:12)
  
 ☐ Am server -> bei requestanfrage ablehnen: nicht entfernt..
 
@@ -12,12 +13,12 @@ Home,
  ☐ Tipps
 
 Allgemein,
-  ☐ Emailbestätigung
+  ✔ Emailbestätigung @done (14-05-21 20:58)
   ☐ Unnützes entfernen
   ☐ Formularvalid
   ☐ Mail duplikate
-    ☐ neuer user wird ausgelogged
-      
+  ☐ neuer user wird ausgelogged
+
 
 
 

@@ -12,7 +12,7 @@
     }
     include "intro.php";
 
-    
+
 ?>
 
 	
@@ -136,7 +136,20 @@
 	</div>
 </div>
 	
+
+<div class="section impressum" id="impressum">
+		<div class="outer">
+			<div class="inner">	
+
+
+	      <div id="impressContent"><h2>Impressum</h2>
+<p>Meine Lieblingsorte ist ein MultiMediaProjekt 1 des Studiengangs MultimediaTechnology der Fachhochschule Salzburg</p><br>
+
+
+<p>Simon Hintersonnleiter</p>
+<a href="mailto:fhoffmann.mmt-b2013@fh-salzburg.at"><p>fhoffmann.mmt-b2013@fh-salzburg.at</p></a></div>
 	
+	</div></div></div>
 <?php
     include "footer.php";
 ?>

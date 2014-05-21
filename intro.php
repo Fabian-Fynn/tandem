@@ -45,6 +45,25 @@
 	if(!isset($errors)):
 ?>
 <div id="title"><div class="logo">
+	<?php if (isset($_GET['msgId'])) {
+		if($_GET['msgId'] == "1"){
+	?>
+		<div id="message">
+			<h1>Account successfully activated!</h1>
+			<p>Please login now</p>
+		</div>
+	<?php
+	} 
+		if($_GET['msgId'] == "2"){
+	?>
+		<div id="message" class="bad">
+			<h1>Account Failed!</h1>
+			<a href="mailto:fhoffmann.mmt-b2013@fh-salzburg.at"><p>Please contact me</p></a>
+		</div>
+	<?php
+	}
+}
+	?>
 		<h1>TANDEM</h1>
 		<img src="img/icons/cap.png" alt="TANDEM">
 		
