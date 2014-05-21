@@ -24,12 +24,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	else
 		$error += 100;
 
-	if(!isset($_POST['email']) || preg_match('/^[A-Z0-9._]+@fh-salzburg.ac.at/g',$_POST['email']) == 0)
-		$error += 1000;
-	if(isset($_POST['password']) && strlen($_POST['password']) > 5 && strlen($_POST['password']) < 10)
+	//if(!isset($_POST['email']) || preg_match('/^[A-Z0-9._-]+@fh-salzburg.ac.at/g',$_POST['email']) == 0)
+	//	$error += 1000;
+	//if(isset($_POST['password']) && strlen($_POST['password']) >= 5 && strlen($_POST['password']) <= 10)
 		$hashedPw = hashPasswordSecure($_POST['password']);
-	else
-		$error += 10000;
+	//else
+	//	$error += 10000;
 
 	$key = md5(microtime().rand());
 	try{
