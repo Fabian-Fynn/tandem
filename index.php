@@ -146,7 +146,7 @@
 <p>Meine Lieblingsorte ist ein MultiMediaProjekt 1 des Studiengangs MultimediaTechnology der Fachhochschule Salzburg</p><br>
 
 
-<p>Simon Hintersonnleiter</p>
+<p>Fabian Hoffmann</p>
 <a href="mailto:fhoffmann.mmt-b2013@fh-salzburg.at"><p>fhoffmann.mmt-b2013@fh-salzburg.at</p></a></div>
 	
 	</div></div></div>

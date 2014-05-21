@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	else
 		$error += 100;
 
-	//if(!isset($_POST['email']) || preg_match('/^[A-Z0-9._-]+@fh-salzburg.ac.at/g',$_POST['email']) == 0)
+	if(!isset($_POST['email']) || preg_match('[\\w-+]+(?:\\.[\\w-+]+)*@fh-salzburg\.ac\.at/g',$_POST['email']) == 0)
 	//	$error += 1000;
 	//if(isset($_POST['password']) && strlen($_POST['password']) >= 5 && strlen($_POST['password']) <= 10)
 		$hashedPw = hashPasswordSecure($_POST['password']);
@@ -62,11 +62,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$error += 100000;
 	}
 	if($error == 0)
-		header("Location: index.php");
+		header("Location: index.php?msgId=4");
 	
 	else{
 		$_SESSION['error'] = $error;
-		header("Location: index.php");
+		header("Location: index.php?msgId=3");
 	}
 }
 

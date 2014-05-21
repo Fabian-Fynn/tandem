@@ -57,11 +57,28 @@
 		if($_GET['msgId'] == "2"){
 	?>
 		<div id="message" class="bad">
-			<h1>Account Failed!</h1>
+			<h1>Account activation failed!</h1>
 			<a href="mailto:fhoffmann.mmt-b2013@fh-salzburg.at"><p>Please contact me</p></a>
 		</div>
 	<?php
 	}
+
+	if($_GET['msgId'] == "3"){
+	?>
+		<div id="message" class="bad">
+			<h1>Activation failed!</h1>
+			<a href="mailto:fhoffmann.mmt-b2013@fh-salzburg.at"><p>Please contact me</p></a>
+		</div>
+	<?php
+	}
+	if($_GET['msgId'] == "4"){
+	?>
+		<div id="message">
+			<h1>Message for you!</h1>
+			<p>We send you an activation mail. Please click the included link.</p>
+		</div>
+	<?php
+	} 
 }
 	?>
 		<h1>TANDEM</h1>

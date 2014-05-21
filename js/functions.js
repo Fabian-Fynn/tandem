@@ -138,7 +138,9 @@ function removeAllHighlights(element){
 
 function checkmail(){
 	mail = $('#Regmail').val();
-	if(!mail.match('/^[A-Z0-9._]+@fh-salzburg.ac.at/g') && mail != ""){
+	var patt = new RegExp('[\\w-+]+(?:\\.[\\w-+]+)*@fh-salzburg\.ac\.at');
+	console.log(patt.exec(mail));
+	if(patt.exec(mail) == null && mail != ""){
 		alert("You have to enter a valid FHS emailadress");
 	}
 	}
