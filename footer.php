@@ -11,7 +11,7 @@
   	<br>
 		<a href="createusers.php">create User</a>
 		<br>
-		<a href="addcourse.php">edit courses</a>
+		<a href="addCourse.php">edit courses</a>
   	<?php
   }
 ?>
