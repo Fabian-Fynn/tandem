@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	//	$error += 10000;
 
 	$key = md5(microtime().rand());
-	echo($key);
+	//echo($key);
 	try{
 	$sth = $dbh->prepare(
 		"INSERT INTO user
@@ -62,11 +62,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$error += 100000;
 	}
 	if($error == 0)
-		//header("Location: home.php");
+		header("Location: home.php");
 	
 	else{
 		$_SESSION['error'] = $error;
-		//header("Location: index.php");
+		header("Location: index.php");
 	}
 }
 
