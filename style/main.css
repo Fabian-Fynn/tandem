@@ -382,20 +382,23 @@ p.error{
 	//float:left;
 	border-top:1px solid #ccc;
 	//z-index:1000;
-	
-  bottom:0;
+	overflow: hidden;
+  	bottom:0;
   
    
 }
 
 .footer .container{
 	height:100%;
-	width:960px;
+	width:100%;
+	max-width:960px;
 	margin:0 auto;
 	opacity: 1;
+	padding-left:30px;
+	padding-right:30px;
 }
 .footer .left{
-	padding-top:50px;
+	padding-top:20px;
 	width:65%;
 	height:100%;
 	float:left;
@@ -416,4 +419,13 @@ p.error{
 }
 .footer a:visited{
 	color:#fff;
+}
+
+.logofooter{
+		position: relative;
+}
+.footer img{
+	width:100%;
+	margin-top: -80px;
+
 }

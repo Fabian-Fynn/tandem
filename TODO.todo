@@ -3,60 +3,51 @@ TODO:
 Index,
  ☐ Content
  ☐ Impressum
- ☐ Footer
+ 
+☐ Am server -> bei requestanfrage ablehnen: nicht entfernt..
 
 User,
  ☐ Stadt,Studiengang -> DB mit wenig einträgen, wenn nicht vorhanden -> andere
 
-Matches+Buddies,
- ✔ User nicht anzeigen wenn Buddy @done (14-05-20 23:46)
- ☐ Am server -> bei requestanfrage ablehnen: nicht entfernt..
- ✔ offerbearb + pic zurück button @done (14-05-20 22:57)
-   
-
 Home,
  ☐ Tipps
- ☐ 
 
 Allgemein,
-  ✔ upload fix delete + temp @done (14-05-19 14:00)
-  ✔ pic @done (14-05-19 14:00)
-  ✔ User löschen -> Beziehungen löschen @done (14-05-19 11:55)
-
-  ☐ Interner Be Logo im Menü
   ☐ Emailbestätigung
-  ✔ PW hashen @done (14-05-19 11:55)
 
   ☐ PWrichtlinien
-  ✔ Favicon @done (14-05-20 16:57)
+
   ☐ Bilder
+
   ☐ check FHS email + dublikate
+
   ☐ Unnützes entfernen
+
   ☐ menü verschwindet bei bestimmter zoomstufe
 
   ☐ Formularvalid überflüssig bei prepared statements
 
+Done,
+  ✔ Footer @done (14-05-21 15:41)
+  ✔ PW hashen @done (14-05-19 11:55)
+  ✔ Favicon @done (14-05-20 16:57)
+   ✔ upload fix delete + temp @done (14-05-19 14:00)
+  ✔ pic @done (14-05-19 14:00)
+  ✔ User löschen -> Beziehungen löschen @done (14-05-19 11:55)
 
-
-Style,
- ☐ Login slider
- ✔ intro größer @done (14-05-19 00:37)
- ✔ logged-in styles @done (14-05-18 21:12)
-
-
-
-
-
-
-
-
+  ✔ Interner Be Logo im Menü @done (14-05-21 15:30)
+  ✔ User nicht anzeigen wenn Buddy @done (14-05-20 23:46)
+ 
+  ✔ offerbearb + pic zurück button @done (14-05-20 22:57)
+   
+  Style,
+   ✔ Login slider @done (14-05-21 15:30)
+   ✔ intro größer @done (14-05-19 00:37)
+   ✔ logged-in styles   @done (14-05-18 21:12)
 
 
 /////////////////////////////
 SNIPPETS:
-
-
-
 
 
 CSS:
