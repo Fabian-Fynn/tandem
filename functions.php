@@ -330,7 +330,7 @@ font-weight: 300;
 <div style='width: 200px;margin: 0 auto'>
 <h1 style='font-family: sans-serif'>Hallo ".$firstname."</h1>
 <p style='font-family: sans-serif; font-size: 12px;'>Um die Anmeldung erfolgreich abzuschlie&szlig;en ist es erforderlich, dass du deine E-Mail-Adresse best&auml;tigst.
- <br>Klicke dazu bitte auf den folgenden <a href='".$url."/activation.php?key=".$key."'>Link</a></p>
+ <br>Klicke dazu bitte auf den folgenden <a href='".$url."/index.php?key=".$key."'>Link</a></p>
 </div>
 </body>
 </html>";

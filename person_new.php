@@ -32,12 +32,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	//	$error += 10000;
 
 	$key = md5(microtime().rand());
+	echo($key);
 	try{
 	$sth = $dbh->prepare(
 		"INSERT INTO user
 		(id, firstname,surname,email,is_female,password,register_date,avatar, activationKey)
 		VALUES
-		(NULL,   ?,     ?,      ?,    ?,              ?,?,?,?)");
+		(NULL,   ?,     ?,        ?,     ?,         ?,        ?,        ?,      ?)");
 	$array = $_POST;
 	
 		$sth->execute(
@@ -61,11 +62,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$error += 100000;
 	}
 	if($error == 0)
-		header("Location: home.php");
+		//header("Location: home.php");
 	
 	else{
 		$_SESSION['error'] = $error;
-		header("Location: index.php");
+		//header("Location: index.php");
 	}
 }
 
