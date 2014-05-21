@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$error += 100000;
 	}
 	if($error == 0)
-		header("Location: home.php");
+		header("Location: index.php");
 	
 	else{
 		$_SESSION['error'] = $error;
