@@ -256,4 +256,43 @@ function verifyPw($pw,$pwFromDB)
     }
 }   	
 
+function getIndexError($error)
+{
+	$errors[] = null;
+	if($error % 10 != 0)
+	{
+		array_push($errors, "Your Firstname is invalid");
+		$error -= 1;
+	}
+	if($error % 100 != 0)
+	{
+		array_push($errors, "Your Surname is invalid");
+		$error -= 10;
+	}
+	if($error % 1000 != 0)
+	{
+		array_push($errors, "Please select your gender");
+		$error -= 100;
+	}
+	if($error % 10000 != 0)
+	{
+		array_push($errors, "Your FHS-Email is invalid");
+		$error -= 1000;
+	}
+	if($error % 100000 != 0)
+	{
+		array_push($errors, "Your Password is invalid");
+		$error -= 10000;
+	}
+	if($error % 100000 != 0)
+	{
+		array_push($errors, "An internal error occurred, we are sorry");
+		$error -= 10000;
+	}
+	array_splice($errors, 0, 1);
+	return $errors;
+
+}
+
+
 ?>

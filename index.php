@@ -4,11 +4,43 @@
 	$dbh = new PDO($DSN, $DB_USER, $DB_PASS);
 
     $pagetitle = "Tandem - Lernplattform für Studenten der FH-Salzburg";
+   	include "functions.php";
+    if(isset($_SESSION['error']))
+    {
+    	$errors = getIndexError($_SESSION['error']);
+    	unset($_SESSION['error']);
+    }
     include "intro.php";
 ?>
 
 	
 <div class = "wrapIndex">
+	<?php
+
+		if(isset($errors)):
+?>
+	<div class="siteContainer">
+	<div class="section" id="s1">
+		<div class="outer">
+			<div class="inner">
+				<br>
+				<h1>Error!</h1>
+					<ul>
+<?php
+
+			foreach ($errors as $error) {
+				echo("<li>".$error."</li>");
+			}
+?>
+
+					</ul>
+				<a href="#register"><button> Try again </button></a>
+			</div>
+		</div>
+	</div>
+<?php
+	endif;
+	 ?>
 
 	<div class="section" id="s1">
 		<div class="outer">
@@ -68,7 +100,7 @@
 						</tr>
 						<tr>
 							<td><label for="isfemale" >Gender:</label></td>
-							<td><input type="radio" name="isfemale" class="radio" value="1"  required>female
+							<td><input type="radio" name="isfemale" class="radio" value="1"  required checked>female
 								<input type="radio" name="isfemale" class="radio" value="0" required>male</td>
 						<tr>
 							<td><label for="email">FHS E-Mail:</label></td> <td><input type="email" id="Regmail" name="email" onblur="checkmail()" placeholder="mmustermann.mmt-b2013@fh-salzburg.ac.at" required></td>
@@ -81,7 +113,7 @@
 							<img id="pwIndicator"></td>
 						</tr>
 						<tr>
-							<td></td><td ><input type="submit" value=" Register "></td>
+							<td></td><td ><input type="submit" value=" Register " formnovalidate="formnovalidate"></td>
 						</tr>
 					</table>
 				</form>
@@ -106,3 +138,50 @@
 <?php
     include "footer.php";
 ?>
+<script>
+
+$(window).scroll(function() {
+   
+    if(!(document.body.scrollHeight - $(this).scrollTop()  <= $(this).height()+80))
+    {
+    	$(".register").removeClass("highlighted");
+    	$(".s1").removeClass("highlighted");
+		checkvisability($("#s1"));
+		checkvisability($("#s2"));
+		checkvisability($("#s3"));
+
+	}else
+	{
+		$(".s1").removeClass("highlighted");
+		$(".s2").removeClass("highlighted");
+		$(".s3").removeClass("highlighted");
+		$(".register").addClass("highlighted");
+    }
+});
+
+
+	
+	window.onload = function(){
+	    $('#loginButton').attr("href", "#");
+	};
+
+
+/* Code by Devin Sturgeon */
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+	        || location.hostname == this.hostname) {
+
+	        var target = $(this.hash);
+	        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	           if (target.length) {
+	             $('html,body').animate({
+	                 scrollTop: (target.offset().top -50)
+	            }, 1000);
+	            return false;
+	        }
+	    }
+	});
+});
+
+	</script>

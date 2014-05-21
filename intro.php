@@ -7,7 +7,7 @@
 
 <div class="subMenu" >
 	 	<div class="outer"><div class="inner">
-	 		<a href="#title" id="around" rel="m_PageScroll2id" class="subNavBtn">TANDEM</a> 
+	 		<a href="index.php" id="around" rel="m_PageScroll2id" class="subNavBtn">TANDEM</a> 
 	 		<div id="menuwrapper">
 				<a href="#s1"  rel="m_PageScroll2id" class="subNavBtn s1">about</a>
 				<a href="#s2"  rel="m_PageScroll2id" class="subNavBtn s2">share</a>
@@ -41,7 +41,9 @@
 	</ul>
 	<a href="#" id="pull"><img src="img/nav-brand.png"></a>
 </nav>
-
+<?php
+	if(!isset($errors)):
+?>
 <div id="title"><div class="logo">
 		<h1>TANDEM</h1>
 		<img src="img/icons/cap.png" alt="TANDEM">
@@ -57,53 +59,11 @@
  <div id="around"><div class="intro" ><img src="img/intro/intro.jpg">
 	 </div>
 </div>
+
+<?php
+	endif;
+?>
 <div class="siteContainer">
-<script>
 
-$(window).scroll(function() {
-   
-    if(!(document.body.scrollHeight - $(this).scrollTop()  <= $(this).height()+80))
-    {
-    	$(".register").removeClass("highlighted");
-    	$(".s1").removeClass("highlighted");
-		checkvisability($("#s1"));
-		checkvisability($("#s2"));
-		checkvisability($("#s3"));
-
-	}else
-	{
-		$(".s1").removeClass("highlighted");
-		$(".s2").removeClass("highlighted");
-		$(".s3").removeClass("highlighted");
-		$(".register").addClass("highlighted");
-    }
-});
-
-
-	
-	window.onload = function(){
-	    $('#loginButton').attr("href", "#");
-	};
-
-
-/* Code by Devin Sturgeon */
-$(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
-	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
-	        || location.hostname == this.hostname) {
-
-	        var target = $(this.hash);
-	        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-	           if (target.length) {
-	             $('html,body').animate({
-	                 scrollTop: (target.offset().top -50)
-	            }, 1000);
-	            return false;
-	        }
-	    }
-	});
-});
-
-	</script>
 
 	

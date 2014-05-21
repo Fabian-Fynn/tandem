@@ -7,21 +7,37 @@ include "menu.php";
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	//if($_POST[''])
 	$date = date('Y-m-d H:i:s');
+	$error = 0;
+
+	if(!isset($_POST['firstname']) || strlen($_POST['firstname']) < 3)
+		$error += 1;
+	if(!isset($_POST['surname']) || strlen($_POST['surname']) < 3)
+		$error += 10;
+
 	if($_POST['isfemale'] == 0)
 		$avatar = "male_avatar.png";
-	else
+	elseif ($_POST['isfemale'] == 1) {
 		$avatar = "female_avatar.png";
+	}
+	else
+		$error += 100;
 
-	$hashedPw = hashPasswordSecure($_POST['password']);
+	if(!isset($_POST['email']) || preg_match('/^[A-Z0-9._]+@fh-salzburg.ac.at/g',$_POST['email']) == 0)
+		$error += 1000;
+	if(isset($_POST['password']) && strlen($_POST['password']) > 5 && strlen($_POST['password']) < 10)
+		$hashedPw = hashPasswordSecure($_POST['password']);
+	else
+		$error += 10000;
+	try{
 	$sth = $dbh->prepare(
 		"INSERT INTO user
 		(id, firstname,surname,email,is_female,password,register_date,avatar)
 		VALUES
 		(NULL,   ?,     ?,      ?,    ?,              ?,?,?)");
 	$array = $_POST;
-	if(formValid(false))
-	{
+	
 		$sth->execute(
 			array(
 				$_POST['firstname'],
@@ -35,10 +51,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			); 
 		$id = $dbh->lastInsertId(); 
 		$_SESSION['id'] = $id;
-		header("Location: home.php");
+
+	} catch(Exception $e)
+	{
+		$error += 100000;
 	}
+	if($error == 0)
+		header("Location: home.php");
+	
 	else{
-		header("Location: person_new.php?error=$error");
+		$_SESSION['error'] = $error;
+		header("Location: index.php");
 	}
 }
 

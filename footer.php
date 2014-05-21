@@ -4,8 +4,7 @@
 		<a href="mailto:fhoffmann.mmt-b2013@fh-salzburg.at">Fabian Hoffmann</a><br>
   		<a href="impressum.php">Impressum</a>
   <?php 
-
-  if($_SESSION['id'] == "3")
+if(isset($_SESSION['id']) && $_SESSION['id'] == "3")
   {
   	?>
   	<br>

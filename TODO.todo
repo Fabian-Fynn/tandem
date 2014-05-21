@@ -49,7 +49,8 @@ Done,
 /////////////////////////////
 SNIPPETS:
 
-
+if(isset($_GET['error']))
+      $errors = getIndexError();
 CSS:
   red  #FF4961
        #CC142D

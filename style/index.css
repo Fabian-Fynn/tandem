@@ -256,10 +256,16 @@ a#more {
 }
 #regForm{
 	float:left;
-	width:80%;
+	width:auto;
 }
 #regForm input[type="text"], #regForm input[type="email"], #regForm input[type="password"]{
 	width:250px;
+}
+
+#regForm input[type="radio"]
+{
+	margin-right:5px;
+	margin-left:5px;
 }
 #altLogin{
 	float:right;
