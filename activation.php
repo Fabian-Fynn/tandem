@@ -17,7 +17,7 @@ if(isset($_GET['key']))
   if($response != null)
   {
      //set user as active
-    $id = $response->userId;
+    $id = $response->id;
     $sth = $dbh->prepare("UPDATE user SET active = ?, activationKey = null WHERE id = ?;");
     $sth->execute(array(1,$id));
  
