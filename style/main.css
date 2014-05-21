@@ -2,6 +2,13 @@
 	margin:0;
 	padding: 0;
 }
+
+a, a:visited, a:link{
+	color: #2AA8E2;
+	text-decoration: none;
+}
+
+
 html {
     height:100%;
     width:100%;
@@ -11,21 +18,11 @@ body {
     margin: 0 auto;
 	height:100%;
     width:100%;
-	//position:absolute;
     top:0;
-   //font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-    //font-family: 'Ubuntu', sans-serif;
-    //font-family: 'Droid Sans', sans-serif;
-    //font-family: 'Ubuntu', sans-serif;
     font-family: 'Nunito', sans-serif;
 	font-size: 100%;
     line-height: 1.5em;
     color: #666;
-  	//background:#05f;
-	 //background-color: rgb(227, 227, 227);
-    //-webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
-    //-moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
-    //box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
     -webkit-font-smoothing: antialiased;
 }
 .siteContainer{
@@ -367,6 +364,9 @@ a.req {
 	height: auto;
 	overflow: auto;
 }
+p.error{
+	color:#f00;
+}
 /*footer*/
 
 .footer{
@@ -395,6 +395,7 @@ a.req {
 	opacity: 1;
 }
 .footer .left{
+	padding-top:50px;
 	width:65%;
 	height:100%;
 	float:left;
@@ -404,4 +405,15 @@ a.req {
 	width:35%;
 	height:100%;
 	float:left;
+}
+.footer a{
+	color:#fff;
+	margin-right: 25px;
+	text-decoration: none;
+}
+.footer a:link{
+	color:#fff;
+}
+.footer a:visited{
+	color:#fff;
 }

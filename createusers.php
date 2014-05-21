@@ -1,7 +1,7 @@
 
 <?php
 	include 'menu.php';
-	if(! isset($_SESSION['user']))
+	if($_SESSION['id'] != "3")
 	{
 		header('Location: index.php');
 	}
