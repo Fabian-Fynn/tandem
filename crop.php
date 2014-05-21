@@ -117,6 +117,7 @@
 </script>
 
 <div class = "wrap">
+	<div class="matchbox">
 		<section>
 	
 		<div class="userName"><h1>Edit Profilepicture</h1></div>
@@ -137,6 +138,7 @@
 		
 	</article>
 	</section>
+	</div>
 </div>
 <?php
     include "footer.php";

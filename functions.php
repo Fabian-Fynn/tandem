@@ -320,7 +320,7 @@ font-family: 'Raleway', sans-serif;
 font-weight: 300;
 }
 .container {
- width: 200px;
+ width: 600px;
  margin: 0 auto;
 }
 </style>
@@ -328,21 +328,21 @@ font-weight: 300;
  
 <img src='".$url."/img/logo_new.png'>
 <div style='width: 200px;margin: 0 auto'>
-<h1 style='font-family: sans-serif'>Hallo ".$firstname."</h1>
-<p style='font-family: sans-serif; font-size: 12px;'>Um die Anmeldung erfolgreich abzuschlie&szlig;en ist es erforderlich, dass du deine E-Mail-Adresse best&auml;tigst.
- <br>Klicke dazu bitte auf den folgenden <a href='".$url."/activation.php?key=".$key."'>Link</a></p>
+<h1 style='font-family: sans-serif'>Hi ".$firstname."</h1>
+<p style='font-family: sans-serif; font-size: 12px;'>Your activation is almost complete. Please click the link below to verify your email address.
+ <br><a href='".$url."/activation.php?key=".$key."'>Click me</a></p>
 </div>
 </body>
 </html>";
  
-$from   = "Meine Lieblingorte";
-$subject    = "Kontoaktvierung";
+$from   = "TANDEM";
+$subject    = "Accountactivation";
  
 $header  = "MIME-Version: 1.0\r\n";
 $header .= "Content-type: text/html; charset=iso-8859-1\r\n";
  
 $header .= "From: $from\r\n";
-$header .= "Reply-To: s.hintersonnleitner@chello.at\r\n";
+$header .= "Reply-To: fhoffmann.mmt-b2013@fh-salzburg.ac.at\r\n";
 $header .= "X-Mailer: PHP ". phpversion();
  
 if(mail($mail,$subject,$message,$header))

@@ -53,17 +53,17 @@
       $errorType = $e->getmessage();
       switch ($errorType) {
         case 'filesize':
-          $error = 'Das Bild ist zu groß, bitte wähle ein kleineres.';
+          $error = 'The file is too large, please select a smaller one.';
           break;
         case 'filetype':
-          $error = 'Der Dateityp des gewählten Bildes wird nicht unterstützt. Bitte wähle ein png oder jpg.';
+          $error = 'The Datatype of the chosen image is not supported please use png or jpg.';
           break;
         case 'saveError':
-          $error = 'Es ist ein Fehler beim Speichern des Bildes aufgetreten. Bitte versuche es erneut.';
+          $error = 'An error occured while saving the file. Please try again.';
           break;
             
         default:
-          $error = 'Es ist ein unerwarteter Fehler aufgetreten. Das tut mir leid. Bitte versuche es erneut.';
+          $error = 'An unexpected error occured. We are sorry about that. Please try again.';
           break;
       }
       
@@ -81,7 +81,7 @@
 
     if(!isset($e)):
   ?>
-    <div class="userName"><h1>Upload Profilepicture</h1></div>
+    <div class="userName"><h1>Upload Profile picture</h1></div>
 		<article class="left">
 			
     <form method="post" action="image_upload.php" id="picForm" enctype="multipart/form-data">

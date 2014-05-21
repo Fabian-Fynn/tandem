@@ -2,8 +2,12 @@
   	<div class="container">
   	<div class="left">
 		<a href="mailto:fhoffmann.mmt-b2013@fh-salzburg.at">Fabian Hoffmann</a><br>
+    <?php if(isset($_SESSION['id'])):
+?>
   		<a href="impressum.php">Impressum</a>
   <?php 
+ 
+    endif;
 if(isset($_SESSION['id']) && $_SESSION['id'] == "3")
   {
   	?>

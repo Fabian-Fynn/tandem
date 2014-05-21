@@ -1,8 +1,6 @@
 TODO:
 Index,
  ☐ Content
- ☐ Impressum
- ✔ register, benachr @done (14-05-21 20:12)
  
 ☐ Am server -> bei requestanfrage ablehnen: nicht entfernt..
 
@@ -13,7 +11,6 @@ Home,
  ☐ Tipps
 
 Allgemein,
-  ✔ Emailbestätigung @done (14-05-21 20:58)
   ☐ Unnützes entfernen
   ☐ Formularvalid
   ☐ Mail duplikate
@@ -85,6 +82,9 @@ Usage,
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Impressum @done (14-05-22 00:02) @project(TODO)
+ ✔ register, benachr @done (14-05-21 20:12) @project(TODO)
+ ✔ Emailbestätigung @done (14-05-21 20:58) @project(TODO)
  ✔ menü verschwindet bei bestimmter zoomstufe @done (14-05-21 18:03) @project(TODO)
  ✔ Bilder @done (14-05-21 18:03) @project(TODO)
  ✔ check FHS email + dublikate @done (14-05-21 17:35) @project(TODO)
