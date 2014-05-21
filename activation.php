@@ -9,7 +9,7 @@ if(isset($_GET['key']))
   $stm = $dbh->prepare("SELECT id FROM user WHERE activationKey = ?");
   $stm->execute(array($key));
   $response = $stm->fetch();
-  echo($response);
+  echo($response->id);
   //delete key and userid
   //$sth = $dbh->prepare("DELETE FROM activation WHERE actKey = ?;");
   //$sth->execute(array($key));
