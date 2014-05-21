@@ -11,6 +11,8 @@
     	unset($_SESSION['error']);
     }
     include "intro.php";
+
+    
 ?>
 
 	

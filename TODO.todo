@@ -1,4 +1,3 @@
-///////////////////////////
 TODO:
 Index,
  ☐ Content
@@ -15,11 +14,8 @@ Home,
 Allgemein,
   ☐ Emailbestätigung
 
-  ☐ PWrichtlinien
-
   ☐ Bilder
 
-  ☐ check FHS email + dublikate
 
   ☐ Unnützes entfernen
 
@@ -27,26 +23,7 @@ Allgemein,
 
   ☐ Formularvalid überflüssig bei prepared statements
 
-Done,
-  ✔ Footer @done (14-05-21 15:41)
-  ✔ PW hashen @done (14-05-19 11:55)
-  ✔ Favicon @done (14-05-20 16:57)
-   ✔ upload fix delete + temp @done (14-05-19 14:00)
-  ✔ pic @done (14-05-19 14:00)
-  ✔ User löschen -> Beziehungen löschen @done (14-05-19 11:55)
 
-  ✔ Interner Be Logo im Menü @done (14-05-21 15:30)
-  ✔ User nicht anzeigen wenn Buddy @done (14-05-20 23:46)
- 
-  ✔ offerbearb + pic zurück button @done (14-05-20 22:57)
-   
-  Style,
-   ✔ Login slider @done (14-05-21 15:30)
-   ✔ intro größer @done (14-05-19 00:37)
-   ✔ logged-in styles   @done (14-05-18 21:12)
-
-
-/////////////////////////////
 SNIPPETS:
 
 if(isset($_GET['error']))
@@ -57,16 +34,6 @@ CSS:
   green #CCC412
   blue  #2AA8E2 !
   pink  #FF4961 !
-
-
-
-
-
-
-
-
-
-
 
 
 Usage,
@@ -113,3 +80,20 @@ Usage,
   ☐ Use ⌘ + control + up/down** (**ctrl + shift + up/down on Windows) to move tasks up and down.
 
   ☐ Use ⌘ + r to see a list of projects and quickly jump between them
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ PWrichtlinien @done (14-05-21 17:35) @project(TODO)
+ ✔ check FHS email + dublikate @done (14-05-21 17:35) @project(TODO)
+ ✔ Footer @done (14-05-21 15:41) @project(TODO)
+ ✔ PW hashen @done (14-05-19 11:55) @project(TODO)
+ ✔ Favicon @done (14-05-20 16:57) @project(TODO)
+ ✔ upload fix delete + temp @done (14-05-19 14:00) @project(TODO)
+ ✔ pic @done (14-05-19 14:00) @project(TODO)
+ ✔ User löschen -> Beziehungen löschen @done (14-05-19 11:55) @project(TODO)
+ ✔ Interner Be Logo im Menü @done (14-05-21 15:30) @project(TODO)
+ ✔ User nicht anzeigen wenn Buddy @done (14-05-20 23:46) @project(TODO)
+ ✔ offerbearb + pic zurück button @done (14-05-20 22:57) @project(TODO)
+ ✔ Login slider @done (14-05-21 15:30) @project(TODO)
+ ✔ intro größer @done (14-05-19 00:37) @project(TODO)
+ ✔ logged-in styles   @done (14-05-18 21:12) @project(TODO)

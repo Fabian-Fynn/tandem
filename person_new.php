@@ -30,12 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$hashedPw = hashPasswordSecure($_POST['password']);
 	else
 		$error += 10000;
+
+	$key = md5(microtime().rand());
 	try{
 	$sth = $dbh->prepare(
 		"INSERT INTO user
-		(id, firstname,surname,email,is_female,password,register_date,avatar)
+		(id, firstname,surname,email,is_female,password,register_date,avatar, activationKey)
 		VALUES
-		(NULL,   ?,     ?,      ?,    ?,              ?,?,?)");
+		(NULL,   ?,     ?,      ?,    ?,              ?,?,?,?)");
 	$array = $_POST;
 	
 		$sth->execute(
@@ -46,12 +48,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				$_POST['isfemale'],
 				$hashedPw,
 				$date,
-				$avatar
+				$avatar,
+				$key
 				)
 			); 
 		$id = $dbh->lastInsertId(); 
 		$_SESSION['id'] = $id;
-
+		
+		sendActivationMail($_POST['email'], $_POST['firstname'], $key);
 	} catch(Exception $e)
 	{
 		$error += 100000;

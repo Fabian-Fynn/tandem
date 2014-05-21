@@ -50,7 +50,9 @@
 	}
 ?>
 
-</style>
+<link href="froala/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="froala/css/froala_editor.min.css" rel="stylesheet" type="text/css">
+<script src="froala/js/froala_editor.min.js"></script>
 <div class = "wrap">
 		
 	<section class="profileTop">
@@ -96,4 +98,14 @@
 	
 <?php
     include "footer.php";
-    ?>
+?>
+
+    <script>
+    $(function() {
+        $('#description').editable({
+			inlineMode: false,
+			buttons: ['bold', 'underline', 'fontSize', 'formatBlock', 'align', 'selectAll']
+
+		})
+    });
+</script>

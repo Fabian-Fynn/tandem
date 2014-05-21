@@ -294,5 +294,67 @@ function getIndexError($error)
 
 }
 
+function sendActivationMail($mail, $firstname, $key)
+{
+try
+  {
+ 
+    if($_SERVER['HTTP_HOST'] == "multimediatechnology.at")
+    {
+      $url = "http://".$_SERVER['HTTP_HOST']."/~fhs36101/mmp1";
+    }
+    else
+    {
+       $url = "http://".$_SERVER['HTTP_HOST']."/mmp1";
+    }
+ 
+$message = "
+<html>
+<head>
+ <meta charset='UTF-8'>
+</head>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,200;);
+body {
+font-family: 'Raleway', sans-serif;
+font-weight: 300;
+}
+.container {
+ width: 200px;
+ margin: 0 auto;
+}
+</style>
+<body>
+ 
+<img src='".$url."/img/logo_new.png'>
+<div style='width: 200px;margin: 0 auto'>
+<h1 style='font-family: sans-serif'>Hallo ".$firstname."</h1>
+<p style='font-family: sans-serif; font-size: 12px;'>Um die Anmeldung erfolgreich abzuschlie&szlig;en ist es erforderlich, dass du deine E-Mail-Adresse best&auml;tigst.
+ <br>Klicke dazu bitte auf den folgenden <a href='".$url."/activation.php?key=".$key."'>Link</a></p>
+</div>
+</body>
+</html>";
+ 
+$from   = "Meine Lieblingorte";
+$subject    = "Kontoaktvierung";
+ 
+$header  = "MIME-Version: 1.0\r\n";
+$header .= "Content-type: text/html; charset=iso-8859-1\r\n";
+ 
+$header .= "From: $from\r\n";
+$header .= "Reply-To: s.hintersonnleitner@chello.at\r\n";
+$header .= "X-Mailer: PHP ". phpversion();
+ 
+if(mail($mail,$subject,$message,$header))
+    echo "true";
+else
+  echo "false";
+}
+catch (Exception $e)
+  {
+    die("Problem with sending email " . $e->getMessage() );
+  }
+ 
+}
 
 ?>
