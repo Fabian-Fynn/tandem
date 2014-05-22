@@ -144,11 +144,16 @@
 
 
 	      <div id="impressContent"><h2>Impressum</h2>
-<p>Meine Lieblingsorte ist ein MultiMediaProjekt 1 des Studiengangs MultimediaTechnology der Fachhochschule Salzburg</p><br>
+
+		
+		<p>TANDEM is a second semester project of the course MultimediaTechnology at University of Applied Sciences Salzburg</p><br>
 
 
-<p>Fabian Hoffmann</p>
+<h4 class="">Fabian Hoffmann</h4>
+<p>MultimediaTechnology</p>
+<a href="www.fh-salzburg.ac.at"><p>University of Applied Sciences Salzburg</p></a><br>
 <a href="mailto:fhoffmann.mmt-b2013@fh-salzburg.at"><p>fhoffmann.mmt-b2013@fh-salzburg.at</p></a></div>
+
 	
 	</div></div></div>
 <?php

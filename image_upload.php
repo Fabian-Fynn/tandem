@@ -21,9 +21,6 @@
         
       $filename = basename($_FILES['image']['name']);
       $ext = substr($filename, -4);
-       
-
-    
     
     
     $imgname = "temp_".$id.$ext;
