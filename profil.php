@@ -106,7 +106,7 @@
 						echo ('<div class="profileInfo"><strong>Residence</strong></div>');
 						echo ('<div class="profileInfo">'.$person->city);
 					}
-					if($isbuddy)
+					if($isbuddy || $id == 3)
 					{
 						echo ('<div class="profileInfo"><strong>Contact '.$person->firstname.'</strong>');
 						echo ('<div class="profileInfo"><a href="mailto:'.$person->email.'">'.$person->email.'</a>');
@@ -158,7 +158,7 @@
 					<?php
 						if($person->description != null)
 						{
-							echo ('<div class="profileInfo"><pre>'.$person->description.'</pre></div>');
+							echo ('<div class="profileInfo"><pre><p>'.$person->description.'</p></pre></div>');
 						}
 						else
 						{

@@ -23,9 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 	else
 		$error += 100;
-
-	if(!isset($_POST['email']) || preg_match('[\w-+]+(?:\\.[\\w-+]+)*@fh-salzburg\.ac\.at',$_POST['email']) == 0)
-	//	$error += 1000;
+	if(!isset($_POST['email']) || preg_match('/[\w-.]+@fh-salzburg\.ac\.at$/', $_POST['email']) == 0)
+	{
+	//if(!isset($_POST['email']) || preg_match('/[\w-+]+(?:\\.[\\w-+]+)*(@fh-salzburg\.ac\.at)$/',$_POST['email']) == 0)
+		$error += 1000;
+}
 	//if(isset($_POST['password']) && strlen($_POST['password']) >= 5 && strlen($_POST['password']) <= 10)
 		$hashedPw = hashPasswordSecure($_POST['password']);
 	//else

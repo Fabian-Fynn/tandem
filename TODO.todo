@@ -14,11 +14,10 @@ Allgemein,
   ☐ Unnützes entfernen
   ☐ Formularvalid
   ☐ Mail duplikate
-  ☐ neuer user wird ausgelogged
+  ☐ Copyright
 
 style,
-  ☐ cropper abstand
-    
+    ☐ responsive
 
 
 
@@ -82,6 +81,8 @@ Usage,
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ neuer user wird ausgelogged @done (14-05-22 11:46) @project(TODO)
+ ✔ cropper abstand @done (14-05-22 11:41) @project(TODO)
  ✔ Impressum @done (14-05-22 00:02) @project(TODO)
  ✔ register, benachr @done (14-05-21 20:12) @project(TODO)
  ✔ Emailbestätigung @done (14-05-21 20:58) @project(TODO)

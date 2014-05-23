@@ -53,10 +53,10 @@
 		}
 		
 		
-		$_POST['firstname'] = strip_tags ( $_POST['firstname'], '<b><p>' );
-		$_POST['surname'] = strip_tags ( $_POST['surname'], '<b><p>' );
+		$_POST['firstname'] = strip_tags ( $_POST['firstname'], '' );
+		$_POST['surname'] = strip_tags ( $_POST['surname'], '' );
 		
-		if(isset($_POST['description'])){$_POST['description'] = strip_tags ( $_POST['description'], '<b><p>' );}
+		if(isset($_POST['description'])){$_POST['description'] = strip_tags ( $_POST['description'], '<b><p><br><u><i><style><strong>' );}
 		
 		
 		

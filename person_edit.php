@@ -104,7 +104,7 @@
     $(function() {
         $('#description').editable({
 			inlineMode: false,
-			buttons: ['bold', 'underline', 'fontSize', 'formatBlock', 'align', 'selectAll']
+			buttons: ['bold', 'underline',  'selectAll']
 
 		})
     });
