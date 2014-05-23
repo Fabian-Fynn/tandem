@@ -31,7 +31,8 @@ CSS:
        #CC142D
   green #CCC412
   blue  #2AA8E2 !
-  pink  #FF4961 !
+  pink  #FF4961 !,
+         255, 73, 97
 
 
 Usage,

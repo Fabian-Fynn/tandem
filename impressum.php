@@ -15,7 +15,7 @@
 
 <h3 class="">Fabian Hoffmann</h3>
 <p>MultimediaTechnology</p>
-<a href="www.fh-salzburg.ac.at"><p>University of Applied Sciences Salzburg</p></a><br>
+<a href="http:\\www.fh-salzburg.ac.at"><p>University of Applied Sciences Salzburg</p></a><br>
 <a href="mailto:fhoffmann.mmt-b2013@fh-salzburg.at"><p>fhoffmann.mmt-b2013@fh-salzburg.at</p></a></div>
 
 

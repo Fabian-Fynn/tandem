@@ -26,11 +26,19 @@
 		<h1>Welcome, <?php echo $user ?>!</h1>
 		<br><br>
 		<?php 
-			if(Count($matches) > 1): ?>
-		<p>We found <?php echo(Count($matches)-1); ?> Matches for you.</p>
-		
+			if(sizeof($matches) > 1):
+			if(sizeof($matches) == 2){?>
+		<p>We found 1 Match for you.</p>
+		<?php
+			}
+			else{
+		?>
+		<p>We found <?php echo(sizeof($matches)-1); ?> Matches for you.</p>
+		<?php
+	}
+	?>
 		<br>
-
+		<div class="homeMatches">
 		<?php 
 		
 			foreach ($matchedPeople as $match):
@@ -43,64 +51,44 @@
 		</a>
 		<?php
 		endforeach; 
+		?>
+		</div>
+		<?php
 		endif;
 		?>
+		<div class="welcome">
+			
+			<h2>Welcome to TANEM,</h2>
+			<p>the knowledge sharing plattform for students of the University of Applied Sciences Salzburg</p>
+			<br>
+			<h3>This is a short introduction in how to use TANDEM</h3>
+			<ul>
+			<li>At first you should fill your Profile with information about you.<br>
+			<a href="profile.php"><div class="button"> Edit your profile </div></a>
+			</li>
+			<li>Tell the world what you want to learn and teach.<br></li>
+			<p>You can edit your courses on your profile site.</p>
+			<a href="profile.php"><div class="button"> Edit your Courses </div></a>
+			
+			<li>Now it's time to check out whether you have matches yet.<br></li>
+			<p>To see them just click the Menubutton "Matches".</p>
+			<p>If there are any matches you will see a list of people.</p>
+			<p>Click on their picture or name to visit their profile,</p>
+			<p>here you'll see their course offers and searches</p>
+			<a href="matches.php"><div class="button"> See your matches </div></a>
+			
+
+			<li>You found someone you want to study with?<br></li>
+			<p>Great! Send him/her a Buddyrequest </p>
+			<a href="profile.php"><div class="button"> Edit your Courses </div></a>
+			
+			</ul>
+
+		</div>
 
 
 
-
-		<?php /*
-		<div class="offer" style="width:200px;">
-				<h2 style='margin-bottom:-5px'>suchen was ich biete</h2><div class="profileInfo"><a href="offer_edit.php?request=o">bearbeiten</a></div>
-				<?php
-					if($aOffer != '')
-					{
-						//echo($aOffer);
-						foreach($bSearch as $oCourse){
-							echo ('<div class="profileInfo"><pre>'.$oCourse.'</pre></div>');
-						}
-					}
-					else
-					{
-						echo ('<div class="profileInfo">Leider habe ich noch keine Beschreibung hinzugefügt.</div>');
-					}
-				?>
-			</div>
-
-			<div class="offer"style="width:200px;">
-				<h2 style='margin-bottom:-5px'>bieten was ich suche</h2><div class="profileInfo"><a href="offer_edit.php?request=o">bearbeiten</a></div>
-				<?php
-					if($aSearch != '')
-					{
-						//echo($aOffer);
-						foreach($bOffer as $oCourse){
-							echo ('<div class="profileInfo"><pre>'.$oCourse.'</pre></div>');
-						}
-					}
-					else
-					{
-						echo ('<div class="profileInfo">Leider habe ich noch keine Beschreibung hinzugefügt.</div>');
-					}
-				?>
-			</div>
-
-			<div class="offer"style="width:200px;">
-				<h2 style='margin-bottom:-5px'>Matches</h2><div class="profileInfo"><a href="offer_edit.php?request=o">bearbeiten</a></div>
-				<?php
-					if($bSearch != '' && $bOffer != '')
-					{
-						//echo($aOffer);
-						foreach($matches as $oCourse){
-							echo ('<div class="profileInfo"><pre>'.$oCourse.'</pre></div>');
-						}
-					}
-					else
-					{
-						echo ('<div class="profileInfo">Leider habe ich noch keine Beschreibung hinzugefügt.</div>');
-					}
-				?>
-			</div>
-		*/?>
+		
 	
 	
 	</div>

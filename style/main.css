@@ -324,17 +324,65 @@ a.req {
 	float:right;
 }
 /*home*/
+.homeMatches{
+	width:auto;
+	height: 220px;
+	margin: auto;
+	padding-left: 8px;
 
+}
 .homeMatch{
 	width: 194px;
 	height:194px;
-	margin:2px;
+	margin:12px;
+	position: relative;
+	overflow: hidden;
 
 }
 .homeMatch img{
 	width:100%;
 }
 
+.welcome{
+	height:auto;
+	width:100%;
+	margin-top:50px;
+	margin-bottom: 50px;
+	padding:25px;
+	padding-top: 5px;
+	clear:both;
+	background: #ddd;
+	display: inline-block;
+	box-sizing:border-box;
+}
+.welcome h2{
+	font-size: 1.5vw;
+	margin-top: 15px;
+	color:#2AA8E2;
+}
+.welcome h3{
+	font-size: 1.2vw;
+
+}
+.welcome ul *{
+	margin-left: 25px;
+}
+.welcome li{
+	margin-top: 20px;
+	margin-left: 23px;
+	font-size: 1vw;
+}
+.welcome ul p{
+	margin-left: 25px;
+}
+.welcome ul a{
+	height: auto;
+	margin:4px;	
+}
+.welcome ul a .button{
+	height:10px;
+	margin-top: 0px;	
+}
 /*imagecrop*/
 
 #cropbox{
@@ -369,6 +417,9 @@ a.req {
 p.error{
 	color:#f00;
 }
+
+
+
 /*footer*/
 
 .footer{

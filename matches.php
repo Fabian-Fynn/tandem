@@ -25,8 +25,18 @@
 		<h1>Your Matches!</h1>
 		<br><br>
 		<?php 
-			if(Count($matches) > 1): ?>
-		<p>We found <?php echo(Count($matches)-1); ?> Matches for you.</p>
+			if(sizeof($matches) > 1):
+			if(sizeof($matches) == 2){?>
+		<p>We found 1 Match for you.</p>
+		<?php
+			}
+			else{
+		?>
+		<p>We found <?php echo(sizeof($matches)-1); ?> Matches for you.</p>
+		<?php
+	}
+	?>
+			
 		<br>
 		<div class="matchbox">
 		<?php 
