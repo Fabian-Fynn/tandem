@@ -7,7 +7,7 @@
 	 	<div class="outer"><div class="inner">
 	 		<a href="home.php" class="subNavBtn">TANDEM</a> 
 	 		<div id="menuwrapper">
-				<a href="profil.php" class="subNavBtn">Profile</a>
+				<a href="profile.php" class="subNavBtn">Profile</a>
 				<a href="matches.php" class="subNavBtn">Matches</a>
 				<a href="buddies.php" class="subNavBtn">Buddies</a>
 				<a href="#register" class="subNavBtn">Placeholder</a>

@@ -22,9 +22,10 @@ body {
 	height:100%;
     width:100%;
     top:0;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Raleway', sans-serif;
 	font-size: 100%;
     line-height: 1.5em;
+    font-weight: 500;
     color: #666;
     -webkit-font-smoothing: antialiased;
 }
@@ -58,7 +59,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     color: #666;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.3em;
 	
 }
@@ -355,14 +356,24 @@ a.req {
 	display: inline-block;
 	box-sizing:border-box;
 }
+.ann{
+	width: 100%;
+	height:auto;
+	margin:auto;
+	position: relative;
+
+
+}
 .welcome h2{
 	font-size: 1.5vw;
 	margin-top: 15px;
 	color:#2AA8E2;
+	font-weight: 700;
 }
 .welcome h3{
-	font-size: 1.2vw;
-
+	font-size: 1.1vw;
+	font-weight: 500;
+	margin-bottom:26px;
 }
 .welcome ul *{
 	margin-left: 25px;
@@ -371,17 +382,33 @@ a.req {
 	margin-top: 20px;
 	margin-left: 23px;
 	font-size: 1vw;
+	font-weight: 700;
 }
 .welcome ul p{
 	margin-left: 25px;
 }
-.welcome ul a{
-	height: auto;
-	margin:4px;	
+
+.welcome ul button{
+	height:10px;
+	margin-left: 0;
+	margin-top: 5px;	
+	height:auto;
+	width:auto;
+	padding:8px;
+	background: rgba(42, 168, 226, 0.2);
+	position: relative;
+	display:inline-block;
+	color:#333;
+	font-weight: 700;
+	border:1px solid rgb(42, 168, 226);
+	cursor: pointer; 
+}
+.welcome ul button:hover{
+	background: rgba(42, 168, 226, 0.8);
+	color:#fff;
 }
 .welcome ul a .button{
-	height:10px;
-	margin-top: 0px;	
+	margin-left:0;
 }
 /*imagecrop*/
 
