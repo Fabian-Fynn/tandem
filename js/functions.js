@@ -81,7 +81,7 @@ $(document).ready(function() {
                         marginTop: "0px"
                     }, 250);
                     setTimeout(function() {
-                        $("#add_err").html("Wrong Username or Password");
+                        $("#add_err").html("Wrong Email or Password");
                     }, 80);
 
                 }

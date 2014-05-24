@@ -18,6 +18,9 @@
 	margin:0;
 }
 
+#loginButton{
+	cursor:pointer;
+}
 
 /* JavaScript free version */
 .subMenu{

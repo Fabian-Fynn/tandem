@@ -54,29 +54,46 @@
 	else
 		$sth = $dbh->query("Select c.id AS cId FROM course c, search o WHERE $id = o.student AND o.course = c.id");
  	$off = $sth->fetchAll();
-	$courses= $dbh->query("Select c.name AS course, c.id AS cId, cat.name AS category FROM category cat, course c WHERE c.category = cat.id ORDER BY category, course");
-	
+	$sth = $dbh->query("Select c.name AS course, c.id AS cId, cat.name AS category FROM category cat, course c WHERE c.category = cat.id ORDER BY category, course");
+	$courses = $sth->fetchAll();
 
 ?>
 <div class = "wrap">
 		
 	<section class="profileTop">
-		<div class="userName"><h1>Edit Offers</h1></div>
-		
-				
+		<div class="userName">
+		<?php if($_SESSION['request'] == 'o'): ?>
+				<h1>Edit Offer</h1>
+		<?php else: ?>
+				<h1>Edit Search</h1>
+		<?php endif; ?>
+			
+
+			</div>	
 			 <form id="courseList" action="offer_edit.php" method="post" >
 				
-			
+			<div class="column">
 			<?php 
 				$currentCat = '';
+				$counter = 0;
+				$break = (sizeof($courses)/4);
 				
 				foreach($courses as $c ){
+					$counter++;
+
+					if($counter > $break)
+					{
+						echo "</div><div class='column'>";
+						$counter = 0;
+					}
+					
 					if($c->category != $currentCat)
 					{	
 
 						echo ('<div class="profileInfo"><strong>'.$c->category.'</strong></div>');
 						$currentCat = $c->category;
 					}
+					
 					$isset = '';
 					foreach($off as $oCourse)
 					{
@@ -89,6 +106,7 @@
 					echo ('<div class="profileInfo"><input type="checkbox" name="offer_'.$c->cId.'" value="'.$c->cId.'"'.$isset.'><pre> '.$c->course.'</pre>  </div>');
 				}
 			?>
+				 </div>
 				 <input style='float:right' type="submit" value="Send">
 		</form>
 
@@ -102,3 +120,19 @@
 <?php
     include "footer.php";
 ?>
+
+<script>
+/*
+(function($) {
+    
+  var allPanels = $('.accordion > dd').hide();
+    
+  $('.accordion > dt > a').click(function() {
+    allPanels.slideUp();
+    $(this).parent().next().slideDown();
+    return false;
+  });
+
+})(jQuery);
+*/
+</script>

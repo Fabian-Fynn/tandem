@@ -210,6 +210,12 @@ img {
 .offer{
 	border-right:1px solid #222;
 }
+
+.column{
+	width:25%;
+	float:left;
+}
+
 .search{
 	padding-left:20px;
 	float:right;
@@ -415,6 +421,21 @@ button:hover{
 }
 .welcome ul a .button{
 	margin-left:0;
+}
+#slogin input[type = 'submit']{
+	background: #fff;
+	margin:0;
+	margin-left: 10px;
+	padding:5px;
+	border-color: #999;
+}
+input[type = 'submit']:hover, #slogin input[type = 'submit']:hover{
+	background: rgba(42, 168, 226, 1);
+	border-color: #fff;
+	color:#fff;
+}
+#register input[type = 'submit']{
+	color:#fff;
 }
 /*imagecrop*/
 
