@@ -36,10 +36,6 @@
 		} catch (Exception $e) {
         	die("Problem connecting to database $DB_NAME as $DB_USER: " . $e->getMessage() );
 		  }
-		//if( $_POST['isfemale'] != 0 || $_POST['isfemale'] != 1 || $_POST['isfemale'] === null ) {
-		//	throw (new Exception( "Bitte geben Sie das Geschlecht an." ));
-				
-		//}
 		if( $_POST['firstname'] == ''){ $error .= "<li>Bitte geben Sie den Vornamen an.</li>";}
 		if( $_POST['surname'] == ''){ $error .= "<li>Bitte geben Sie den Nachnamen an.</li>";}
 		
@@ -322,13 +318,13 @@ font-family: 'Raleway', sans-serif;
 font-weight: 300;
 }
 .container {
- width: 600px;
+ width: 700px;
  margin: 0 auto;
 }
 </style>
 <body>
  
-<img src='".$url."/img/logo_new.png'>
+<img src='".$url."/img/nav-brand.png'>
 <div style='width: 200px;margin: 0 auto'>
 <h1 style='font-family: sans-serif'>Hi ".$firstname."</h1>
 <p style='font-family: sans-serif; font-size: 12px;'>Your activation is almost complete. Please click the link below to verify your email address.
