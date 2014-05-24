@@ -16,7 +16,7 @@
 	
 	
 
-	$sth = $dbh->prepare("SELECT * FROM user WHERE email = ?");
+	$sth = $dbh->prepare("SELECT * FROM user WHERE email = ? AND active = 1");
 			$sth->execute(
 			  array(
 			  	$uMail
