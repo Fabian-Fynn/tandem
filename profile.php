@@ -158,7 +158,7 @@
 						<?php
 							if($person->description != null)
 							{
-								echo ('<div class="profileInfo"><pre><p>'.$person->description.'</p></pre></div>');
+								echo ('<div class="profileInfo">'.$person->description.'</div>');
 							}
 							else
 							{
