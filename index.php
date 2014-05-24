@@ -24,7 +24,7 @@ include "intro.php";
 					<h1>What is TANDEM?</h1>
 
 					
-					<h3>TANDEM connects students of University of Applied Sciences Salzburg</h3>
+					<h2>TANDEM connects students at University of Applied Sciences Salzburg</h2>
 					<div class="img triad">
 						<div class="left"><img src="img/icons/people.png" alt="Study">Meet new people</div>
 						
@@ -32,6 +32,9 @@ include "intro.php";
 						
 						<div class="right"><img src="img/icons/share.png" alt="Study">share your's</div>
 					</div>
+
+					<h2>With TANDEM can learn a variety of things.</h2> 
+					<p>From science through economics and music skills to handcrafts and languages.</p>
 				</div>
 
 			</div>
@@ -40,6 +43,9 @@ include "intro.php";
 			<div class="outer">
 				<div class="inner">
 					<h1>Share your expertise</h1>
+					<h2>No matter what you're good in. Share your knowledge!</h2>
+					<p>Save your for private lessons, pay your tutor with your own expertise.</p>
+					<img class="img left" src="img/icons/share2.png" alt="Study">
 					
 				</div>
 			</div>
@@ -49,8 +55,10 @@ include "intro.php";
 		<div id="s3"class="section">
 			<div class="outer">
 				<div class="inner">
-					<h1>Section 3</h1>
-					<img class="img right" src="img/icons/study1.png" alt="Study">
+					<h1>Gain knowledge and skills</h1>
+					<h2>We all despair at some point.</h2>
+					<p>Admit it, you know what i mean.</p>
+					<img class="img right" src="img/icons/confusion.png" alt="Study">
 					<br><br><br><br><br><br><br>
 				</div>
 			</div>

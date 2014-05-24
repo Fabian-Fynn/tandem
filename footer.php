@@ -10,7 +10,7 @@
   <?php 
     else:
       ?>
-    <a href="mailto:fhoffmann.mmt-b2013@fh-salzburg.at">Fabian Hoffmann</a><br>
+    <a href="mailto:fhoffmann.mmt-b2013@fh-salzburg.ac.at">Fabian Hoffmann</a><br>
 <?php
     endif;
 if(isset($_SESSION['id']) && $_SESSION['id'] == "3")
