@@ -76,134 +76,135 @@
 	endif;
 ?>
 <div class="wrap">
-		
-	<section class="profileTop">
-		<div class="userName"><h1><?php echo ($person->firstname." ".$person->surname) ?></h1></div>
-		<article class="left"><div class="profilePicContainer">
-				<div class="profilePic"><img src="img/profilePics/<?php echo $avatar ?>"></div>
+	<div class="matchbox">	
+		<section class="profileTop">
+			<div class="userName"><h1><?php echo ($person->firstname." ".$person->surname) ?></h1></div>
+			<article class="left"><div class="profilePicContainer">
+					<div class="profilePic"><img src="img/profilePics/<?php echo $avatar ?>"></div>
 
-				<?php if($ownProfile): ?>
-					<div class="profileInfo changePic"><a href="image_upload.php">Change Profilepicture</a></div> 
-					<div class="profileInfo"><a href="person_edit.php">Edit Profile</a></div>
-				<?php endif; ?>
-				
-				<?php
-					if($person->studienfach != null)
-					{
-						echo ('<div class="profileInfo"><strong>Course of Studies</strong></div>');
-						echo ('<div class="profileInfo">'.$person->studienfach);
-					}
-					if($person->studienjahr != null)
-					{
-						echo (' '.$person->studienjahr.'</div>');
-					}
-					else
-					{
-						echo ('</div>');
-					}
-					if($person->city != null)
-					{
-						echo ('<div class="profileInfo"><strong>Residence</strong></div>');
-						echo ('<div class="profileInfo">'.$person->city);
-					}
-					if($isbuddy || $id == 3)
-					{
-						echo ('<div class="profileInfo"><strong>Contact '.$person->firstname.'</strong>');
-						echo ('<div class="profileInfo"><a href="mailto:'.$person->email.'">'.$person->email.'</a>');
-					}
-					echo ('<div class="profileInfo"><strong>Member since</strong></div>');
-					echo ('<div class="profileInfo">'.$date->format('d. m. Y'));
-				?>
-			
-			
-			
-			</div>
-		
-		</article>
-		<article class="right">
-			<?php 
-				if(!$ownProfile):
-				
-			?>
-
-			<form id="RequestForm" action="request.php" method="post">
-				<div id="sendRequest">
-				<input type="hidden" name="partner" id="partner" value="<?php echo($id); ?>">
-				<input type="hidden" name="reqAct" id="reqAct" value="<?php echo($reqAct); ?>">
-		        <input type="submit" value="<?php echo($buddyButton); ?>" class="submit" id="submitRequest" >
-				</div>
-					<div id="add_err"></div>
-			</form>
-			<?php if($isOthersRequest): ?>
-				<a class="req" id="reqAbort" href="request.php?partner=<?php echo($id) ?>&reqAct=<?php echo($reqAct); ?>" ><button onclick='abortRequest(<?php echo($id); ?>)'> Abort </button></a>
-			<?php endif; ?>
-			<script>
-				window.onload = function(){
-					$("#RequestForm").submit(function(e){
-		    			e.preventDefault();
-					});
-				};
-			</script>
-			<?php 
-				if($isbuddy):
-			?>
-
-				<h2> Your are Conneted!</h2>
-			<?php
-				endif;
-				endif;
-			?>			
-			<div class="description">
-				<h2>About me</h2>
+					<?php if($ownProfile): ?>
+						<div class="profileInfo changePic"><a href="image_upload.php">Change Profilepicture</a></div> 
+						<div class="profileInfo"><a href="person_edit.php">Edit Profile</a></div>
+					<?php endif; ?>
+					
 					<?php
-						if($person->description != null)
+						if($person->studienfach != null)
 						{
-							echo ('<div class="profileInfo"><pre><p>'.$person->description.'</p></pre></div>');
+							echo ('<div class="profileInfo"><strong>Course of Studies</strong></div>');
+							echo ('<div class="profileInfo">'.$person->studienfach);
+						}
+						if($person->studienjahr != null)
+						{
+							echo (' '.$person->studienjahr.'</div>');
 						}
 						else
 						{
-							echo ('<div class="profileInfo">I\'m too cool to share this Info</div>');
+							echo ('</div>');
 						}
+						if($person->city != null)
+						{
+							echo ('<div class="profileInfo"><strong>Residence</strong></div>');
+							echo ('<div class="profileInfo">'.$person->city);
+						}
+						if($isbuddy || $id == 3)
+						{
+							echo ('<div class="profileInfo"><strong>Contact '.$person->firstname.'</strong>');
+							echo ('<div class="profileInfo"><a href="mailto:'.$person->email.'">'.$person->email.'</a>');
+						}
+						echo ('<div class="profileInfo"><strong>Member since</strong></div>');
+						echo ('<div class="profileInfo">'.$date->format('d. m. Y'));
+					?>
+				
+				
+				
+				</div>
+			
+			</article>
+			<article class="right">
+				<?php 
+					if(!$ownProfile):
+					
+				?>
+
+				<form id="RequestForm" action="request.php" method="post">
+					<div id="sendRequest">
+					<input type="hidden" name="partner" id="partner" value="<?php echo($id); ?>">
+					<input type="hidden" name="reqAct" id="reqAct" value="<?php echo($reqAct); ?>">
+			        <input type="submit" value="<?php echo($buddyButton); ?>" class="submit" id="submitRequest" >
+					</div>
+						<div id="add_err"></div>
+				</form>
+				<?php if($isOthersRequest): ?>
+					<a class="req" id="reqAbort" href="request.php?partner=<?php echo($id) ?>&reqAct=<?php echo($reqAct); ?>" ><button onclick='abortRequest(<?php echo($id); ?>)'> Abort </button></a>
+				<?php endif; ?>
+				<script>
+					window.onload = function(){
+						$("#RequestForm").submit(function(e){
+			    			e.preventDefault();
+						});
+					};
+				</script>
+				<?php 
+					if($isbuddy):
+				?>
+
+					<h2> Your are Conneted!</h2>
+				<?php
+					endif;
+					endif;
+				?>			
+				<div class="description">
+					<h2>About me</h2>
+						<?php
+							if($person->description != null)
+							{
+								echo ('<div class="profileInfo"><pre><p>'.$person->description.'</p></pre></div>');
+							}
+							else
+							{
+								echo ('<div class="profileInfo">I\'m too cool to share this Info</div>');
+							}
+						?>
+				</div>
+				<div class="offer">
+					<h2 style='margin-bottom:-5px'>I offer</h2><?php if($ownProfile): ?><div class="profileInfo"><a href="offer_edit.php?request=o">edit</a></div><?php endif; ?>
+					<?php
+							$currentCat = '';
+							foreach($offer as $oCourse){
+								if($oCourse->category != $currentCat)
+								{
+									echo ('<div class="profileInfo"><strong>'.$oCourse->category.'</strong></div>');
+									$currentCat = $oCourse->category;
+								}
+								echo ('<div class="profileInfo"><pre>'.$oCourse->course.'</pre></div>');
+							}
+					?>
+				</div>
+				<div class="search">
+					<h2 style='margin-bottom:-5px'>I look for</h2><?php if($ownProfile): ?><div class="profileInfo"><a href="offer_edit.php?request=s">edit</a></div><?php endif; ?>
+					<?php
+							$currentCat = '';
+							foreach($search as $sCourse){
+								if($sCourse->category != $currentCat)
+								{
+									echo ('<div class="profileInfo"><strong>'.$sCourse->category.'</strong></div>');
+									$currentCat = $sCourse->category;
+								}
+								echo ('<div class="profileInfo"><pre>'.$sCourse->course.'</pre></div>');
+							}
 					?>
 			</div>
-			<div class="offer">
-				<h2 style='margin-bottom:-5px'>I offer</h2><?php if($ownProfile): ?><div class="profileInfo"><a href="offer_edit.php?request=o">edit</a></div><?php endif; ?>
-				<?php
-						$currentCat = '';
-						foreach($offer as $oCourse){
-							if($oCourse->category != $currentCat)
-							{
-								echo ('<div class="profileInfo"><strong>'.$oCourse->category.'</strong></div>');
-								$currentCat = $oCourse->category;
-							}
-							echo ('<div class="profileInfo"><pre>'.$oCourse->course.'</pre></div>');
-						}
-				?>
-			</div>
-			<div class="search">
-				<h2 style='margin-bottom:-5px'>I look for</h2><?php if($ownProfile): ?><div class="profileInfo"><a href="offer_edit.php?request=s">edit</a></div><?php endif; ?>
-				<?php
-						$currentCat = '';
-						foreach($search as $sCourse){
-							if($sCourse->category != $currentCat)
-							{
-								echo ('<div class="profileInfo"><strong>'.$sCourse->category.'</strong></div>');
-								$currentCat = $sCourse->category;
-							}
-							echo ('<div class="profileInfo"><pre>'.$sCourse->course.'</pre></div>');
-						}
-				?>
-		</div>
-		</article>
-	</section>
-	<section class="profileBottom">
-		<article class="left">
-		
-		</article>
-		<article class="right">
+			</article>
+		</section>
+		<section class="profileBottom">
+			<article class="left">
+			
+			</article>
+			<article class="right">
 
-		</article>
-	</section>
+			</article>
+		</section>
+	</div>
 </div>
 	
 <?php
