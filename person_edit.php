@@ -28,7 +28,9 @@
 				  
 					header("Location: profile.php");
 			   }
-			   else{die("damn");}
+			   else{
+			   	header("Location: person_edit.php");
+			   }
 		    } catch (Exception $e) {
 				die("Problem with updating Data!" . $e->getMessage() );
 			}
@@ -68,8 +70,8 @@
 					
 				</p>
 			   
-				<p  ><label for="firstname">Firstname:</label> <input type="text" name="firstname" value="<?php echo $person->firstname; ?>"></p>
-				<p  ><label for="surname">Lastname:</label> <input type="text" name="surname" value="<?php echo $person->surname; ?>"></p>
+				<p  ><label for="firstname">Firstname:</label> <input type="text" name="firstname" value="<?php echo ($person->firstname); ?>" required></p>
+				<p  ><label for="surname">Lastname:</label> <input type="text" name="surname" value="<?php echo $person->surname; ?>" required></p>
 				 <p  ><label for="studienfach">Course of Studies:</label> <input type="text" name="studienfach" value="<?php echo $person->studienfach; ?>"></p>
 				 <p><label for="studienjahr" >Year:</label> 
 					<select name="studienjahr">
