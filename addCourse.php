@@ -116,7 +116,7 @@
 					<input type="hidden" name="edit" value="true">
 						<?php
 							foreach ($courses as $course) {
-								echo($course->course."<input type='radio' style='float:left; margin-top:4px; margin-right:10px;' name='course' value='".$course->course."'><br>");
+								echo($course->course."<input type='radio' style='float:left; margin-top:4px; margin-right:10px;' name='course' value='".$course->course."' required><br>");
 								
 							}
 						?>
