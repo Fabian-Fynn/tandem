@@ -42,11 +42,11 @@
 		
 		$_POST['firstname'] = strip_tags ( $_POST['firstname'], '' );
 		$_POST['surname'] = strip_tags ( $_POST['surname'], '' );
-		if(isset($_POST['city'])
+		if(isset($_POST['city']))
 		{
 			$_POST['city'] = strip_tags ( $_POST['city'], '' );
 		}
-		if(isset($_POST['studienfach'])
+		if(isset($_POST['studienfach']))
 		{
 			$_POST['studienfach'] = strip_tags ( $_POST['studienfach'], '' );
 		}
@@ -57,17 +57,18 @@
 			return false;
 		}
 		if(isset($_POST['description']))
-			{
+		{
 				$_POST['description'] = strip_tags ( $_POST['description'], '<b><p><br><u><i><style><strong>' );
-			}
+		}
 		
 		
-		if($error == ''){
+		if($error == '')
+		{
 			return true;
 		}
 			
-		return false;
-		}
+	}
+	
 
 function checkMail($mail)
 {
