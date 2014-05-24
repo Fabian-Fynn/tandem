@@ -270,7 +270,7 @@ a#more {
 }
 #regForm{
 	float:left;
-	width:auto;
+	width:50%;
 }
 #regForm input[type="text"], #regForm input[type="email"], #regForm input[type="password"]{
 	width:240px;
@@ -282,10 +282,18 @@ a#more {
 	margin-left:5px;
 }
 #altLogin{
-	float:right;
+	float:left;
 	width:35%;
 }
-
+#altLogin input{
+	float:left;
+	margin-bottom:10px;
+}
+#register #submitLogin{
+	float:left;
+	margin-left: 10px;
+	margin-top: -20px;
+}
 .img{
 	
 }
