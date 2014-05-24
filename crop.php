@@ -24,9 +24,9 @@
 
 		  $stm = $dbh->query("SELECT avatar FROM user WHERE id=$id");
 		  $avatar = $stm->fetch();
-		    //if($avatar->avatar != null)
-		    	 //echo("<script>alert('".$avatar->avatar."');</script>");
-		    unlink("img/profilePics/".$avatar->avatar);
+
+		    if($avatar->avatar != "male_avatar.png" && $avatar->avatar != "female_avatar.png")
+		    	unlink("img/profilePics/".$avatar->avatar);
 
 		    
 
