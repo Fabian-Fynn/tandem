@@ -124,13 +124,11 @@ include "intro.php";
 							<div id="impressContent"><h2>Legal Notice</h2>
 
 								
-								<p>TANDEM is a second semester project of the course MultimediaTechnology at University of Applied Sciences Salzburg</p><br>
-
-
-								<h4 class="">Fabian Hoffmann</h4>
-								<p>MultimediaTechnology</p>
-								<a href="www.fh-salzburg.ac.at"><p>University of Applied Sciences Salzburg</p></a><br>
-								<a href="mailto:fhoffmann.mmt-b2013@fh-salzburg.at"><p>fhoffmann.mmt-b2013@fh-salzburg.at</p></a></div>
+								<?php
+									include "legalText.php";
+								?>
+								
+							</div>
 
 								
 							</div></div></div>

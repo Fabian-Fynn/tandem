@@ -2,25 +2,23 @@ TODO:
 Index,
  ☐ Content
  
-
 User,
  ☐ Stadt, Studiengang -> DB mit wenig einträgen, wenn nicht vorhanden -> andere
-
+ ☐ offer accordion
 
 Allgemein,
   ☐ Unnützes entfernen
   ☐ Copyright
 
 style,
-    ☐ responsive
-
-
+ ☐ responsive
+ ☐ intro
 
 
 SNIPPETS:
-
-if(isset($_GET['error']))
+ if(isset($_GET['error']))
       $errors = getIndexError();
+
 CSS:
   red  #FF4961
        #CC142D
@@ -29,7 +27,6 @@ CSS:
         42, 168, 226
   pink  #FF4961 !,
          255, 73, 97
-
 
 Usage,
   NOTE: In Windows or Linux use ctrl instead of ⌘
