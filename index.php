@@ -156,21 +156,14 @@ include "intro.php";
 							include "footer.php";
 							?>
 							<script>
-							$(window).scroll(function() {
-
-								if (!(document.body.scrollHeight - $(this).scrollTop() <= $(this).height() + 80)) {
-									$(".register").removeClass("highlighted");
+							$(window).scroll(function() {								
 									$(".s1").removeClass("highlighted");
 									checkvisability($("#s1"));
 									checkvisability($("#s2"));
 									checkvisability($("#s3"));
+									checkvisability($("#register"));
 
-								} else {
-									$(".s1").removeClass("highlighted");
-									$(".s2").removeClass("highlighted");
-									$(".s3").removeClass("highlighted");
-									$(".register").addClass("highlighted");
-								}
+								
 							});
 				$(function() {
 					

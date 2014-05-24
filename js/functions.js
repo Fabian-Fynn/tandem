@@ -144,9 +144,7 @@ function checkvisability(element) {
         removeAllHighlights($(highlighter));
         $(highlighter).addClass("highlighted");
     }
-    //else
 
-    //$(highlighter).removeClass("highlighted");	
 }
 
 function removeAllHighlights(element) {
