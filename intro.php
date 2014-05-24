@@ -94,15 +94,17 @@
 	} 
 	endif;
 	?>
-		<h1>TANDEM</h1>
 		<img src="img/icons/cap.png" alt="TANDEM">
+		<h1>TANDEM</h1>
+		
 		
 		<div id="catch">
 		<h2>Students share Knowledge</h2>
-		</div>
-			<div class="more"><a href="#s1" id="more"><div class="more1">more<img src="img/icons/down.png" alt="down"></div></a></div>
-		</div>
 		
+			
+		</div>
+		<div class="arrow"><a href="#s1" id="more"><div class="more"> <img src="img/icons/down.png" alt="down"></div></a></div>
+		</div>
 		
 	</div>
  <div id="around"><div class="intro" ><img src="img/intro/intro.jpg">
