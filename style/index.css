@@ -273,7 +273,7 @@ a#more {
 	width:auto;
 }
 #regForm input[type="text"], #regForm input[type="email"], #regForm input[type="password"]{
-	width:250px;
+	width:240px;
 }
 
 #regForm input[type="radio"]
