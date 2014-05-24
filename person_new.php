@@ -53,8 +53,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			); 
 		$id = $dbh->lastInsertId(); 
 		$_SESSION['id'] = $id;
-		
-		sendActivationMail($_POST['email'], $_POST['firstname'], $key);
+		if($error == 0)
+		{
+			sendActivationMail($_POST['email'], $_POST['firstname'], $key);
+		}
 	} catch(Exception $e)
 	{
 		$error += 100000;

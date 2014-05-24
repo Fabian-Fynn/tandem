@@ -42,11 +42,24 @@
 		
 		$_POST['firstname'] = strip_tags ( $_POST['firstname'], '' );
 		$_POST['surname'] = strip_tags ( $_POST['surname'], '' );
-		$_POST['city'] = strip_tags ( $_POST['city'], '' );
-		$_POST['studienfach'] = strip_tags ( $_POST['studienfach'], '' );
-		if(preg_match('/[0-9]*/', $_POST['studienjahr']))
+		if(isset($_POST['city'])
+		{
+			$_POST['city'] = strip_tags ( $_POST['city'], '' );
+		}
+		if(isset($_POST['studienfach'])
+		{
+			$_POST['studienfach'] = strip_tags ( $_POST['studienfach'], '' );
+		}
 		
-		if(isset($_POST['description'])){$_POST['description'] = strip_tags ( $_POST['description'], '<b><p><br><u><i><style><strong>' );}
+		
+		if(isset($_POST['studienjahr']) && preg_match('/[0-9]*/', $_POST['studienjahr']) == 0)
+		{
+			return false;
+		}
+		if(isset($_POST['description']))
+			{
+				$_POST['description'] = strip_tags ( $_POST['description'], '<b><p><br><u><i><style><strong>' );
+			}
 		
 		
 		if($error == ''){
