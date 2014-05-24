@@ -236,13 +236,9 @@ a#more {
 }
 
 
-#s4 {
-	background: #2e353f;
-	margin-bottom:0;
-	color: white;
-	//-webkit-box-shadow: inset 0px 2px 5px 0px #222;
-	//-moz-box-shadow:    inset 0px 2px 5px 0px #222;
-	//box-shadow:         inset 0px 2px 5px 0px #222;
+
+#register *{
+	color:#fff;
 }
 #impressum {
 	background: #fff;
@@ -336,9 +332,9 @@ img.img{
 	width:33%;
 
 }
-.img.left{
+.img.center{
 	width:50%;
-	
+	margin-bottom: 30px;
 }
 .img img{
 	width:100%;

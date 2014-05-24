@@ -45,7 +45,7 @@ include "intro.php";
 					<h1>Share your expertise</h1>
 					<h2>No matter what you're good in. Share your knowledge!</h2>
 					<p>Save your for private lessons, pay your tutor with your own expertise.</p>
-					<img class="img left" src="img/icons/share2.png" alt="Study">
+					<img class="img center" src="img/icons/share2.png" alt="Study">
 					
 				</div>
 			</div>
@@ -58,8 +58,12 @@ include "intro.php";
 					<h1>Gain knowledge and skills</h1>
 					<h2>We all despair at some point.</h2>
 					<p>Admit it, you know what i mean.</p>
-					<img class="img right" src="img/icons/confusion.png" alt="Study">
-					<br><br><br><br><br><br><br>
+					<img class="img center" src="img/icons/confusion.png" alt="Study">
+					<br>
+					<h2>At that point it's good to have a tutor.</h2>
+					<img class="img center" src="img/icons/tutor.png" alt="Study">
+					<br>
+					
 				</div>
 			</div>
 
@@ -70,6 +74,14 @@ include "intro.php";
 		<div class="section s4" id="register">
 			<div class="outer">
 				<div class="inner">	
+					<h2>So join now, share your knowledge and learn new stuff.</h2>
+					<div class="img triad">
+						<div class="left"><img src="img/icons/science.png" alt="Study"></div>
+						
+						<div class="center"><img src="img/icons/sports.png" alt="Study"></div>
+						
+						<div class="right"><img src="img/icons/music.png" alt="Study"></div>
+					</div>
 					<div id="regForm">
 						<h1>Register</h1>
 						
