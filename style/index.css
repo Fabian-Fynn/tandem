@@ -278,11 +278,12 @@ a#more {
 	width:35%;
 }
 #altLogin input{
-	float:left;
+	
 	margin-top: 7px;
 }
+
 #altLogin #submitLogin{
-	float:left;
+	float:right;
 	margin-left: 10px;
 	margin-top: -13px;
 }
