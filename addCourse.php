@@ -8,25 +8,31 @@
 	$error = "";
 
 	$categories = $dbh->query("Select * FROM category");
-	$courses= $dbh->query("Select c.name AS course, c.id AS cid, cat.name AS category FROM category cat, course c WHERE c.category = cat.id AND c.active = 1 ORDER BY course");
+	$courses= $dbh->query("Select c.name AS course, c.id AS cid, cat.name AS category, cat.id AS catid FROM category cat, course c WHERE c.category = cat.id AND c.active = 1 ORDER BY course");
 	$InactiveCourses= $dbh->query("Select c.name AS course, c.id AS cid, cat.name AS category FROM category cat, course c WHERE c.category = cat.id AND c.active = 0 ORDER BY course");
 	if ($_SERVER['REQUEST_METHOD'] == 'POST' &&!isset($_POST['editNow']) &&!isset($_POST['edit']) &&!isset($_POST['accept']) ) {
-		$_POST['editNow'] = "true";
+		try{
+			$_POST['editNow'] = "true";
 
-		$sth = $dbh->prepare(
-			  "INSERT INTO course
-				(id, name, category, active)
-				  VALUES
-				(NULL,  ?,?, ?)");
+			$sth = $dbh->prepare(
+				  "INSERT INTO course
+					(id, name, category, active)
+					  VALUES
+					(NULL,  ?,?, ?)");
 
-		$sth->execute(
-			array(
-				$_POST['name'],
-				$_POST['category'],
-				1
-			)
-		); 
-
+			$sth->execute(
+				array(
+					$_POST['name'],
+					$_POST['category'],
+					1
+				)
+			); 
+		}	 catch(Exception $e)
+		{
+			$error = "unable_to_add";
+			header("Location: addCourse.php?error=".$error);
+		}
+		header("Location: addCourse.php");
 	}
 	if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['editNow']))
 	{	
@@ -46,31 +52,33 @@
 
 		}	 catch(Exception $e)
 		{
-			$error = "Choose category";
+			$error = "unable_to_edit";
+			header("Location: addCourse.php?error=".$error);
 		}
-					header("Location: addCourse.php?error=".$error);
+		header("Location: addCourse.php");
 			   
 	}
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete']))
 	{
 		try{
-		$array = $_POST;
-		$sth = $dbh->prepare("DELETE FROM course WHERE id = ?;");
-				
-			   
-			  
-				 	$sth->execute(
-					  array(
-						$_POST['courseid']
-						)
-					); 
+			$array = $_POST;
+			$sth = $dbh->prepare("DELETE FROM course WHERE id = ?;");
+					
+				   
+				  
+					 	$sth->execute(
+						  array(
+							$_POST['courseid']
+							)
+						); 
 
 		}	 catch(Exception $e)
 		{
-			$error = "Choose category";
+			$error = "unable_to_delete";
+			header("Location: addCourse.php?error=".$error);
 		}
-					header("Location: addCourse.php?error=".$error);
+		header("Location: addCourse.php");
 
 	}
 	if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['accept']))
@@ -90,9 +98,10 @@
 
 		}	 catch(Exception $e)
 		{
-			$error = "Choose category";
+			$error = "unable_to_accept";
+			header("Location: addCourse.php?error=".$error);
 		}
-					header("Location: addCourse.php?error=".$error);
+		header("Location: addCourse.php");
 	}
 
 ?>
@@ -118,10 +127,13 @@
 					?>
 					<label for="category" >Category:</label>
 					<select name="category" required>
-						<option value="">
+						<option value=""></option>
 						<?php
 							foreach ($categories as $category) {
-								echo("<option value='".$category->id."'>".$category->name);
+								if(isset($_POST['category']) && $category->id == $_POST['category'] )
+									echo("<option value='".$category->id."' selected >".$category->name);
+								else	
+									echo("<option value='".$category->id."'>".$category->name);
 							}
 						?>
 					</select>
@@ -163,6 +175,7 @@
 							<b><?php echo($course->course) ?></b>
 							<input type="hidden" name="courseid" value="<?php echo($course->cid) ?>">
 							<input type="hidden" name="course" value="<?php echo($course->course) ?>">
+							<input type="hidden" name="category" value="<?php echo($course->catid) ?>">
 							<br>
 							<?php echo($course->category) ?>
 						</div>
