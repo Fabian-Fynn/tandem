@@ -123,19 +123,17 @@
 		<section class="profileTop">
 			<div class="userName"><h1>Create Users</h1></div>
 			<article class="left">
-				<h2>Randomusergenerator</h2>
+				<h2>RandomuserGenerator</h2>
 				<form action="createusers.php" method="post" >
 					<label for="amount" >Amount:</label> 
-					<input type="text" name="amount">
-					<input type="submit">
+					<input type="text" name="amount"><br>
+					<input type="submit" value=" create users ">
 				</form>
 			</article>
 			<article class="right">
 			<h2>RandomuserDeleter</h2>
-			<form action="deleterandomusers.php" method="post" >
-				<label for="amount" >Delete all:</label> 
-				
-				<input type="submit">
+			<form action="deleterandomusers.php" method="post" >				
+				<input style="float:left;" type="submit" value=" delete all ">
 			</form>
 		</article>
 		</section>

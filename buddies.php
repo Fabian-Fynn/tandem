@@ -25,7 +25,7 @@ $(document).ready(function(){
 <div class = "wrap">
 	<div class="requestblock">
 		<h1>Other's Requests</h1>
-
+		<br>
 
 
 
@@ -63,7 +63,7 @@ $(document).ready(function(){
 		if($requestCount == 0 ):
 
 			?>
-		<p>You have no Requests</p>
+		<p>You have no Requests.</p>
 
 
 
@@ -75,7 +75,7 @@ $(document).ready(function(){
 	</div>
 	<div class="requestblock">
 		<h1>Your Requests</h1>
- 
+ 		<br>
 
 		<?php 
 		$requestCount = 0;
@@ -101,7 +101,7 @@ $(document).ready(function(){
 		//else:
 		if($requestCount == 0 ):
 			?>
-		<p>You have not sent any Requests</p>
+		<p>You have not sent any Requests.</p>
 
 
 
@@ -113,13 +113,9 @@ $(document).ready(function(){
 	</div>
 	<div class="requestblock">
 		<h1>Your Buddies</h1>
-		<?php 
-
-		if(isset($buddies)):
-			?>
-
-
-		<br><br>
+		<br>
+		<?php if(isset($buddies)): ?>
+<br>
 		<?php 
 		$requestCount = 0;
 		foreach ($buddies as $buddy):
