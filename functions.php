@@ -43,22 +43,11 @@
 		if( $_POST['firstname'] == ''){ $error .= "<li>Bitte geben Sie den Vornamen an.</li>";}
 		if( $_POST['surname'] == ''){ $error .= "<li>Bitte geben Sie den Nachnamen an.</li>";}
 		
-		if($edit == false)
-		{
-			$sth  = $dbh->prepare( "SELECT * FROM user WHERE email=?" );
-			$sth->execute(array( $_POST['email']));
-			$p = $sth->fetch();
-		
-			if($p != false){ $error .= "<li>Die angegebene E-Mail-Adresse ist gereits vergeben.</li>";}
-		}
-		
 		
 		$_POST['firstname'] = strip_tags ( $_POST['firstname'], '' );
 		$_POST['surname'] = strip_tags ( $_POST['surname'], '' );
 		
 		if(isset($_POST['description'])){$_POST['description'] = strip_tags ( $_POST['description'], '<b><p><br><u><i><style><strong>' );}
-		
-		
 		
 		
 		if($error == ''){
@@ -68,7 +57,24 @@
 		return false;
 		}
 
+function checkMail($mail)
+{
+	 include "config.php";
+	 try {
+			$dbh = new PDO($DSN, $DB_USER, $DB_PASS);
+			$dbh->setAttribute(PDO::ATTR_ERRMODE,            PDO::ERRMODE_EXCEPTION);
+			$dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ); 
+		} catch (Exception $e) {
+        	die("Problem connecting to database $DB_NAME as $DB_USER: " . $e->getMessage() );
+		  }
+	$sth  = $dbh->prepare( "SELECT * FROM user WHERE email=?" );
+			$sth->execute(array( $_POST['email']));
+			$p = $sth->fetch();
+	if($p != false)
+		return false;
 
+	return true;
+}
 	function matches($dbh, $id){
 	$var = "";
 
@@ -272,12 +278,12 @@ function getIndexError($error)
 	}
 	if($error % 10000 != 0)
 	{
-		array_push($errors, "Your FHS-Email is invalid");
+		array_push($errors, "Your FHS-Email is invalid or already registered.");
 		$error -= 1000;
 	}
 	if($error % 100000 != 0)
 	{
-		array_push($errors, "Your Password is invalid");
+		array_push($errors, "Your Password is invalid. At least 5 and at most 10 letters.");
 		$error -= 10000;
 	}
 	if($error % 100000 != 0)

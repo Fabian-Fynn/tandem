@@ -39,17 +39,32 @@ function JsSwitch() {
 function checkPasswordMatch() {
     var password = $("#txtPassword").val();
     var confirmPassword = $("#txtConfirmPassword").val();
-    if (password != confirmPassword)
-        $("#pwIndicator").attr("src", "img/delete.png");
+    if (password.length >= 5)
+        $("#pwLength").attr("src", "img/check.png");
     else
+        $("#pwLength").attr("src", "img/error.png");
+
+    if (password == confirmPassword && password.length >= 5)
         $("#pwIndicator").attr("src", "img/check.png");
+    else
+        $("#pwIndicator").attr("src", "img/error.png");
+
 }
 
+function checkmail() {
+    mail = $('#Regmail').val();
+    var patt = new RegExp('[\\w-+]+(?:\\.[\\w-+]+)*@fh-salzburg\.ac\.at');
+    if (patt.exec(mail) == null && mail != "") {
+
+        $('#mailValid').attr("src", "img/error.png");
+    } else {
+        $('#mailValid').attr("src", "img/check.png");
+    }
+}
 
 
 $(document).ready(function() {
 
-    //$(".subMenu").css('top', '0px');
     $("#submitLogin").click(function() {
         email = $("#email").val();
         password = $("#pwd").val();
@@ -141,13 +156,4 @@ function removeAllHighlights(element) {
     $(".register").removeClass("highlighted");
     element.addClass("highlighted");
 
-}
-
-function checkmail() {
-    mail = $('#Regmail').val();
-    var patt = new RegExp('[\\w-+]+(?:\\.[\\w-+]+)*@fh-salzburg\.ac\.at');
-    console.log(patt.exec(mail));
-    if (patt.exec(mail) == null && mail != "") {
-        alert("You have to enter a valid FHS emailadress");
-    }
 }

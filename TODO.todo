@@ -2,20 +2,14 @@ TODO:
 Index,
  ☐ Content
  
-☐ Am server -> bei requestanfrage ablehnen: nicht entfernt..
 
 User,
- ☐ Stadt,Studiengang -> DB mit wenig einträgen, wenn nicht vorhanden -> andere
+ ☐ Stadt, Studiengang -> DB mit wenig einträgen, wenn nicht vorhanden -> andere
 
-Home,
- ☐ Tipps
 
 Allgemein,
   ☐ Unnützes entfernen
-  ☐ Formularvalid
-  ☐ Mail duplikate
   ☐ Copyright
-    ☐ edit course
 
 style,
     ☐ responsive
@@ -82,13 +76,17 @@ Usage,
 
   ☐ Use ⌘ + r to see a list of projects and quickly jump between them
 
-＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Formularvalid @done (14-05-24 13:50) @project(TODO)
+ ✔ Mail duplikate @done (14-05-24 13:49) @project(TODO)
+ ✔ Am server -> bei requestanfrage ablehnen: nicht entfernt.. @done (14-05-24 13:49) @project(TODO)
+ ✔ edit course @done (14-05-24 03:23) @project(TODO)
+ ✔ Tipps @done (14-05-24 03:23) @project(TODO)
  ✔ neuer user wird ausgelogged @done (14-05-22 11:46) @project(TODO)
  ✔ cropper abstand @done (14-05-22 11:41) @project(TODO)
  ✔ Impressum @done (14-05-22 00:02) @project(TODO)
- ✔ register, benachr @done (14-05-21 20:12) @project(TODO)
  ✔ Emailbestätigung @done (14-05-21 20:58) @project(TODO)
+ ✔ register, benachr @done (14-05-21 20:12) @project(TODO)
  ✔ menü verschwindet bei bestimmter zoomstufe @done (14-05-21 18:03) @project(TODO)
  ✔ Bilder @done (14-05-21 18:03) @project(TODO)
  ✔ check FHS email + dublikate @done (14-05-21 17:35) @project(TODO)

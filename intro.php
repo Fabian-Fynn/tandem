@@ -42,10 +42,10 @@
 	<a href="#" id="pull"><img src="img/nav-brand.png"></a>
 </nav>
 <?php
-	if(!isset($errors)):
+	
 ?>
 <div id="title"><div class="logo">
-	<?php if (isset($_GET['msgId'])) {
+	<?php if (isset($_GET['msgId'])):
 		if($_GET['msgId'] == "1"){
 	?>
 		<div id="message">
@@ -64,10 +64,23 @@
 	}
 
 	if($_GET['msgId'] == "3"){
+		
 	?>
 		<div id="message" class="bad">
-			<h1>Activation failed!</h1>
-			<a href="mailto:fhoffmann.mmt-b2013@fh-salzburg.at"><p>Please contact me</p></a>
+			<h1>Registration failed!</h1>
+			<br>
+					<ul>
+						<?php
+						if(isset($errors)){
+							foreach ($errors as $error) {
+								echo("<li>".$error."</li>");
+							}
+						}
+						?>
+
+					</ul>
+					<a href="#register"><button> Try again </button></a>
+			<a href="mailto:fhoffmann.mmt-b2013@fh-salzburg.at"><button> Contact me </button></a>
 		</div>
 	<?php
 	}
@@ -79,7 +92,7 @@
 		</div>
 	<?php
 	} 
-}
+	endif;
 	?>
 		<h1>TANDEM</h1>
 		<img src="img/icons/cap.png" alt="TANDEM">
@@ -97,7 +110,7 @@
 </div>
 
 <?php
-	endif;
+	
 ?>
 <div class="siteContainer">
 
