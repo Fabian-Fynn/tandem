@@ -231,15 +231,13 @@ a#more {
 
 #register *{
 	color:#fff;
+	text-align: left;
+
 }
 #impressum {
 	background: #fff;
 	margin-bottom:0;
 	color: #666;
-	//-webkit-box-shadow: inset 0px 2px 5px 0px #222;
-	//-moz-box-shadow:    inset 0px 2px 5px 0px #222;
-	//box-shadow:         inset 0px 2px 5px 0px #222;
-	
 	padding-bottom: 50px;
 }
 #impressum h2{

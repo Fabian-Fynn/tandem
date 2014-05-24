@@ -1,6 +1,5 @@
 TODO:
 Index,
- ✔ Content @done (14-05-24 23:02)
  
 User,
  ☐ Stadt, Studiengang -> DB mit wenig einträgen, wenn nicht vorhanden -> andere
@@ -74,6 +73,7 @@ Usage:
   ☐ Use ⌘ + r to see a list of projects and quickly jump between them
 
 Archive:
+ ✔ Content @done (14-05-24 23:02) @project(TODO)
  ✔ Formularvalid @done (14-05-24 13:50) @project(TODO)
  ✔ Mail duplikate @done (14-05-24 13:49) @project(TODO)
  ✔ Am server -> bei requestanfrage ablehnen: nicht entfernt.. @done (14-05-24 13:49) @project(TODO)
