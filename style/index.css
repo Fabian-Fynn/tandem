@@ -287,12 +287,12 @@ a#more {
 }
 #altLogin input{
 	float:left;
-	margin-bottom:10px;
+	margin-top: 7px;
 }
-#register #submitLogin{
+#altLogin #submitLogin{
 	float:left;
 	margin-left: 10px;
-	margin-top: -20px;
+	margin-top: -13px;
 }
 .img{
 	
@@ -344,13 +344,16 @@ img.img{
 
 	
 }
-#pwIndicator, #pwLength, #mailValid{
+#pwIndicator, #pwLength{
 	float:left;
 	margin:3px 0 0 5px;
 	
 }
 
-
+#mailValid{
+	float:left;
+	margin:2px 0 0 5px;
+}
 
 #register form{
 	
