@@ -290,6 +290,7 @@ float:left;
 	float:left;
 	margin:8px;
 	line-height: 20px;
+	overflow:hidden;
 }
 .match img{
 	width:300px;
