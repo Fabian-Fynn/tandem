@@ -229,10 +229,13 @@ a#more {
 
 
 
-#register *{
+#register p{
 	color:#fff;
 	text-align: left;
 
+}
+#register form{
+	text-align: left;
 }
 #impressum {
 	background: #fff;
