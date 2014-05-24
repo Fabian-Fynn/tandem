@@ -144,7 +144,7 @@ include "intro.php";
 						<div class="inner">	
 
 
-							<div id="impressContent"><h2>Impressum</h2>
+							<div id="impressContent"><h2>Legal Notice</h2>
 
 								
 								<p>TANDEM is a second semester project of the course MultimediaTechnology at University of Applied Sciences Salzburg</p><br>
@@ -178,9 +178,8 @@ include "intro.php";
 								}
 							});
 				$(function() {
-					$('#loginButton').click(function(e) {
-						e.preventDefault();
-					});
+					
+					$("#loginButton").removeAttr("href"); 
 				});
 			
 

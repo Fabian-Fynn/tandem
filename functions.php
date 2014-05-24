@@ -75,9 +75,6 @@
 	$offer = $dbh->query("Select course FROM offer WHERE teacher=$id");
 	$search = $dbh->query("Select course FROM search WHERE student=$id");
 
-
-		
-		//echo("not empty");
 		$aOffer[] = $var;
 		foreach ($offer as $course) 
 			array_push($aOffer, $course->course);
@@ -107,7 +104,6 @@
 
 		$aSearch = implode(',', $aSearch);
 		$aSearch = substr($aSearch, 1);
-		//echo("::::::::::".Count($aSearch));
 		$teachers = $dbh->query("Select teacher FROM offer WHERE course IN ($aSearch)");
 
     	$bOffer[] = $var;

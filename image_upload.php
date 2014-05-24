@@ -85,7 +85,7 @@
       
       <input name="image" type="file" id="fileToUpload">
       <div class="buttons">
-      <a href="profil.php"><input type="button" value=" Cancel "></a><input type="submit" value=" Send " id="submit">
+      <a href="profile.php"><input type="button" value=" Cancel "></a><input type="submit" value=" Send " id="submit">
       <div style="float: left;height:auto; width:auto;"><p id="error"></p></div>
       </div>
     </form>
@@ -120,6 +120,7 @@
   <article class="left">
     <?php echo($error); ?>
     <a href="image_upload.php"><button>Back</button></a>
+    
   </article>
 
   <?php

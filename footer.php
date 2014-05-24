@@ -4,8 +4,8 @@
 		
     <?php if(isset($_SESSION['id'])):
 ?>
-      <a href="profil.php?id=3">Fabian Hoffmann</a><br>
-  		<a href="impressum.php">Impressum</a>
+      <a href="profile.php?id=3">Fabian Hoffmann</a><br>
+  		<a href="legals.php">Legal Notice</a>
 
   <?php 
     else:

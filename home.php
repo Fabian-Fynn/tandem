@@ -11,51 +11,9 @@
 	$user = $person->firstname;
 
 
-
-    $matches = Matches($dbh, $id);
-    if(Count($matches) > 1)
-    {
-    	$matchesString = implode(',', $matches);
-	    $matchesString = substr($matchesString, 1);
-    	$matchedPeople = $dbh->query("Select * FROM user WHERE id IN ($matchesString) order by rand() limit 5");
-    
-    }
-    
 ?>
 	<div class = "wrap">
-		<h1>Welcome, <?php echo $user ?>!</h1>
-		<br><br>
-		<?php 
-			if(sizeof($matches) > 1):
-			if(sizeof($matches) == 2){?>
-		<p>We found 1 Match for you.</p>
-		<?php
-			}
-			else{
-		?>
-		<p>We found <?php echo(sizeof($matches)-1); ?> Matches for you.</p>
-		<?php
-	}
-	?>
-		<br>
-		<div class="homeMatches">
-		<?php 
 		
-			foreach ($matchedPeople as $match):
-		?>
-		<a href="profil.php?id=<?php echo($match->id) ?>">
-		<div class = "match homeMatch">
-			<img src="img/profilePics/<?php echo ($match->avatar)  ?>">
-			<div class="name"><?php echo($match->firstname." ".$match->surname) ?></div>
-		</div>
-		</a>
-		<?php
-		endforeach; 
-		?>
-		</div>
-		<?php
-		endif;
-		?>
 		<div class="welcome">
 			
 			<h2>Welcome to TANDEM,</h2>

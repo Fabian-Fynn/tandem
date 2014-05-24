@@ -116,7 +116,7 @@ img {
 	position:relative;
 			
 }
-.profileTop .left{
+.profileTop .left, .crop{
 	width:35%;
 	min-width:300px;
 	//background:#f2f;
@@ -126,6 +126,10 @@ img {
 
 	
 }
+.crop{
+	width:50%;
+}
+
 .profileTop pre{
 	-moz-hyphens:auto;
 	-ms-hyphens:auto;
@@ -388,10 +392,11 @@ a.req {
 	margin-left: 25px;
 }
 
-.welcome ul button{
+button, input[type = 'submit'], input[type = 'button']{
 	height:10px;
 	margin-left: 0;
 	margin-top: 5px;	
+	margin-right: 5px;
 	height:auto;
 	width:auto;
 	padding:8px;
@@ -403,7 +408,7 @@ a.req {
 	border:1px solid rgb(42, 168, 226);
 	cursor: pointer; 
 }
-.welcome ul button:hover{
+button:hover{
 	background: rgba(42, 168, 226, 0.8);
 	color:#fff;
 }
@@ -424,6 +429,13 @@ a.req {
 #fileToUpload{
 	width:100%;
 }
+.warning {
+	margin-top: 20px;
+	color: #9F6000;
+	background-color: #FEEFB3;
+	padding:6px;
+}
+
 .buttons{
 	margin-top: 40px;
 	float:left;
@@ -509,4 +521,9 @@ p.error{
 	width:100%;
 	margin-top: -80px;
 
+}
+@media screen and (max-width: 960px) {
+	.changePic{
+		display: none;
+	}
 }

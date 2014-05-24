@@ -32,7 +32,7 @@
 			}
 			else{
 		?>
-		<p>We found <?php echo(sizeof($matches)-1); ?> Matches for you.</p>
+		<p>We found some Matches for you.</p>
 		<?php
 	}
 	?>
@@ -43,23 +43,11 @@
 
 		foreach ($matchedPeople as $match):
 			?>
-		<a href="profil.php?id=<?php echo($match->id) ?>">
+		<a href="profile.php?id=<?php echo($match->id) ?>">
 		<div class = "match">
 			<img src="img/profilePics/<?php echo ($match->avatar)?>">
 			<div class="name"><?php echo($match->firstname." ".$match->surname) ?></div>
-			<?php /*
-			unset($offer);
-			foreach ($matchedOffer as $o => $offer) {
-				if($offer->teacher == $match->id)
-				{
-					echo("<p>".$offer->name."</p>");
-
-				}
-
-			}
-			reset($matchedOffer);
-			*/
-			?>
+			
 		</div>
 		</a>
 		<?php

@@ -37,7 +37,7 @@ $(document).ready(function(){
 		
 		<div class = "request">
 			<img src="img/profilePics/<?php echo ($r->avatar)?>">
-			<a href="profil.php?id=<?php echo($r->id) ?>"><p><?php echo($r->firstname." ".$r->surname) ?></p></a>
+			<a href="profile.php?id=<?php echo($r->id) ?>"><p><?php echo($r->firstname." ".$r->surname) ?></p></a>
 
 			<form id="acceptForm_<?php echo($r->id); ?>" action="request.php" method="post">
 				<div id="sendRequest">
@@ -84,7 +84,7 @@ $(document).ready(function(){
 		?>
 		<div class = "request" id="request_<?php echo($r->id); ?>">
 			<img src="img/profilePics/<?php echo ($r->avatar)?>">
-			<a href="profil.php?id=<?php echo($r->id) ?>"><p><?php echo($r->firstname." ".$r->surname) ?></p></a>
+			<a href="profile.php?id=<?php echo($r->id) ?>"><p><?php echo($r->firstname." ".$r->surname) ?></p></a>
 
 			<form id="abortForm_<?php echo($r->id); ?>" action="request.php" method="post">
 				<div >
@@ -126,7 +126,7 @@ $(document).ready(function(){
 			
 			$requestCount++;
 		?>
-		<a href="profil.php?id=<?php echo($buddy->id) ?>">
+		<a href="profile.php?id=<?php echo($buddy->id) ?>">
 			<div class = "match">
 				<img src="img/profilePics/<?php echo ($buddy->avatar)?>">
 				<div class="name"><?php echo($buddy->firstname." ".$buddy->surname) ?></div>

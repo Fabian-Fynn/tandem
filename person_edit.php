@@ -26,7 +26,7 @@
 						)
 					); 
 				  
-					header("Location: profil.php");
+					header("Location: profile.php");
 			   }
 			   else{die("damn");}
 		    } catch (Exception $e) {
@@ -84,7 +84,7 @@
 				<p><label for="city">Residence:</label> <input type="text" name="city" value="<?php echo $person->city; ?>"></p>
 				<p><label for="description">About me:</label> <textarea name="description" id="description" ><?php echo $person->description; ?></textarea></p>
 				
-				<p><input style='float:right' type="submit" value="Change"><a href='profil.php' style='float:right'><button onclick='location.href=this."profil.php"; return false;'>Cancel</button></a></p>
+				<p><input style='float:right' type="submit" value="Change"><a href='profile.php' style='float:right'><button onclick='location.href=this."profile.php"; return false;'>Cancel</button></a></p>
 			</form>
 
 		</article>

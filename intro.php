@@ -32,12 +32,12 @@
 	
 <nav class="clearfix">
 	<ul class="clearfix">
-		<li><a href="#">TANDEM</a></li>
-		<li><a href="#about">about</a></li>
-		<li><a href="#features">share</a></li>
-		<li><a href="#">Design</a></li>
-		<li><a href="#">Web 2.0</a></li>
-		<li><a href="#">Tools</a></li>	
+		<li><a href="#title">TANDEM</a></li>
+		<li><a href="#s1">about</a></li>
+		<li><a href="#s2">share</a></li>
+		<li><a href="#s3">gain</a></li>
+		<li><a href="#register">register/login</a></li>
+		<li><a href="#impress">legal notice</a></li>	
 	</ul>
 	<a href="#" id="pull"><img src="img/nav-brand.png"></a>
 </nav>

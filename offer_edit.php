@@ -38,7 +38,7 @@
 						)
 					); 
 				   }
-					header("Location: profil.php");
+					header("Location: profile.php");
 			   
 			 
 		    } catch (Exception $e) {

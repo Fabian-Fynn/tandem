@@ -78,7 +78,7 @@
 
 		    unlink("img/profilePics/temp_".$id.".".$ext);
 
-	   		header("Location:profil.php");
+	   		header("Location:profile.php");
 	   		exit;
 	   	}catch(Exeption $e)
 	   	{
@@ -118,25 +118,26 @@
 
 <div class = "wrap">
 	<div class="matchbox">
-		<section>
+		<section class="crop">
 	
 		<div class="userName"><h1>Edit Profilepicture</h1></div>
-		<article class="left">
+		
 			<h2>Choose image section</h2>
 			<img src="img/profilePics/<?php echo $filename; ?>" id="cropbox">
-			 <p><form action="crop.php" method="post" onsubmit="return checkCoords();">
+			<form action="crop.php" method="post" onsubmit="return checkCoords();">
       <input type="hidden" id="x" name="x" />
       <input type="hidden" id="y" name="y" />
       <input type="hidden" id="w" name="w" />
       <input type="hidden" id="h" name="h" />
       <input type="submit" name="cropNow" value="Send" class="btn" />
-  </form></p>
-		</article>
-		<article class="right">
+  </form>
+  <div class="warning"><b>Note:</b> After submiting your new image it sometimes happens that you still see your old profile picture. In that case please refresh the page.</div>
+		
+
 		
 		
 		
-	</article>
+
 	</section>
 	</div>
 </div>

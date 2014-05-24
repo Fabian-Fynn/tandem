@@ -1,10 +1,6 @@
 
 <?php
 include "menu.php";
-	//$dbh = new PDO($DSN, $DB_USER, $DB_PASS);
-
-
-
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	//if($_POST[''])
@@ -25,16 +21,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$error += 100;
 	if(!isset($_POST['email']) || preg_match('/[\w-.]+@fh-salzburg\.ac\.at$/', $_POST['email']) == 0)
 	{
-	//if(!isset($_POST['email']) || preg_match('/[\w-+]+(?:\\.[\\w-+]+)*(@fh-salzburg\.ac\.at)$/',$_POST['email']) == 0)
+	
 		$error += 1000;
-}
-	//if(isset($_POST['password']) && strlen($_POST['password']) >= 5 && strlen($_POST['password']) <= 10)
+	}
+	if(isset($_POST['password']) && strlen($_POST['password']) >= 5 && strlen($_POST['password']) <= 10)
 		$hashedPw = hashPasswordSecure($_POST['password']);
-	//else
-	//	$error += 10000;
+	else
+		$error += 10000;
 
 	$key = md5(microtime().rand());
-	//echo($key);
+	
 	try{
 	$sth = $dbh->prepare(
 		"INSERT INTO user
