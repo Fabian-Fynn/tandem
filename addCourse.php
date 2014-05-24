@@ -46,7 +46,7 @@
 		{
 			$error = "Choose category";
 		}
-					header("Location: addcourse.php?error=".$error);
+					header("Location: addCourse.php?error=".$error);
 			   
 	}
 
@@ -68,7 +68,7 @@
 		{
 			$error = "Choose category";
 		}
-					header("Location: addcourse.php?error=".$error);
+					header("Location: addCourse.php?error=".$error);
 
 	}
 ?>
@@ -84,7 +84,7 @@
 		
 
 
-				<form action="addcourse.php" class="addcourse" method="post" >
+				<form action="addCourse.php" class="addcourse" method="post" >
 					<label for="name" >Course name:</label> 
 					<input type="text" name="name" 
 					<?php if (isset($_POST['edit'])){
@@ -111,7 +111,7 @@
 			</article>
 			<article class="right" style="width:200px">
 			<h2>Edit existing Course</h2>
-			<form action="addcourse.php" class="addcourse" method="post" >
+			<form action="addCourse.php" class="addcourse" method="post" >
 					
 					<input type="hidden" name="edit" value="true">
 						<?php
