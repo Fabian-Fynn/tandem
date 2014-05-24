@@ -256,7 +256,7 @@ a#more {
 	margin:0 auto;
 	
 }
-#register h1{
+#register h1, #register h2{
 	text-align:center;
 	color:#fff;	
 }
