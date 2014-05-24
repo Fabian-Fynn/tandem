@@ -64,7 +64,7 @@
 		text-align: right;
 		right: 0px;
 		position: relative;
-		width:450px;
+		width:515px;
 	}
 #menuwrapper a{
 		width:90px;
@@ -73,9 +73,11 @@
 		padding-left:0;
 		padding-right:0;
 	}
-
+#menuwrapper a.long{
+	width:155px;
+}
 /* low res version */
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 990px) {
 	.subMenu{
 		display: none;
 	}
@@ -97,11 +99,11 @@
 		width: 100%;
 		background: #2AA8E2;
 		font-size: 11pt;
-		//font-family: 'PT Sans', Arial, sans-serif;
 		font-weight: 300;
 		position: fixed;
 		z-index:100;
 		height: auto;
+		top:0;
 	}
 
 	nav ul {
@@ -119,7 +121,7 @@
 		position: relative;
 	}
 
-	nav a {
+	nav a , nav a:link, nav a:visited{
 		color: #fff;
 		display: inline-block;
 		text-decoration: none;
@@ -189,10 +191,7 @@
 
 
 
-/* Desktop version */
-@media only screen and (min-width: 960px) {
-.clearfix{
-display: none;
+
 }
 	nav{
 		display:none;
@@ -201,122 +200,129 @@ display: none;
 	
 
 
-	
-	.menuBtn {
-		background: center center no-repeat transparent;
-		background: #000;
-		display: block;
-		width: 40px;
-		height: 40px;
-		position: absolute;
-		top: 0;
-		left: 10px;
-		cursor:pointer;
-	}
-	
-	.active {
-		background: #FF4961;
-	}
-	a#around{
-		background:none;
-		float:left;
-	}
 
-	.clear {
-		clear: both;
-	}
+.menuBtn {
+	background: center center no-repeat transparent;
+	background: #000;
+	display: block;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	left: 10px;
+	cursor:pointer;
+}
 
-	.inner {
-		width: 960px;
-		margin: 0 auto;
-		position: relative;
-		min-height: 50px;
-		padding:30px 0;
-		font-size: 18px;
-		
+.active {
+	background: #FF4961;
+}
+a#around{
+	background:none;
+	float:left;
+}
 
-		font-weight: 300;
-		padding:30px 0;
-		clear:both;
-		
-	}
-	
-	.subMenu {
-		position: fixed;
-		top: 0px;
-		height: 60px;
-		z-index: 1000;
-		width: 100%;
-		min-width: 960px;
-	}
-	.subMenu .start{
-		position: absolute;
-		top: 595px;
-	}
-	
-	.subMenu .inner {
-		padding:0;
-		font-weight: 300;
-		width:960px;
-	}
-	
-	.subMenu .outer {
-		//background:#2aa8e2;
-		background:#fff;
-		//-webkit-box-shadow: 0 5px 5px -2px #4D4D4D;
-		//box-shadow: 0 5px 5px -2px #333;
-		z-index:100;
-		//color:#333;
-		border-bottom: 1px solid #ccc;
-		height:72px;
-	}
-	
-	.subNavBtn {
-		display: block;
-		height: 50px;
-		width: auto;
-		float: left;
-		margin: 0;
-		text-decoration: none;
-		font-size: 25px;
-		padding: 21px 2% 0 2%;
-		vertical-align: middle;
-		//color: #333;
-		visibility:visible;
-	}
-	#menuwrapper a:hover, #menuwrapper a:active, .highlighted, a.highlighted{
-		background: #FF4961;
-		color:#fff;
-	}
-	
-	#menuwrapper{
-		float: right;
-		text-align: right;
-		right: 0px;
-		position: relative;
-		font-size: 19px;
-		
-	}
-	#menuwrapper .subNavBtn{
-		font-size: 18px;
-	}
-	#menuwrapper a{
-		
-	}
-	
-	.end {
-		margin: 0;
-	}
-	
-	
-	.sTop {
-		min-height: 630px;
-		background:#e5e5e5;
-		color:#3d3d3d;
-	}
+.clear {
+	clear: both;
+}
 
+.inner {
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+	min-height: 50px;
+	padding:30px 0;
+	font-size: 18px;
 	
 
+	font-weight: 300;
+	padding:30px 0;
+	clear:both;
+	
+}
+
+.subMenu {
+	position: fixed;
+	top: 0px;
+	height: 60px;
+	z-index: 1000;
+	width: 100%;
+	min-width: 960px;
+}
+
+.subMenu .start{
+	position: absolute;
+	top: 595px;
+}
+
+.subMenu .inner {
+	padding:0;
+	font-weight: 300;
+	width:960px;
+}
+
+.subMenu .outer {
+	//background:#2aa8e2;
+	background:#fff;
+	//-webkit-box-shadow: 0 5px 5px -2px #4D4D4D;
+	//box-shadow: 0 5px 5px -2px #333;
+	z-index:100;
+	//color:#333;
+	border-bottom: 1px solid #ccc;
+	height:72px;
+}
+
+.subNavBtn {
+	display: block;
+	height: 50px;
+	width: auto;
+	float: left;
+	margin: 0;
+	text-decoration: none;
+	font-size: 25px;
+	padding: 21px 2% 0 2%;
+	vertical-align: middle;
+	visibility:visible;
+}
+
+
+
+#menuwrapper a:hover, #menuwrapper a:active, .highlighted, a.highlighted{
+	background: #FF4961;
+	color:#fff;
+}
+
+#menuwrapper{
+	float: right;
+	text-align: right;
+	right: 0px;
+	position: relative;
+	font-size: 19px;
+	
+}
+#menuwrapper .subNavBtn{
+	font-size: 18px;
+}
+
+#menuwrapper a{
+	
+}
+
+.end {
+	margin: 0;
+}
+
+
+.sTop {
+	min-height: 630px;
+	background:#e5e5e5;
+	color:#3d3d3d;
+}
+
+
+/* Desktop version */
+@media only screen and (min-width: 990px) {
+.clearfix{
+display: none;
 	#nav-brand{
 		visibility:hidden;
 	}
@@ -324,6 +330,7 @@ display: none;
 	#login{
 		display:block;
 	}
+
 }
 
 /* non Index Nav */

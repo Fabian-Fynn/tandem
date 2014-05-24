@@ -1,8 +1,9 @@
 <?php
 	include "head.php";
 ?>
+
 	<link rel="stylesheet" href="style/indexNav.css">
-</head>
+</head>						
 <div class="subMenu" >
 	 	<div class="outer"><div class="inner">
 	 		<a href="home.php" class="subNavBtn">TANDEM</a> 
@@ -10,7 +11,7 @@
 				<a href="profile.php" class="subNavBtn">Profile</a>
 				<a href="matches.php" class="subNavBtn">Matches</a>
 				<a href="buddies.php" class="subNavBtn">Buddies</a>
-				<a href="#register" class="subNavBtn">Placeholder</a>
+				<a href="suggestCourse.php" class="subNavBtn long">Suggest Course</a>
 				<a href="logout.php"  class="subNavBtn" >Logout</a>
 			</div>
 		</div>
@@ -19,12 +20,12 @@
 	
 <nav class="clearfix">
 	<ul class="clearfix">
-		<li><a href="#">Home</a></li>
-		<li><a href="#about">About</a></li>
-		<li><a href="#features">Features</a></li>
-		<li><a href="#">Design</a></li>
-		<li><a href="#">Web 2.0</a></li>
-		<li><a href="#">Tools</a></li>	
+		<li><a href="home.php">TANDEM</a></li>
+		<li><a href="profile.php">Profile</a></li>
+		<li><a href="matches.php">Matches</a></li>
+		<li><a href="buddies.php">Buddies</a></li>
+		<li><a href="suggestCourse.php">Suggest Course</a></li>
+		<li><a href="logout.php">Logout</a></li>	
 	</ul>
 	<a href="#" id="pull"><img src="img/nav-brand.png"></a>
 </nav>

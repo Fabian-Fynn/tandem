@@ -18,34 +18,6 @@ include "intro.php";
 
 
 <div class = "wrapIndex">
-	<?php
-/*
-	if(isset($errors)):
-		?>
-	<div class="siteContainer">
-		<div class="section" id="s1">
-			<div class="outer">
-				<div class="inner">
-					<br>
-					<h1>Error!</h1>
-					<ul>
-						<?php
-
-						foreach ($errors as $error) {
-							echo("<li>".$error."</li>");
-						}
-						?>
-
-					</ul>
-					<a href="#register"><button> Try again </button></a>
-				</div>
-			</div>
-		</div>
-		<?php
-		endif;
-		*/
-		?>
-
 		<div class="section" id="s1">
 			<div class="outer">
 				<div class="inner">

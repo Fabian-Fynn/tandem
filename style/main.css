@@ -247,7 +247,31 @@ img {
 float:left;
 }
 
+.addcourse{
 
+}
+
+.higherH2{
+	margin-top:0;
+}
+.editCourseList{
+	width:100%;
+	height:60px;
+}
+
+.editCourseList .info{
+	float:left; 
+	margin-top:5px; 
+	width:60%;
+}
+
+.editCourseList .courseButtons{
+	float:left;
+	width:40%;
+}
+.editCourseList .courseButtons input{
+	float:left;
+}
 #submitPersDel{
 	float:left;
 }
