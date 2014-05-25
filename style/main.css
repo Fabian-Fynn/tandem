@@ -105,7 +105,7 @@ img {
 	margin-top:10px;
 	margin-bottom:20px;
 	font-size:2em;
-	line-height:7px;
+	line-height:1em;
 }
 
 .userName p {
@@ -401,13 +401,13 @@ a.req {
 
 }
 .welcome h2{
-	font-size: 1.5vw;
+	font-size: 150%;
 	margin-top: 15px;
 	color:#2AA8E2;
 	font-weight: 700;
 }
 .welcome h3{
-	font-size: 1.1vw;
+	font-size:115%%;
 	font-weight: 500;
 	margin-bottom:26px;
 }
@@ -417,7 +417,7 @@ a.req {
 .welcome li{
 	margin-top: 20px;
 	margin-left: 23px;
-	font-size: 1vw;
+	font-size: 100%;
 	font-weight: 700;
 }
 .welcome ul p{
@@ -498,7 +498,8 @@ input[type = 'submit']:hover, #slogin input[type = 'submit']:hover{
 .matchbox{
 	padding-bottom: 100px;
 	height: auto;
-	overflow: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 p.error{
 	color:#f00;
@@ -566,11 +567,22 @@ p.error{
 }
 .footer img{
 	width:100%;
-	margin-top: -80px;
+	margin-top: -4.5vw;
 
 }
 @media screen and (max-width: 960px) {
 	.changePic{
 		display: none;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.right{
+		padding:0!important;
+	}
+}
+@media screen and (max-width: 670px) {
+	.ann img{
+		width:90%;
 	}
 }

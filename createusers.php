@@ -81,12 +81,17 @@
 			$offers = array_slice($o, 0, 5);
 			$DBid = $dbh->lastInsertId(); 
 			foreach ($offers as $offer ) {
+				try{
 				$stho->execute(
 					array(
 						$offer,
 						$DBid
 					)
 				); 
+				}
+				catch(Execption $e)
+				{}
+
 			}
 			$searchamount = 0;
 			$searches = array();

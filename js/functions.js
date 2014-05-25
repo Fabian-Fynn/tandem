@@ -114,7 +114,7 @@ $(document).ready(function() {
                     } else if ($("#reqAct").val() == "abortList") {
                         $("#request_" + partner).remove();
                     } else if ($("#reqAct").val() == "accept") {
-                        $("#submitRequest").val(" Accept ");
+                        $("#submitRequest").val(" Accepted ");
                         $("#submitRequest").attr("disabled", "disabled");
                     } else {
 

@@ -44,7 +44,8 @@
 			   
 			   
 		    } catch (Exception $e) {
-				die("Problem with updating Data!" . $e->getMessage() );
+		    	header('Location: ' . $_SERVER['HTTP_REFERER']);
+				
 			}
 
 		if($reqAct != "unfriend" && $reqAct != "abort" && $reqAct != "abortList"):
@@ -63,7 +64,8 @@
 					$status
 			    )
 			); 	
-			//echo ('false');
+			
+			header('Location: ' . $_SERVER['HTTP_REFERER']);
 		endif;
 			
 		header('Location: ' . $_SERVER['HTTP_REFERER']);
