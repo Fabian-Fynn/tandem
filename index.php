@@ -32,11 +32,11 @@ include "intro.php";
 					
 					<h2>TANDEM connects students at University of Applied Sciences Salzburg</h2>
 					<div class="img triad">
-						<div class="left"><img src="img/icons/people.png" alt="Study">Meet new people</div>
+						<div class="left"><img src="img/icons/people.png" alt="Study"><p>Meet new people</p></div>
 						
-						<div class="center"><img src="img/icons/success.png" alt="Study">gain knowledge</div>
+						<div class="center"><img src="img/icons/success.png" alt="Study"><p>gain knowledge</p></div>
 						
-						<div class="right"><img src="img/icons/share.png" alt="Study">share your's</div>
+						<div class="right"><img src="img/icons/share.png" alt="Study"><p>share your's</p></div>
 					</div>
 
 					<h2>With TANDEM can learn a variety of things.</h2> 

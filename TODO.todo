@@ -10,7 +10,6 @@ Allgemein,
   ☐ Unnützes entfernen
 
 style,
- ☐ responsive
 
 
 SNIPPETS:
@@ -72,6 +71,7 @@ Usage:
   ☐ Use ⌘ + r to see a list of projects and quickly jump between them
 
 Archive:
+ ✔ responsive @done (14-05-25 23:55) @project(TODO)
  ✔ Copyright @done (14-05-25 01:16) @project(TODO)
  ✔ intro @done (14-05-25 01:16) @project(TODO)
  ✔ Content @done (14-05-24 23:02) @project(TODO)

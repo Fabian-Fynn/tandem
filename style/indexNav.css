@@ -77,7 +77,7 @@
 	width:155px;
 }
 /* low res version */
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 989px) {
 	.subMenu{
 		display: none;
 	}
@@ -226,7 +226,7 @@ a#around{
 }
 
 .inner {
-	width: 960px;
+	max-width: 960px;
 	margin: 0 auto;
 	position: relative;
 	min-height: 50px;
