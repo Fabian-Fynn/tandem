@@ -83,7 +83,7 @@
 					<div class="profilePic"><img src="img/profilePics/<?php echo $avatar ?>"></div>
 
 					<?php if($ownProfile): ?>
-						<div class="profileInfo changePic"><a href="image_upload.php">Change Profilepicture</a></div> 
+						<div class="profileInfo changePic"><a href="image_upload.php">Change Profile picture</a></div> 
 						<div class="profileInfo"><a href="person_edit.php">Edit Profile</a></div>
 					<?php endif; ?>
 					

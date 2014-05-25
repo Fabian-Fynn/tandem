@@ -1,16 +1,22 @@
 
 <?php
-include "config.php";
-$dbh = new PDO($DSN, $DB_USER, $DB_PASS);
-
-$pagetitle = "Tandem - Lernplattform für Studenten der FH-Salzburg";
-include "functions.php";
 if(isset($_SESSION['error']))
 {
 	$errors = getIndexError($_SESSION['error']);
 	
 	unset($_SESSION['error']);
 }
+if (isset($_SESSION['id'])) {
+
+	header("Location: logout.php");
+}
+include "config.php";
+$dbh = new PDO($DSN, $DB_USER, $DB_PASS);
+
+$pagetitle = "Tandem - Lernplattform für Studenten der FH-Salzburg";
+include "functions.php";
+
+
 include "intro.php";
 
 
