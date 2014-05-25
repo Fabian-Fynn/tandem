@@ -50,12 +50,20 @@
 	//	echo("<script>alert('".$_SESSION['request']."');</script>");
 	
 	if($_SESSION['request'] == 'o')
-	$sth = $dbh->query("Select c.id AS cId FROM course c, offer o WHERE $id = o.teacher AND o.course = c.id");
+	{
+		$sth = $dbh->query("Select c.id AS cId FROM course c, offer o WHERE $id = o.teacher AND o.course = c.id");
+		$stm = $dbh->query("Select c.name AS course, c.id AS cId, cat.name AS category FROM category cat, course c WHERE c.category = cat.id AND c.id NOT IN(Select c.id AS cId FROM course c, search o WHERE $id = o.student AND o.course = c.id) ORDER BY category, course");
+	}
+	
 	else
+	{
 		$sth = $dbh->query("Select c.id AS cId FROM course c, search o WHERE $id = o.student AND o.course = c.id");
+		$stm = $dbh->query("Select c.name AS course, c.id AS cId, cat.name AS category FROM category cat, course c WHERE c.category = cat.id AND c.id NOT IN(Select c.id AS cId FROM course c, offer o WHERE $id = o.teacher AND o.course = c.id) ORDER BY category, course");
+	}
+		
  	$off = $sth->fetchAll();
-	$sth = $dbh->query("Select c.name AS course, c.id AS cId, cat.name AS category FROM category cat, course c WHERE c.category = cat.id ORDER BY category, course");
-	$courses = $sth->fetchAll();
+	
+	$courses = $stm->fetchAll();
 
 ?>
 <div class = "wrap">
