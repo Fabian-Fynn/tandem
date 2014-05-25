@@ -13,7 +13,7 @@
 
     $matches = Matches($dbh, $id);
 
-    if(sizeof($matches) > 1)
+    if(sizeof($matches) > 0)
     {
 	    $matchesString = implode(',', $matches);
 	    $matchesString = substr($matchesString, 1);
