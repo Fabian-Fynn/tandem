@@ -1,9 +1,12 @@
 <?php include "head.php" ?>
+<link rel="stylesheet" href="amaran/css/themes/user.css">
 <link rel="stylesheet" href="style/index.css">
 <link rel="stylesheet" href="style/indexNav.css">
+<link rel="stylesheet" href="amaran/css/jquery.amaran.css">
+
 
 </head>
-
+<script src="amaran/js/jquery.amaran.js"></script>
 <div class="subMenu" >
 	 	<div class="outer"><div class="inner">
 	 		<a href="index.php" id="around" rel="m_PageScroll2id" class="subNavBtn">TANDEM</a> 
@@ -128,5 +131,13 @@ function bounce(){
 	$("#arrow").effect( "bounce", {  distance: 35, direction: "down" }, 900 );
 	setTimeout(bounce, 3500);	
 }
+ $.amaran({
+    content:{
+        img:'img/fabi.png',
+        user:'Fabian Hoffmann',
+        message:'Multimedia Technology student at University of Applied Science Salzburg'
+       },
+    theme:'user blue',
+});
 </script>
 	
