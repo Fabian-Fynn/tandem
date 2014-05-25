@@ -97,7 +97,7 @@ function checkMail($mail)
 		$aOffer[] = $var;
 		foreach ($offer as $course) 
 			array_push($aOffer, $course->course);
-		if(sizeof($aOffer) == 0)
+		if(sizeof($aOffer) == 1)
 			return null;
 
 		$aOffer = implode(',', $aOffer);
@@ -118,7 +118,7 @@ function checkMail($mail)
 		foreach ($search as $course) 
 			array_push($aSearch, $course->course);
 		
-		if(sizeof($aSearch) == 0)
+		if(sizeof($aSearch) == 1)
 			return null;	
 
 		$aSearch = implode(',', $aSearch);
