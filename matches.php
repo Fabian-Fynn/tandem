@@ -18,7 +18,7 @@
 	    $matchesString = implode(',', $matches);
 	    $matchesString = substr($matchesString, 1);
 
-		$matchedPeople = $dbh->query("Select * FROM user WHERE id IN ($matchesString) AND id != $id");
+		$matchedPeople = $dbh->query("Select * FROM user WHERE id IN ($matchesString)");
 	}
 ?>
 	<div class = "wrap">
