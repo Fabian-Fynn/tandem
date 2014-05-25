@@ -138,7 +138,7 @@
 						?>
 					</select>
 					<br>
-					<input type="submit">
+					<input type="submit" value="Send">
 				</form>
 				<p class="error"><?php if(isset($_GET['error'])) {echo($_GET['error']);} ?>	</p>
 			<br>
