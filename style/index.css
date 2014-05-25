@@ -150,10 +150,10 @@ a#more {
 	
 }
 
-.arrow{
+#arrow{
 	width:100%;
 	position: absolute;
-	bottom:85px;
+	bottom:120px;
 }
 
 .inner {

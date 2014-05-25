@@ -4,7 +4,6 @@
 
 </head>
 
-
 <div class="subMenu" >
 	 	<div class="outer"><div class="inner">
 	 		<a href="index.php" id="around" rel="m_PageScroll2id" class="subNavBtn">TANDEM</a> 
@@ -103,7 +102,7 @@
 		
 			
 		</div>
-		<div class="arrow"><a href="#s1" id="more"><div class="more"> <img src="img/icons/down.png" alt="down"></div></a></div>
+		<div id="arrow"><a href="#s1" id="more"><div class="more"> <img src="img/icons/down.png" alt="down"></div></a></div>
 		</div>
 		
 	</div>
@@ -115,6 +114,19 @@
 	
 ?>
 <div class="siteContainer">
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script >
 
+$(document).ready(function() {
 
+	setTimeout(bounce, 500);
+  
+
+});
+
+function bounce(){
+	$("#arrow").effect( "bounce", {  distance: 35, direction: "down" }, 900 );
+	setTimeout(bounce, 3500);	
+}
+</script>
 	
