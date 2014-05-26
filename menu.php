@@ -2,7 +2,7 @@
 	include "head.php";
 ?>
 
-	<link rel="stylesheet" href="style/indexNav.css">
+<link rel="stylesheet" href="style/nav.css">
 </head>						
 <div class="subMenu" >
 	 	<div class="outer"><div class="inner">

@@ -15,16 +15,11 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/functions.js"></script>
 	
-	
 	<script>
-		
 		$(function() {
 			var pull 		= $('#pull');
 				menu 		= $('nav ul');
-				menuHeight	= menu.height();
-				
-			
-				
+				menuHeight	= menu.height();	
 			
 			$(pull).on('click', function(e) {
 				e.preventDefault();
@@ -32,16 +27,11 @@
 			});
 
 
-
 			$(window).resize(function(){
         		var w = $(window).width();
         		if(w > 320 && menu.is(':hidden')) {
         			menu.removeAttr('style');
-				
-				
         		}
     		});
 		});
-
 	</script>
-	

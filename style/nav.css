@@ -18,14 +18,18 @@
 	margin:0;
 }
 
+#loginButton{
+	cursor:pointer;
+}
 
 /* JavaScript free version */
 .subMenu{
 	position:fixed;
 	top:0px;
 	//background:#2aa8e2;
-	-webkit-box-shadow: 0 5px 5px -2px #4D4D4D;
-	box-shadow: 0 5px 5px -2px #4D4D4D;
+	background:#fff;
+	//-webkit-box-shadow: 0 5px 5px -2px #4D4D4D;
+	//box-shadow: 0 5px 5px -2px #4D4D4D;
 	width:100%;
 	color:#fff;
 	z-index:100;
@@ -35,29 +39,49 @@
 	margin:0 auto;
 	padding-left:20px;
 	padding-right:20px;
+	z-index:1000;
 }
 
 .subMenu a{
-	color:#fff;
+	color:#666;
 	text-decoration:none;
-	margin-left:20px;
+	//margin-left:20px;
 }
 
 .subMenu .inner {
-	width: 9o%;
+	//width: 9o%;
 	margin: 0 auto;
 	position: relative;
 	font-size: 18px;
-	font-family: 'Open Sans', sans-serif;
+	
 	font-weight: 300;
 	padding:10px 0;
 	clear:both;
 }
 
-
-
+#menuwrapper{
+		float: right;
+		text-align: right;
+		right: 0px;
+		position: relative;
+		width:515px;
+	}
+#menuwrapper a{
+		width:90px;
+		text-align: center;
+		vertical-align: middle;
+		padding-left:0;
+		padding-right:0;
+	}
+#menuwrapper a.long{
+	width:155px;
+}
 /* low res version */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 989px) {
+	.subMenu{
+		display: none;
+	}
+
 	#nav-brand img{
 		margin:0;
 		border:none;
@@ -65,22 +89,21 @@
 	}
 
 
-	#login{
+	#slogin{
 		display:none;
 	}
 
 	
-
 	
 	nav {
 		width: 100%;
-		background: #2e353f;
+		background: #2AA8E2;
 		font-size: 11pt;
-		font-family: 'PT Sans', Arial, sans-serif;
-		font-weight: bold;
+		font-weight: 300;
 		position: fixed;
 		z-index:100;
 		height: auto;
+		top:0;
 	}
 
 	nav ul {
@@ -98,7 +121,7 @@
 		position: relative;
 	}
 
-	nav a {
+	nav a , nav a:link, nav a:visited{
 		color: #fff;
 		display: inline-block;
 		text-decoration: none;
@@ -119,15 +142,17 @@
 
 	nav a:hover, nav a:active {
 		background-color: #8c99a4;
+		color:#fff;
 	}
 
 	nav a#pull {
 		display: block;
 		width: 100%;
 		position: relative;
-		background:#2aa8e2;
-		-webkit-box-shadow: 0 3px 4px -1px #1d1d1d;
-		box-shadow: 0 3px 4px -1px #1d1d1d;
+		background:#fff;
+		border-bottom: 1px solid #999;
+		//-webkit-box-shadow: 0 3px 4px -1px #1d1d1d;
+		//box-shadow: 0 3px 4px -1px #1d1d1d;
 	}
 
 	nav a#pull:after {
@@ -139,6 +164,10 @@
 		position: absolute;
 		right: 15px;
 		top: 14px;
+	}
+
+	a#around{
+		background:none;
 	}
 }
 
@@ -162,313 +191,146 @@
 
 
 
-/* Desktop version */
-@media only screen and (min-width: 960px) {
 
+}
 	nav{
 		display:none;
 	}
-
-	
-
-	
-	
-	.menuBtn {
-		background: center center no-repeat transparent;
-		background: #000;
-		display: block;
-		width: 40px;
-		height: 40px;
-		position: absolute;
-		top: 0;
-		left: 10px;
-	}
 	
 	
 
-	
-	
-	.subMenu {
-		position: fixed;
-		top: 0px;
-		height: 50px;
-		z-index: 1000;
-		width: 100%;
-		min-width: 960px;
-	
-	}
-	
-	.subMenu .inner {
-		padding:0;
-		font-weight: 400;
-	}
-	
-	.subMenu .outer {
-		background:#2aa8e2;
-		-webkit-box-shadow: 0 5px 5px -2px #4D4D4D;
-		box-shadow: 0 5px 5px -2px #333;
-		z-index:10;
-	}
-	
-	.subNavBtn {
-		display: block;
-		height: 35px;
-		width: 10%;
-		float: left;
-		margin: 0px 0px 0 0;
-		text-decoration: none;
-		font-size: 14px;
-		padding: 15px 2% 0 2%;
-		text-align: center;
-		color: #fff;
-		
-	}
-	
-	.subMenu a:hover{
-	background: #CC142D;
-	}
 
-	#nav-brand{
-		visibility:hidden;
-	}
 
+.menuBtn {
+	background: center center no-repeat transparent;
+	background: #000;
+	display: block;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	left: 10px;
+	cursor:pointer;
 }
 
-/* non Index Nav */
-/* Clearfix */
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
+.active {
+	background: #FF4961;
+}
+a#around{
+	background:none;
+	float:left;
 }
 
-.clearfix:after {
-    clear: both;
+.clear {
+	clear: both;
 }
 
-.clearfix {
-    *zoom: 1;	
+.inner {
+	max-width: 960px;
+	margin: 0 auto;
+	position: relative;
+	min-height: 50px;
+	padding:30px 0;
+	font-size: 18px;
+	
+
+	font-weight: 300;
+	padding:30px 0;
+	clear:both;
+	
 }
 
-.clearfix img{
-	border:none;
-	margin:0;
+.subMenu {
+	position: fixed;
+	top: 0px;
+	height: 60px;
+	z-index: 1000;
+	width: 100%;
+	min-width: 960px;
 }
 
-
-/* JavaScript free version */
-.subMenu{
-	position:fixed;
-	top:0px;
-	background:#2aa8e2;
-	-webkit-box-shadow: 0 5px 5px -2px #4D4D4D;
-	box-shadow: 0 5px 5px -2px #4D4D4D;
-	width:100%;
-	color:#fff;
-	z-index:100;
-}
-
-.subMenu .inner{
-	margin:0 auto;
-	padding-left:20px;
-	padding-right:20px;
-}
-
-.subMenu a{
-	color:#fff;
-	text-decoration:none;
-	margin-left:20px;
+.subMenu .start{
+	position: absolute;
+	top: 595px;
 }
 
 .subMenu .inner {
-	width: 9o%;
-	margin: 0 auto;
-	position: relative;
-	font-size: 18px;
-	font-family: 'Open Sans', sans-serif;
+	padding:0;
 	font-weight: 300;
-	padding:10px 0;
-	clear:both;
+	width:960px;
+}
+
+.subMenu .outer {
+	//background:#2aa8e2;
+	background:#fff;
+	//-webkit-box-shadow: 0 5px 5px -2px #4D4D4D;
+	//box-shadow: 0 5px 5px -2px #333;
+	z-index:100;
+	//color:#333;
+	border-bottom: 1px solid #ccc;
+	height:72px;
+}
+
+.subNavBtn {
+	display: block;
+	height: 50px;
+	width: auto;
+	float: left;
+	margin: 0;
+	text-decoration: none;
+	font-size: 25px;
+	padding: 21px 2% 0 2%;
+	vertical-align: middle;
+	visibility:visible;
 }
 
 
 
-/* low res version */
-@media screen and (max-width: 960px) {
-	#nav-brand img{
-		margin:0;
-		border:none;
-		float:left;
-	}
+#menuwrapper a:hover, #menuwrapper a:active, .highlighted, a.highlighted{
+	background: #FF4961;
+	color:#fff;
+}
 
-
-	#login{
-		display:none;
-	}
-
-
+#menuwrapper{
+	float: right;
+	text-align: right;
+	right: 0px;
+	position: relative;
+	font-size: 19px;
 	
-	nav {
-		width: 100%;
-		background: #2e353f;
-		font-size: 11pt;
-		font-family: 'PT Sans', Arial, sans-serif;
-		font-weight: bold;
-		position: fixed;
-		z-index:100;
-		height: auto;
-	}
+}
+#menuwrapper .subNavBtn{
+	font-size: 18px;
+}
 
-	nav ul {
-		padding: 0;
-		margin: 0 auto;
-		width: 100%;
-  		height: auto;
-		display: none;
-	}
+#menuwrapper a{
+	
+}
 
-	nav li {
-		display: inline;
-		float: left;
-		width: 50%;
-		position: relative;
-	}
-
-	nav a {
-		color: #fff;
-		display: inline-block;
-		text-decoration: none;
-		line-height: 40px;
-		text-shadow: 1px 1px 0px #283744;
-		text-align: left;
-		width: 100%;
-		text-indent: 25px;
-	}
-
-	nav li a {
-		-moz-box-sizing:border-box;
-		-webkit-box-sizing:border-box;
-		border-bottom: 1px solid #576979;
-		border-right: 1px solid #576979;
-	}
-
-
-	nav a:hover, nav a:active {
-		background-color: #8c99a4;
-	}
-
-	nav a#pull {
-		display: block;
-		width: 100%;
-		position: relative;
-		background:#2aa8e2;
-		-webkit-box-shadow: 0 3px 4px -1px #1d1d1d;
-		box-shadow: 0 3px 4px -1px #1d1d1d;
-	}
-
-	nav a#pull:after {
-		content:"";
-		background: url('nav-icon.png') no-repeat;
-		width: 30px;
-		height: 30px;
-		display: inline-block;
-		position: absolute;
-		right: 15px;
-		top: 14px;
-	}
+.end {
+	margin: 0;
 }
 
 
-/*Smartphone*/
-@media only screen and (max-width : 320px) {
-	nav li {
-		display: block;
-		float: none;
-		width: 100%;
-	}
-
-	nav li a {
-		border-bottom: 1px solid #576979;
-	}
-
+.sTop {
+	min-height: 630px;
+	background:#e5e5e5;
+	color:#3d3d3d;
 }
-
-
-
-
 
 
 /* Desktop version */
-@media only screen and (min-width: 960px) {
-
-	nav{
-		display:none;
-	}
-
-	
-
-	
-	
-	.menuBtn {
-		background: center center no-repeat transparent;
-		background: #000;
-		display: block;
-		width: 40px;
-		height: 40px;
-		position: absolute;
-		top: 0;
-		left: 10px;
-	}
-	
-	
-
-	
-	
-	.subMenu {
-		position: fixed;
-		top: 0px;
-		height: 50px;
-		z-index: 1000;
-		width: 100%;
-		min-width: 960px;
-	
-	}
-	
-	.subMenu .inner {
-		padding:0;
-		font-weight: 400;
-	}
-	
-	.subMenu .outer {
-		background:#2aa8e2;
-		-webkit-box-shadow: 0 5px 5px -2px #4D4D4D;
-		box-shadow: 0 5px 5px -2px #333;
-		z-index:10;
-	}
-	
-	.subNavBtn {
-		display: block;
-		height: 35px;
-		width: 10%;
-		float: left;
-		margin: 0px 0px 0 0;
-		text-decoration: none;
-		font-size: 14px;
-		padding: 15px 2% 0 2%;
-		text-align: center;
-		color: #fff;
-		
-	}
-	
-	.subMenu a:hover{
-	background: #CC142D;
-	}
-
+@media only screen and (min-width: 990px) {
+.clearfix{
+display: none;
 	#nav-brand{
 		visibility:hidden;
+	}
+
+	#login{
+		display:block;
 	}
 
 }
 
 /* non Index Nav */
-

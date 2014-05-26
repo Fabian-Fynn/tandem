@@ -39,30 +39,23 @@
 					); 
 				   }
 					header("Location: profile.php");
-			   
-			 
+		
 		    } catch (Exception $e) {
 				die("Problem with updating Data!" . $e->getMessage() );
 			}
-
 	}
-	//if($_SESSION['request'] == 'o')
-	//	echo("<script>alert('".$_SESSION['request']."');</script>");
 	
 	if($_SESSION['request'] == 'o')
 	{
 		$sth = $dbh->query("Select c.id AS cId FROM course c, offer o WHERE $id = o.teacher AND o.course = c.id");
 		$stm = $dbh->query("Select c.name AS course, c.id AS cId, cat.name AS category FROM category cat, course c WHERE c.category = cat.id AND c.active = 1 AND c.id NOT IN(Select c.id AS cId FROM course c, search o WHERE $id = o.student AND o.course = c.id) ORDER BY category, course");
-	}
-	
-	else
+	}else
 	{
 		$sth = $dbh->query("Select c.id AS cId FROM course c, search o WHERE $id = o.student AND o.course = c.id");
 		$stm = $dbh->query("Select c.name AS course, c.id AS cId, cat.name AS category FROM category cat, course c WHERE c.category = cat.id AND c.active = 1 AND c.id NOT IN(Select c.id AS cId FROM course c, offer o WHERE $id = o.teacher AND o.course = c.id) ORDER BY category, course");
 	}
-		
+
  	$off = $sth->fetchAll();
-	
 	$courses = $stm->fetchAll();
 
 ?>
@@ -76,71 +69,49 @@
 				<h1>Edit Search</h1>
 		<?php endif; ?>
 			
-
 			</div>	
-			 <form id="courseList" action="offer_edit.php" method="post" >
-				
-			<div class="column">
-			<?php 
-				$currentCat = '';
-				$counter = 0;
-				$break = (sizeof($courses)/4);
-				
-				foreach($courses as $c ){
-					$counter++;
-
-					if($counter > $break)
-					{
-						echo "</div><div class='column'>";
-						$counter = 0;
-					}
+			<form id="courseList" action="offer_edit.php" method="post" >		
+				<div class="column">
+				<?php 
+					$currentCat = '';
+					$counter = 0;
+					$break = (sizeof($courses)/4);
 					
-					if($c->category != $currentCat)
-					{	
+					foreach($courses as $c ){
+						$counter++;
 
-						echo ('<div class="profileInfo"><strong>'.$c->category.'</strong></div>');
-						$currentCat = $c->category;
+						if($counter > $break)
+						{
+							echo "</div><div class='column'>";
+							$counter = 0;
+						}
+						
+						if($c->category != $currentCat)
+						{
+							echo ('<div class="profileInfo"><strong>'.$c->category.'</strong></div>');
+							$currentCat = $c->category;
+						}
+						
+						$isset = '';
+						foreach($off as $oCourse)
+						{
+							if($c->cId == $oCourse->cId)
+							{	$isset = ' checked';
+							 	 break;	
+							}	
+						}
+						echo ('<div class="profileInfo"><input type="checkbox" name="offer_'.$c->cId.'" value="'.$c->cId.'"'.$isset.'><pre> '.$c->course.'</pre>  </div>');
 					}
-					
-					$isset = '';
-					foreach($off as $oCourse)
-					{
-						if($c->cId == $oCourse->cId)
-						{	$isset = ' checked';
-						 	 break;
-					 			
-						}	
-					}
-					echo ('<div class="profileInfo"><input type="checkbox" name="offer_'.$c->cId.'" value="'.$c->cId.'"'.$isset.'><pre> '.$c->course.'</pre>  </div>');
-				}
-			?>
+				?>
 				 </div>
 				 <input style='float:right' type="submit" value="Send">
-		</form>
+			</form>
 
-		<article class="right">
-				
+		<article class="right">		
 		</article>
 	</section>
-	
 </div>
 	
 <?php
     include "footer.php";
 ?>
-
-<script>
-/*
-(function($) {
-    
-  var allPanels = $('.accordion > dd').hide();
-    
-  $('.accordion > dt > a').click(function() {
-    allPanels.slideUp();
-    $(this).parent().next().slideDown();
-    return false;
-  });
-
-})(jQuery);
-*/
-</script>

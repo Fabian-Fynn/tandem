@@ -1,4 +1,3 @@
-
 <?php
 	include 'menu.php';
 	if($_SESSION['id'] != "3")
@@ -31,25 +30,21 @@
 				(NULL, ?,   ?)");
 
 		//create user
-		
 		$id=5;
 		while($id <= $_POST['amount'])
 		{
 			$isfemaleRand = rand(1,20);
+
 			if($isfemaleRand > 10)
 				$isfemale = 1;
 			else
 				$isfemale = 0;
-
-
 			
 			if($isfemale == 0)
 			{
 				$firstnameNr = rand(0,count($firstMale)-1);
 				$firstname = $firstMale[$firstnameNr];
-				
-			}
-			else
+			}else
 			{
 				$firstnameNr = rand(0,count($firstFemale)-1);
 				$firstname = $firstFemale[$firstnameNr];
@@ -59,11 +54,12 @@
 			$email = $id."@test.at";
 			
 			$password = hashPasswordSecure("asdf");
+
 			if($isfemale == 0)
 	            $avatar = "male_avatar.png";
 	        else
 	        	$avatar = "female_avatar.png";
-			//$username = $firstname.$id;
+
 			$sth->execute(
 				array(
 					$firstname,
@@ -74,12 +70,13 @@
 					$date,
 					$avatar
 				)
-				); 
+			); 
 
 			$o = range(1, 25);
 			shuffle($o);
 			$offers = array_slice($o, 0, 5);
-			$DBid = $dbh->lastInsertId(); 
+			$DBid = $dbh->lastInsertId();
+
 			foreach ($offers as $offer ) {
 				try{
 				$stho->execute(
@@ -91,7 +88,6 @@
 				}
 				catch(Execption $e)
 				{}
-
 			}
 			$searchamount = 0;
 			$searches = array();
@@ -105,8 +101,6 @@
 				}
 			}
 			foreach ($searches as $search ) {
-				//echo($search."-");
-				//echo(gettype($offer));
 				$sths->execute(
 					array(
 						$search,
@@ -114,17 +108,11 @@
 					)
 				); 
 			}
-			//echo($isfemale." ".$firstname." ".$surname." ".$email."<br>");	
-
 			$id++;
-
 		}
-		
 	}
-
 ?>
 	<div class = "wrap">
-			
 		<section class="profileTop">
 			<div class="userName"><h1>Create Users</h1></div>
 			<article class="left">

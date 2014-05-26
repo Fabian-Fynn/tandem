@@ -1,4 +1,3 @@
-
 <?php
 include "menu.php";
 if(! isset($_SESSION['id']))
@@ -17,10 +16,13 @@ $buddies = getBuddies($dbh, $id);
 
 ?>
 <script>
-$(document).ready(function(){
-	$('.submit').click(function (e) {e.preventDefault(); });
-)};
-
+	$(document).ready(function(){
+		$('.submit').click(
+			function (e) {
+				e.preventDefault(); 
+			}
+		);
+	});
 </script>
 <div class = "wrap">
 	<div class="matchbox">
@@ -28,12 +30,10 @@ $(document).ready(function(){
 			<h1>Other's Requests</h1>
 			<br>
 
-
-
 			<?php 
-			$requestCount = 0;
-			foreach ($oRequests as $r):
-				$requestCount++;
+				$requestCount = 0;
+				foreach ($oRequests as $r):
+					$requestCount++;
 			?>
 			
 			<div class = "request">
@@ -55,33 +55,30 @@ $(document).ready(function(){
 						<input type="submit" value=" Reject " class="submit" id="submitRequest" >
 					</div>
 					<div id="add_err"></div>
-				</form>
-				
+				</form>	
 			</div>
 			
 			<?php
-			endforeach; 
-			if($requestCount == 0 ):
+				endforeach; 
+				if($requestCount == 0 ):
+			?>
 
-				?>
 			<p>You have no Requests.</p>
-
-
-
+		
 			<?php 
 
-			
-			endif;
+				endif;
+
 			?>
 		</div>
 		<div class="requestblock">
 			<h1>Your Requests</h1>
-	 		<br>
+			<br>
 
 			<?php 
-			$requestCount = 0;
-			foreach ($mRequests as $r):
-				$requestCount++;
+				$requestCount = 0;
+					foreach ($mRequests as $r):
+						$requestCount++;
 			?>
 			<div class = "request" id="request_<?php echo($r->id); ?>">
 				<img src="img/profilePics/<?php echo ($r->avatar)?>">
@@ -98,53 +95,51 @@ $(document).ready(function(){
 			</div>
 
 			<?php
-			endforeach; 
-			//else:
-			if($requestCount == 0 ):
-				?>
+				endforeach; 
+				if($requestCount == 0 ):
+			?>
 			<p>You have not sent any Requests.</p>
-
-
 
 			<?php 
 
-			
-			endif;
+				endif;
+
 			?>
 		</div>
 		<div class="requestblock">
 			<h1>Your Buddies</h1>
 			<br>
-			<?php if(isset($buddies)): ?>
-	<br>
 			<?php 
+				if(isset($buddies)):
+			?>
+			<br>
+			<?php 
+
 			$requestCount = 0;
 			foreach ($buddies as $buddy):
-				
 				$requestCount++;
+
 			?>
 			<a href="profile.php?id=<?php echo($buddy->id) ?>">
 				<div class = "match">
 					<img src="img/profilePics/<?php echo ($buddy->avatar)?>">
 					<div class="name"><?php echo($buddy->firstname." ".$buddy->surname) ?></div>
-
 				</div>
 			</a>
 			<?php
-			endforeach; 
-			
-			else:
+
+				endforeach; 
+				else:
 
 				?>
 			<p>You have no Buddies yet!</p>
 
-
-
 			<?php 
-
 			
-			endif;
+				endif;
+
 			?>
+			
 		</div>
 	</div>
 </div>

@@ -1,4 +1,3 @@
-
 <?php
 	include 'menu.php';
 	if(! isset($_SESSION['user']))
@@ -11,11 +10,9 @@
 	if(isset($_SESSION['uploadfile']))
 	{
 		$filename = $_SESSION['uploadfile'];
-
 	}
 	if(isset($_POST['cropNow']))
 	{
-
 		try{
 		  $targ_w = $targ_h = 500;
 		  $jpeg_quality = 90;
@@ -27,15 +24,7 @@
 
 		    if($avatar->avatar != "male_avatar.png" && $avatar->avatar != "female_avatar.png")
 		    	unlink("img/profilePics/".$avatar->avatar);
-
-		    
-
-
-
-
-		      
-
-
+ 
 		  $srcParts = pathinfo($src);
 
 		  if($srcParts['extension'] == 'jpg')
@@ -53,15 +42,12 @@
 		  $filename = $_SESSION['id'] . '_profile.'. $srcParts['extension'];
 		  $newSrc = 'img/profilePics/' . $filename;
 
-		  //if $srcParts['extension'] =="jpgp";
-
 		  if($srcParts['extension'] == 'jpg' || $srcParts['extension'] == 'JPG')
 		     imagejpeg($dst_r,$newSrc);
 		   else if ($srcParts['extension'] == 'png' || $srcParts['extension'] == 'PNG')
 		    imagepng($dst_r,$newSrc);
 
 		  imagedestroy($img_r);
-
 
 			$sth = $dbh->prepare("UPDATE user SET avatar = ? WHERE id = ?;");
 
@@ -71,7 +57,6 @@
 							$id
 							)
 						); 
-
 			 	
 			$srcParts = pathinfo($avatar->avatar);
 		    $ext = $srcParts['extension'];
@@ -82,17 +67,13 @@
 	   		exit;
 	   	}catch(Exeption $e)
 	   	{
-
 	   		echo("<script>alert('".$e."')</script>");
 	   	}
-
 	}
 ?>
 <script src="js/jquery.Jcrop.js"></script>
-<script type="text/javascript">
-
+<script>
   window.onload = function(){
-
     $('#cropbox').Jcrop({
       aspectRatio: 1,
       onSelect: updateCoords
@@ -119,29 +100,20 @@
 <div class = "wrap">
 	<div class="matchbox">
 		<section class="crop">
-	
-		<div class="userName"><h1>Edit Profilepicture</h1></div>
-		
+			<div class="userName"><h1>Edit Profilepicture</h1></div>			
 			<h2>Choose image section</h2>
 			<img src="img/profilePics/<?php echo $filename; ?>" id="cropbox">
 			<form action="crop.php" method="post" onsubmit="return checkCoords();">
-      <input type="hidden" id="x" name="x" />
-      <input type="hidden" id="y" name="y" />
-      <input type="hidden" id="w" name="w" />
-      <input type="hidden" id="h" name="h" />
-      <input type="submit" name="cropNow" value="Send" class="btn" />
-  </form>
-  <div class="warning"><b>Note:</b> After submiting your new image it sometimes happens that you still see your old profile picture. In that case please refresh the page.</div>
-		
-
-		
-		
-		
-
-	</section>
+			    <input type="hidden" id="x" name="x" />
+			    <input type="hidden" id="y" name="y" />
+			    <input type="hidden" id="w" name="w" />
+			    <input type="hidden" id="h" name="h" />
+			    <input type="submit" name="cropNow" value="Send" class="btn" />
+			</form>
+	 		<div class="warning"><b>Note:</b> After submiting your new image it sometimes happens that you still see your old profile picture. In that case please refresh the page.</div>
+		</section>
 	</div>
 </div>
 <?php
     include "footer.php";
 ?>
-

@@ -22,12 +22,7 @@ function loginslide() {
         }, 100);
         $("#loginForm").trigger("reset");
         loginvisible = false;
-
-
-
     }
-
-
 }
 
 function JsSwitch() {
@@ -48,7 +43,6 @@ function checkPasswordMatch() {
         $("#pwIndicator").attr("src", "img/icons/check.png");
     else
         $("#pwIndicator").attr("src", "img/icons/error.png");
-
 }
 
 function checkmail() {
@@ -62,9 +56,7 @@ function checkmail() {
     }
 }
 
-
 $(document).ready(function() {
-
     $("#submitLogin").click(function() {
         email = $("#email").val();
         password = $("#pwd").val();
@@ -76,14 +68,12 @@ $(document).ready(function() {
                 if (html == 'true') {
                     window.location = "home.php";
                 } else {
-
                     $("#add_err").animate({
                         marginTop: "0px"
                     }, 250);
                     setTimeout(function() {
                         $("#add_err").html("Wrong Email or Password");
                     }, 80);
-
                 }
             }
         });
@@ -92,9 +82,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-
     $("#submitRequest").click(function() {
-
         partner = $("#partner").val();
         reqAct = $("#reqAct").val();
         $.ajax({
@@ -116,20 +104,15 @@ $(document).ready(function() {
                     } else if ($("#reqAct").val() == "accept") {
                         $("#submitRequest").val(" Accepted ");
                         $("#submitRequest").attr("disabled", "disabled");
-                    } else {
-
                     }
                 } else {
-
                     $("#add_err").animate({
                         marginTop: "0px"
                     }, 250);
                     //$("#add_err").html("Es ist ein Fehler aufgetreten :(");
                     $("#add_err").html(html);
-
                 }
             }
-
         });
         return false;
     });
@@ -144,7 +127,6 @@ function checkvisability(element) {
         removeAllHighlights($(highlighter));
         $(highlighter).addClass("highlighted");
     }
-
 }
 
 function removeAllHighlights(element) {
@@ -153,5 +135,4 @@ function removeAllHighlights(element) {
     $(".s3").removeClass("highlighted");
     $(".register").removeClass("highlighted");
     element.addClass("highlighted");
-
 }

@@ -1,4 +1,3 @@
-
 <?php
 	include "menu.php";
 	if(! isset($_SESSION['user']))
@@ -10,16 +9,15 @@
 		$ownProfile = false;	
 	}
 	else{
-	
-	$ownProfile = true;
-	$id = $_SESSION['id'];
+		$ownProfile = true;
+		$id = $_SESSION['id'];
 	}
+
 	$stm = $dbh->query("SELECT * FROM user WHERE id=$id");
   	$person = $stm->fetch();
-	
 	$user = $person->firstname;
-
 	$date = new DateTime($person->register_date);
+
 	if($person->avatar != null)
 	{
 		$avatar = $person->avatar;
@@ -37,6 +35,7 @@
 		$isbuddy = true;
 	else
 		$isbuddy = false;
+
 	$stm = $dbh->query("Select COUNT(*) AS c FROM partner WHERE personA = ".$_SESSION['id']." AND personB = ".$id." AND status = 0");
 	$mRequest = $stm->fetch();
 
@@ -114,43 +113,31 @@
 						echo ('<div class="profileInfo"><strong>Member since</strong></div>');
 						echo ('<div class="profileInfo">'.$date->format('d. m. Y'));
 					?>
-				
-				
-				
-				</div>
-			
+				</div>	
 			</article>
 			<article class="right">
 				<?php 
-					if(!$ownProfile):
-					
+					if(!$ownProfile):		
 				?>
 
-				<form id="RequestForm" action="request.php" method="post">
-					<div id="sendRequest">
-					<input type="hidden" name="partner" id="partner" value="<?php echo($id); ?>">
-					<input type="hidden" name="reqAct" id="reqAct" value="<?php echo($reqAct); ?>">
-			        <input type="submit" value="<?php echo($buddyButton); ?>" class="submit" id="submitRequest" >
-					</div>
-						<div id="add_err"></div>
-				</form>
-				<?php if($isOthersRequest): ?>
-					<a class="req" id="reqAbort" href="request.php?partner=<?php echo($id) ?>&reqAct=<?php echo($reqAct); ?>" ><button onclick='abortRequest(<?php echo($id); ?>)'> Abort </button></a>
-				<?php endif; ?>
-				<script>
-					window.onload = function(){
-						$("#RequestForm").submit(function(e){
-			    			e.preventDefault();
-						});
-					};
-				</script>
-				<?php 
-					if($isbuddy):
-				?>
-
-					<h2> Your are Conneted!</h2>
-				<?php
-					endif;
+					<form id="RequestForm" action="request.php" method="post">
+						<div id="sendRequest">
+						<input type="hidden" name="partner" id="partner" value="<?php echo($id); ?>">
+						<input type="hidden" name="reqAct" id="reqAct" value="<?php echo($reqAct); ?>">
+				        <input type="submit" value="<?php echo($buddyButton); ?>" class="submit" id="submitRequest" >
+						</div>
+							<div id="add_err"></div>
+					</form>
+					<?php 
+						if($isOthersRequest): ?>
+							<a class="req" id="reqAbort" href="request.php?partner=<?php echo($id) ?>&reqAct=<?php echo($reqAct); ?>" ><button onclick='abortRequest(<?php echo($id); ?>)'> Abort </button></a>
+					<?php 
+						endif; 
+						if($isbuddy):
+					?>
+						<h2> Your are Conneted!</h2>
+					<?php
+						endif;
 					endif;
 				?>			
 				<div class="description">
@@ -169,15 +156,15 @@
 				<div class="offer">
 					<h2 style='margin-bottom:-5px'>I offer</h2><?php if($ownProfile): ?><div class="profileInfo"><a href="offer_edit.php?request=o">edit</a></div><?php endif; ?>
 					<?php
-							$currentCat = '';
-							foreach($offer as $oCourse){
-								if($oCourse->category != $currentCat)
-								{
-									echo ('<div class="profileInfo"><strong>'.$oCourse->category.'</strong></div>');
-									$currentCat = $oCourse->category;
-								}
-								echo ('<div class="profileInfo"><pre>'.$oCourse->course.'</pre></div>');
+						$currentCat = '';
+						foreach($offer as $oCourse){
+							if($oCourse->category != $currentCat)
+							{
+								echo ('<div class="profileInfo"><strong>'.$oCourse->category.'</strong></div>');
+								$currentCat = $oCourse->category;
 							}
+							echo ('<div class="profileInfo"><pre>'.$oCourse->course.'</pre></div>');
+						}
 					?>
 				</div>
 				<div class="search">
@@ -193,15 +180,7 @@
 								echo ('<div class="profileInfo"><pre>'.$sCourse->course.'</pre></div>');
 							}
 					?>
-			</div>
-			</article>
-		</section>
-		<section class="profileBottom">
-			<article class="left">
-			
-			</article>
-			<article class="right">
-
+				</div>
 			</article>
 		</section>
 	</div>
