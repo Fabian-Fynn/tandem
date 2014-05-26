@@ -11,11 +11,11 @@
 	 	<div class="outer"><div class="inner">
 	 		<a href="index.php" id="around" rel="m_PageScroll2id" class="subNavBtn">TANDEM</a> 
 	 		<div id="menuwrapper">
-				<a href="#s1"  rel="m_PageScroll2id" class="subNavBtn s1">about</a>
-				<a href="#s2"  rel="m_PageScroll2id" class="subNavBtn s2">share</a>
-				<a href="#s3"  rel="m_PageScroll2id" class="subNavBtn s3">gain</a>
-				<a href="#register"  rel="m_PageScroll2id" class="subNavBtn register">register</a>
-				<a href="#register" id="loginButton" class="subNavBtn" onclick="loginslide()" >login</a>
+				<a href="#s1"  rel="m_PageScroll2id" class="subNavBtn s1">About</a>
+				<a href="#s2"  rel="m_PageScroll2id" class="subNavBtn s2">Share</a>
+				<a href="#s3"  rel="m_PageScroll2id" class="subNavBtn s3">Gain</a>
+				<a href="#register"  rel="m_PageScroll2id" class="subNavBtn register">Register</a>
+				<a href="#register" id="loginButton" class="subNavBtn" onclick="loginslide()" >Login</a>
 			</div>
 		</div>
 			
@@ -35,11 +35,11 @@
 <nav class="clearfix">
 	<ul class="clearfix">
 		<li><a href="#title"  onclick="menu.slideToggle();">TANDEM</a></li>
-		<li><a href="#s1"  onclick="menu.slideToggle();">about</a></li>
-		<li><a href="#s2"  onclick="menu.slideToggle();">share</a></li>
-		<li><a href="#s3"  onclick="menu.slideToggle();">gain</a></li>
-		<li><a href="#register"  onclick="menu.slideToggle();">register/login</a></li>
-		<li><a href="#impressum"  onclick="menu.slideToggle();">legal notice</a></li>	
+		<li><a href="#s1"  onclick="menu.slideToggle();">About</a></li>
+		<li><a href="#s2"  onclick="menu.slideToggle();">Share</a></li>
+		<li><a href="#s3"  onclick="menu.slideToggle();">Gain</a></li>
+		<li><a href="#register"  onclick="menu.slideToggle();">Register/Login</a></li>
+		<li><a href="#impressum"  onclick="menu.slideToggle();">Legal Notice</a></li>	
 	</ul>
 	<a href="#" id="pull"><img src="img/nav-brand.png"></a>
 </nav>
