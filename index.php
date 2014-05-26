@@ -107,17 +107,17 @@ include "intro.php";
 										</tr>
 										<tr>
 											<td><label for="email">FHS E-Mail:</label></td> <td id="mailCell"><input type="email" id="Regmail" name="email" onKeyUp="checkmail()" onChange="checkmail()" placeholder="mmustermann.mmt-b2013@fh-salzburg.ac.at" required>
-												<img id="mailValid" src="img/error.png">
+												<img id="mailValid" src="img/icons/error.png">
 											</td>
 										</tr>
 										<tr>
 											<td><label for="password">Password:</label></td> <td id="pwCell"><input id="txtPassword" type="password" name="password" pattern=".{5,10}" onKeyUp="checkPasswordMatch();" title="5-10 letters or numbers." required>
-											<img id="pwLength" src="img/error.png">
+											<img id="pwLength" src="img/icons/error.png">
 										</td>
 										</tr>
 										<tr >
 											<td><label for="password">repeat:</label></td> <td id="pwCell"><input id="txtConfirmPassword" type="password" name="password" onKeyUp="checkPasswordMatch();"  required>
-											<img id="pwIndicator" src="img/error.png"></td>
+											<img id="pwIndicator" src="img/icons/error.png"></td>
 										</tr>
 										<tr>
 											<td></td><td ><input type="submit" value=" Register " ></td>

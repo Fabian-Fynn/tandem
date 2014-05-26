@@ -40,14 +40,14 @@ function checkPasswordMatch() {
     var password = $("#txtPassword").val();
     var confirmPassword = $("#txtConfirmPassword").val();
     if (password.length >= 5)
-        $("#pwLength").attr("src", "img/check.png");
+        $("#pwLength").attr("src", "img/icons/check.png");
     else
-        $("#pwLength").attr("src", "img/error.png");
+        $("#pwLength").attr("src", "img/icons/error.png");
 
     if (password == confirmPassword && password.length >= 5)
-        $("#pwIndicator").attr("src", "img/check.png");
+        $("#pwIndicator").attr("src", "img/icons/check.png");
     else
-        $("#pwIndicator").attr("src", "img/error.png");
+        $("#pwIndicator").attr("src", "img/icons/error.png");
 
 }
 
