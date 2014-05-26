@@ -52,7 +52,7 @@ $(document).ready(function(){
 					<div id="sendRequest">
 						<input type="hidden" name="partner" id="partner" value="<?php echo($r->id); ?>">
 						<input type="hidden" name="reqAct" id="reqAct" value="abort">
-						<input type="submit" value=" Abort " class="submit" id="submitRequest" >
+						<input type="submit" value=" Reject " class="submit" id="submitRequest" >
 					</div>
 					<div id="add_err"></div>
 				</form>
