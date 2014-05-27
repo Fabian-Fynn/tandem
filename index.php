@@ -1,22 +1,33 @@
-
 <?php
-if(isset($_SESSION['error']))
-{
-	$errors = getIndexError($_SESSION['error']);
-	
-	unset($_SESSION['error']);
-}
-if (isset($_SESSION['id'])) {
+/*TANDEM is a second semester project (MultiMediaProjekt 1) of the course Multimedia Technology at University of Applied Sciences Salzburg
 
-	header("Location: logout.php");
-}
-include "config.php";
-$dbh = new PDO($DSN, $DB_USER, $DB_PASS);
+Author: Fabian Hoffmann
+Course of Study: Multimedia Technology
+At: University of Applied Sciences Salzburg
 
-$pagetitle = "Tandem - Lernplattform für Studenten der FH-Salzburg";
-include "functions.php";
+fhoffmann.mmt-b2013@fh-salzburg.ac.at
 
-include "intro.php";
+"Icons made by Icons8, Freepik and Designerz Base from Flaticon.com / partly modified"
+
+"Index picture made by CollegeDegrees360 from Flickr.com"
+*/
+	if(isset($_SESSION['error']))
+	{
+		$errors = getIndexError($_SESSION['error']);
+		
+		unset($_SESSION['error']);
+	}
+	if (isset($_SESSION['id'])) {
+
+		header("Location: logout.php");
+	}
+	include "config.php";
+	$dbh = new PDO($DSN, $DB_USER, $DB_PASS);
+
+	$pagetitle = "Tandem - Lernplattform für Studenten der FH-Salzburg";
+	include "functions.php";
+
+	include "intro.php";
 
 ?>
 <div class = "wrapIndex">
