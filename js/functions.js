@@ -62,9 +62,9 @@ function checkmail() {
     var patt = new RegExp('[\\w-+]+(?:\\.[\\w-+]+)*@fh-salzburg\.ac\.at');
     if (patt.exec(mail) == null && mail != "") {
 
-        $('#mailValid').attr("src", "img/error.png");
+        $('#mailValid').attr("src", "img/icons/error.png");
     } else {
-        $('#mailValid').attr("src", "img/check.png");
+        $('#mailValid').attr("src", "img/icons/check.png");
     }
 }
 
