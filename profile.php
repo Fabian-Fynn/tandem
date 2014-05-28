@@ -117,7 +117,7 @@ fhoffmann.mmt-b2013@fh-salzburg.ac.at
 							echo ('<div class="profileInfo"><strong>Residence</strong></div>');
 							echo ('<div class="profileInfo">'.$person->city);
 						}
-						if($isbuddy || $id == 3)
+						if(($isbuddy || $id == 3) && $_SESSION['id'] != 3)
 						{
 							echo ('<div class="profileInfo"><strong>Contact '.$person->firstname.'</strong>');
 							echo ('<div class="profileInfo"><a href="mailto:'.$person->email.'">'.$person->email.'</a>');
