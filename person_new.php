@@ -11,6 +11,7 @@ fhoffmann.mmt-b2013@fh-salzburg.ac.at
 
 "Index picture made by CollegeDegrees360 from Flickr.com"
 */
+include "functions.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	//if($_POST[''])
