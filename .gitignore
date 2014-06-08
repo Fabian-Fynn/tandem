@@ -37,4 +37,5 @@ Pics/*
 *.todo
 *.ico
 *.sublime-project
+*.sublime-workspace
 config.json
