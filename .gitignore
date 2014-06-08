@@ -29,7 +29,12 @@ system/cron/cron.txt
 system/logs/*
 system/tmp/*
 
+
 config.php
 img/*
 Input/*
 Pics/*
+*.todo
+*.ico
+*.sublime-project
+config.json
