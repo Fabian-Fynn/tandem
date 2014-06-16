@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 	else
 		$error += 100;
-	if(!isset($_POST['email']) || preg_match('/[\w-.]+@fh-salzburg\.ac\.at$/', $_POST['email']) == 0 || checkMail($_POST['email']) == false)
+	if(!isset($_POST['email']) || !checkMail($_POST['email']))
 	{
 	
 		$error += 1000;

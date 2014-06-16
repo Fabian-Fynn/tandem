@@ -90,71 +90,50 @@ function checkMail($mail)
 	if($p != false)
 		return false;
 
+	if(preg_match('/[\w-.]+@fh-salzburg\.ac\.at$/', $mail) == 0 )
+		return false;
+	
 	return true;
 }
 function matches($dbh, $id){
-$var = "";
+	$var = "";
 
- $sth  = $dbh->prepare("Select course FROM offer WHERE teacher=?");
- 		 $sth->execute(array( $id));
- $offer = $sth->fetchAll();
+ 	//Get my students
+	$sth = $dbh->prepare("Select student FROM search WHERE course IN (Select course FROM offer WHERE teacher=?)");
+		$sth->execute(array(  $id));
+	$students = $sth->fetchAll();
 
- $sth  = $dbh->prepare("Select course FROM search WHERE student=?");
- 		 $sth->execute(array(  $id));
- $search = $sth->fetchAll();
-
-	$aOffer[] = $var;
-	foreach ($offer as $course) 
-		array_push($aOffer, $course->course);
-	if(Count($aOffer) == 1)
-		return null;
-
-	$aOffer = implode(',', $aOffer);
-	$aOffer = substr($aOffer, 1);
-	$students = $dbh->query("Select student FROM search WHERE course IN ($aOffer)");
-
-
-    $bSearch[] = $var;
-
-    foreach ($students as $student) {
-    	if($student->student != $id)
-    		array_push($bSearch, $student->student);
-    }
+	//To array
+	$bSearch[] = $var;
+	foreach ($students as $student) {
+		array_push($bSearch, $student->student);
+	}
 	    
 
-	
-	
-	$aSearch[] = $var;
-	foreach ($search as $course) 
-		array_push($aSearch, $course->course);
-	
-	if(Count($aSearch) == 1)
-		return null;	
+	//Get my teachers
+	$sth = $dbh->prepare("Select teacher FROM offer WHERE course IN (Select course FROM search WHERE student=?)");
+		$sth->execute(array(  $id));
+	$teachers = $sth->fetchAll();
 
-	$aSearch = implode(',', $aSearch);
-	$aSearch = substr($aSearch, 1);
-	$teachers = $dbh->query("Select teacher FROM offer WHERE course IN ($aSearch)");
-
+	//To array
 	$bOffer[] = $var;
-
 	foreach ($teachers as $teacher) {
-		if($teacher->teacher != $id)
-			array_push($bOffer, $teacher->teacher);
+		array_push($bOffer, $teacher->teacher);
 	}
-	 $allmatches = array_intersect($bSearch, $bOffer);
 
-	 $buddies = GetBuddies($dbh, $id);
+	//Combine the arrays
+	$allmatches = array_intersect($bSearch, $bOffer);
+
+	//Get my buddies and kick them from list
+	$buddies = GetBuddies($dbh, $id);
 	if($buddies != null):
-	$buddyArray[] = $var;
-	foreach ($buddies as $b)
-		{
-
-			   array_push($buddyArray, $b->id);
+		$buddyArray[] = $var;
+		foreach ($buddies as $b){
+		   array_push($buddyArray, $b->id);
 		}
 
-	
-		return array_diff($allmatches, $buddyArray);
 
+		return array_diff($allmatches, $buddyArray);
 	endif;
 	return $allmatches;
 }
@@ -201,6 +180,7 @@ function verifyPw($pw,$pwFromDB)
   }
   return false;
 }
+
 
 /**
  *
