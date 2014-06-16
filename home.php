@@ -18,9 +18,7 @@ fhoffmann.mmt-b2013@fh-salzburg.ac.at
 	}
 
 	$id = $_SESSION['id'];
-	$stm = $dbh->query("Select * FROM user WHERE id=$id");
-  	$person = $stm->fetch();
-	$user = $person->firstname;
+	
 ?>
 	<div class = "wrap">	
 		<div class="welcome">

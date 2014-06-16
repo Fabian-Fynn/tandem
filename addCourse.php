@@ -21,7 +21,7 @@ $error = "";
 $categories = $dbh->query("Select * FROM category");
 $courses= $dbh->query("Select c.name AS course, c.id AS cid, cat.name AS category, cat.id AS catid FROM category cat, course c WHERE c.category = cat.id AND c.active = 1 ORDER BY course");
 $InactiveCourses= $dbh->query("Select c.name AS course, c.id AS cid, cat.name AS category FROM category cat, course c WHERE c.category = cat.id AND c.active = 0 ORDER BY course");
-if ($_SERVER['REQUEST_METHOD'] == 'POST' &&!isset($_POST['editNow']) &&!isset($_POST['edit']) &&!isset($_POST['accept']) ) {
+if (!isset($_POST['editNow']) &&!isset($_POST['edit']) &&!isset($_POST['accept']) ) {
 	try{
 		$_POST['editNow'] = "true";
 

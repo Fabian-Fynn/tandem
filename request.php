@@ -29,7 +29,8 @@ fhoffmann.mmt-b2013@fh-salzburg.ac.at
 		$reqAct = "abort";
 		$partner = $_GET['partner'];
 	}
-  	$stm = $dbh->query("Select COUNT(*) AS c FROM partner WHERE personA IN (".$partner.",".$id.") AND personB IN (".$partner.",".$id.")");
+  	$stm = $dbh->prepare("Select COUNT(*) AS c FROM partner WHERE personA IN (?,?) AND personB IN (?,?)");
+	$stm->execute(array($partner, $id, $partner, $id));
 	$isbuddy = $stm->fetch();		
 	
 	if($reqAct == "accept")

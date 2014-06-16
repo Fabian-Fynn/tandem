@@ -40,7 +40,9 @@ fhoffmann.mmt-b2013@fh-salzburg.ac.at
          throw new Exception("filetype");
        
       $uploadfile = $uploaddir . $imgname;
-
+      
+      $_SESSION['uploadfile'] = $imgname;
+      
       if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
         $_SESSION['uploadfile'] = $imgname;
         resize("img/profilePics/".$imgname, "img/profilePics/".$imgname, 500, 500, false);

@@ -28,12 +28,11 @@ fhoffmann.mmt-b2013@fh-salzburg.ac.at
 		try{
 		  $targ_w = $targ_h = 500;
 		  $jpeg_quality = 90;
-		  $src = "img/profilePics/".$_SESSION['uploadfile'];
+		  $src = "img/profilePics/".$filename;
 		  unset($_SESSION['uploadfile']);
-
-		  $stm = $dbh->query("SELECT avatar FROM user WHERE id=$id");
-		  $avatar = $stm->fetch();
-
+		  $avatar = $dbh->prepare("SELECT avatar FROM user WHERE id=?");
+  			$avatar->execute(array($id));
+		  $avatar = $avatar->fetch();
 		    if($avatar->avatar != "male_avatar.png" && $avatar->avatar != "female_avatar.png")
 		    	unlink("img/profilePics/".$avatar->avatar);
  
@@ -74,7 +73,6 @@ fhoffmann.mmt-b2013@fh-salzburg.ac.at
 		    $ext = $srcParts['extension'];
 
 		    unlink("img/profilePics/temp_".$id.".".$ext);
-
 	   		header("Location:profile.php");
 	   		exit;
 	   	}catch(Exeption $e)

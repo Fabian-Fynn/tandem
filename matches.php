@@ -18,8 +18,12 @@ fhoffmann.mmt-b2013@fh-salzburg.ac.at
 	}
 
 	$id = $_SESSION['id'];
-	$stm = $dbh->query("Select * FROM user WHERE id=$id");
-  	$person = $stm->fetch();
+ 	
+  	$sth  = $dbh->prepare("Select * FROM user WHERE id=?");
+ 		    $sth->execute(array( $id));
+ 	
+ 	$person = $sth->fetch();
+
 	$user = $person->firstname;
 
     $matches = Matches($dbh, $id);
@@ -29,7 +33,9 @@ fhoffmann.mmt-b2013@fh-salzburg.ac.at
 	    $matchesString = implode(',', $matches);
 	    $matchesString = substr($matchesString, 1);
 
-		$matchedPeople = $dbh->query("Select * FROM user WHERE id IN ($matchesString) AND id != $id");
+		$sth  = $dbh->prepare("Select * FROM user WHERE id IN ($matchesString) AND id != $id");
+ 		    $sth->execute(array( $id));
+ 		$matchedPeople = $sth->fetchAll();
 	}
 ?>
 	<div class = "wrap">

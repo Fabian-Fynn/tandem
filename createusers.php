@@ -23,7 +23,7 @@ fhoffmann.mmt-b2013@fh-salzburg.ac.at
 
 		$date = date('Y-m-d H:i:s');
 
-		$dbh->exec("DELETE FROM user WHERE email LIKE  '%test.at'");
+		$dbh->exec("DELETE FROM user WHERE email LIKE  '%test.at'"); //keine beeinflussbare Variable
 
 		$sth = $dbh->prepare(
 			  "INSERT INTO user

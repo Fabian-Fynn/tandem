@@ -25,7 +25,8 @@ fhoffmann.mmt-b2013@fh-salzburg.ac.at
 		$id = $_SESSION['id'];
 	}
 
-	$stm = $dbh->query("SELECT * FROM user WHERE id=$id");
+	$stm = $dbh->prepare("SELECT * FROM user WHERE id=?");
+	$stm->execute(array($id));
   	$person = $stm->fetch();
 	$user = $person->firstname;
 	$date = new DateTime($person->register_date);
@@ -38,20 +39,28 @@ fhoffmann.mmt-b2013@fh-salzburg.ac.at
 	{
 		$avatar = "profilePic.png";
 	}
-	$offer = $dbh->query("Select c.name AS course, cat.name AS category FROM category cat, course c, offer o WHERE o.teacher = $id AND o.course = c.id AND c.category = cat.id ");
-	$search = $dbh->query("Select c.name AS course, cat.name AS category FROM category cat, course c, search s WHERE s.student = $id AND s.course = c.id AND c.category = cat.id ");
-	$stm = $dbh->query("Select COUNT(*) AS c FROM partner WHERE personA IN (".$_SESSION['id'].",".$id.") AND personB IN (".$_SESSION['id'].",".$id.") AND status = 1");
-	$aBuddy = $stm->fetch();
+	$stho = $dbh->prepare("Select c.name AS course, cat.name AS category FROM category cat, course c, offer o WHERE o.teacher = ? AND o.course = c.id AND c.category = cat.id ");
+	$sths = $dbh->prepare("Select c.name AS course, cat.name AS category FROM category cat, course c, search s WHERE s.student = ? AND s.course = c.id AND c.category = cat.id ");
+	$sthb = $dbh->prepare("Select COUNT(*) AS c FROM partner WHERE personA IN (".$_SESSION['id'].",?) AND personB IN (".$_SESSION['id'].",?) AND status = 1");
 
+	$stho->execute(array($id)); 
+	$sths->execute(array($id)); 
+	$sthb->execute(array($id, $id)); 
+
+	$offer = $stho->fetchAll();
+	$search = $sths->fetchAll();
+	$aBuddy = $sthb->fetch();
 	if($aBuddy->c != 0)
 		$isbuddy = true;
 	else
 		$isbuddy = false;
 
-	$stm = $dbh->query("Select COUNT(*) AS c FROM partner WHERE personA = ".$_SESSION['id']." AND personB = ".$id." AND status = 0");
+	$stm = $dbh->prepare("Select COUNT(*) AS c FROM partner WHERE personA = ".$_SESSION['id']." AND personB = ? AND status = 0");
+	$stm->execute(array($id)); 
 	$mRequest = $stm->fetch();
 
-	$stm = $dbh->query("Select COUNT(*) AS c FROM partner WHERE personB = ".$_SESSION['id']." AND personA = ".$id." AND status = 0");
+	$stm = $dbh->prepare("Select COUNT(*) AS c FROM partner WHERE personB = ".$_SESSION['id']." AND personA = ? AND status = 0");
+	$stm->execute(array($id));
 	$oRequest = $stm->fetch();
 
 	if($mRequest->c != 0)

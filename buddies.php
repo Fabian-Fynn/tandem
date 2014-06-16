@@ -20,9 +20,11 @@ if(! isset($_SESSION['id']))
 $id = $_SESSION['id'];
 
 /* Get others Requests */
-$oRequests = $dbh->query("Select u.* FROM user u, partner p WHERE u.id = p.personA AND p.personB = $id AND p.status = 0");
+$oRequests = $dbh->prepare("Select u.* FROM user u, partner p WHERE u.id = p.personA AND p.personB = ? AND p.status = 0");
+  $oRequests->execute(array($id));
 /* Get my Requests */
-$mRequests = $dbh->query("Select u.* FROM user u, partner p WHERE u.id = p.personB AND p.personA = $id AND p.status = 0");
+$mRequests = $dbh->prepare("Select u.* FROM user u, partner p WHERE u.id = p.personB AND p.personA = ? AND p.status = 0");
+  $mRequests->execute(array($id));
 
 $buddies = getBuddies($dbh, $id);
 

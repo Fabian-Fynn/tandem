@@ -17,6 +17,6 @@ fhoffmann.mmt-b2013@fh-salzburg.ac.at
 		header('Location: index.php');
 	}
 
-	$dbh->exec("DELETE FROM user WHERE email LIKE  '%test.at'");
+	$dbh->exec("DELETE FROM user WHERE email LIKE  '%test.at'"); //keine beeinflussbare Variable
 	header('Location: createusers.php');
 ?>

@@ -95,8 +95,13 @@ function checkMail($mail)
 function matches($dbh, $id){
 $var = "";
 
-$offer = $dbh->query("Select course FROM offer WHERE teacher=$id");
-$search = $dbh->query("Select course FROM search WHERE student=$id");
+ $sth  = $dbh->prepare("Select course FROM offer WHERE teacher=?");
+ 		 $sth->execute(array( $id));
+ $offer = $sth->fetchAll();
+
+ $sth  = $dbh->prepare("Select course FROM search WHERE student=?");
+ 		 $sth->execute(array(  $id));
+ $search = $sth->fetchAll();
 
 	$aOffer[] = $var;
 	foreach ($offer as $course) 
@@ -107,6 +112,7 @@ $search = $dbh->query("Select course FROM search WHERE student=$id");
 	$aOffer = implode(',', $aOffer);
 	$aOffer = substr($aOffer, 1);
 	$students = $dbh->query("Select student FROM search WHERE course IN ($aOffer)");
+
 
     $bSearch[] = $var;
 
@@ -172,6 +178,7 @@ $search = $dbh->query("Select course FROM search WHERE student=$id");
 	{
     	$buddylist = substr($buddylist, 1);
 	   	$sth = $dbh->query("Select * FROM user WHERE id IN ($buddylist)");
+	   	
 	    return $sth->fetchAll();
 	}
 	return null;
@@ -211,6 +218,7 @@ function verifyPw($pw,$pwFromDB)
      * übergeben werden, das ist performanter.
      *
      **/
+    echo($path);
     $size = ($size) ? $size : getimagesize($path);
  
     $height_skaliert = (int)$size[1]*$new_width/$size[0];
