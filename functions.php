@@ -108,7 +108,6 @@ function matches($dbh, $id){
 	foreach ($students as $student) {
 		array_push($bSearch, $student->student);
 	}
-	    
 
 	//Get my teachers
 	$sth = $dbh->prepare("Select teacher FROM offer WHERE course IN (Select course FROM search WHERE student=?)");
@@ -131,7 +130,6 @@ function matches($dbh, $id){
 		foreach ($buddies as $b){
 		   array_push($buddyArray, $b->id);
 		}
-
 
 		return array_diff($allmatches, $buddyArray);
 	endif;
