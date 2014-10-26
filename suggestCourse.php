@@ -13,10 +13,7 @@ fhoffmann.mmt-b2013@fh-salzburg.ac.at
 "Index picture made by CollegeDegrees360 from Flickr.com"
 */
 include 'menu.php';
-	if(!isset($_SESSION['id']))
-	{
-		header('Location: index.php');
-	}
+	checkSession();
 	$error = "";
 
 	$categories = $dbh->query("Select * FROM category");

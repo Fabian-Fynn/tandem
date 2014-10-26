@@ -13,10 +13,7 @@ fhoffmann.mmt-b2013@fh-salzburg.ac.at
 */
 	include "functions.php";
 
-    if(!isset($_SESSION['id']))
-	{
-		header('Location: index.php');
-	}
+    checkSession();
 	$id = $_SESSION['id'];
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') 

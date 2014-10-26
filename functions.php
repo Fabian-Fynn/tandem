@@ -11,79 +11,61 @@ fhoffmann.mmt-b2013@fh-salzburg.ac.at
 
 "Index picture made by CollegeDegrees360 from Flickr.com"
 */
-    include "config.php";
-	 session_start();
+include "config.php";
+session_start();
 
-    if( ! $DB_NAME ) die('please create config.php, define $DB_NAME, $DB_USER, $DB_PASS there');
+checkDB();
 
-    try {
-        $dbh = new PDO($DSN, $DB_USER, $DB_PASS);
-        $dbh->setAttribute(PDO::ATTR_ERRMODE,            PDO::ERRMODE_EXCEPTION);
-        $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ); 
-        $dbh->exec('SET CHARACTER SET utf8') ;
-    } catch (Exception $e) {
-        die("Problem connecting to database $DB_NAME as $DB_USER: " . $e->getMessage() );
-    }
+if(isset($_SESSION['USER']))
+{
+	$loggedin = "Logout";
+	$id = $_SESSION['id'];
+}
+
+function formValid($edit){
+	GLOBAL $_POST;
+	include "config.php";
+	GLOBAL $error;
 	
-	if(isset($_SESSION['USER']))
-	{
-		$loggedin = "Logout";
-		$id = $_SESSION['id'];
-	}
+	checkDB();
 
-	function formValid($edit){
-		GLOBAL $_POST;
-		 include "config.php";
-		GLOBAL $error;
-		
-		try {
-			$dbh = new PDO($DSN, $DB_USER, $DB_PASS);
-			$dbh->setAttribute(PDO::ATTR_ERRMODE,            PDO::ERRMODE_EXCEPTION);
-			$dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ); 
-		} catch (Exception $e) {
-        	die("Problem connecting to database $DB_NAME as $DB_USER: " . $e->getMessage() );
-		}
-		if( $_POST['firstname'] == ''){ $error .= "<li>Bitte geben Sie den Vornamen an.</li>";}
-		if( $_POST['surname'] == ''){ $error .= "<li>Bitte geben Sie den Nachnamen an.</li>";}
-		
-		$_POST['firstname'] = strip_tags ( $_POST['firstname'], '' );
-		$_POST['surname'] = strip_tags ( $_POST['surname'], '' );
-		if(isset($_POST['city']))
-		{
-			$_POST['city'] = strip_tags ( $_POST['city'], '' );
-		}
-		if(isset($_POST['studienfach']))
-		{
-			$_POST['studienfach'] = strip_tags ( $_POST['studienfach'], '' );
-		}
-		
-		
-		if(isset($_POST['studienjahr']) && preg_match('/[0-9]*/', $_POST['studienjahr']) == 0)
-		{
-			return false;
-		}
-		if(isset($_POST['description']))
-		{
-				$_POST['description'] = strip_tags ( $_POST['description'], '<b><p><br><u><i><style><strong>' );
-		}
-		
-		
-		if($error == '')
-		{
-			return true;
-		}	
+	if( $_POST['firstname'] == ''){ $error .= "<li>Bitte geben Sie den Vornamen an.</li>";}
+	if( $_POST['surname'] == ''){ $error .= "<li>Bitte geben Sie den Nachnamen an.</li>";}
+	
+	$_POST['firstname'] = strip_tags ( $_POST['firstname'], '' );
+	$_POST['surname'] = strip_tags ( $_POST['surname'], '' );
+	if(isset($_POST['city']))
+	{
+		$_POST['city'] = strip_tags ( $_POST['city'], '' );
 	}
+	if(isset($_POST['studienfach']))
+	{
+		$_POST['studienfach'] = strip_tags ( $_POST['studienfach'], '' );
+	}
+	
+	
+	if(isset($_POST['studienjahr']) && preg_match('/[0-9]*/', $_POST['studienjahr']) == 0)
+	{
+		return false;
+	}
+	if(isset($_POST['description']))
+	{
+			$_POST['description'] = strip_tags ( $_POST['description'], '<b><p><br><u><i><style><strong>' );
+	}
+	
+	
+	if($error == '')
+	{
+		return true;
+	}	
+}
 
 function checkMail($mail)
 {
-	 include "config.php";
-	 try {
-			$dbh = new PDO($DSN, $DB_USER, $DB_PASS);
-			$dbh->setAttribute(PDO::ATTR_ERRMODE,            PDO::ERRMODE_EXCEPTION);
-			$dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ); 
-		} catch (Exception $e) {
-        	die("Problem connecting to database $DB_NAME as $DB_USER: " . $e->getMessage() );
-		}
+	include "config.php";
+	
+	checkDB();
+
 	$sth  = $dbh->prepare( "SELECT * FROM user WHERE email=?" );
 			$sth->execute(array( $_POST['email']));
 			$p = $sth->fetch();
@@ -178,7 +160,25 @@ function verifyPw($pw,$pwFromDB)
   }
   return false;
 }
+function checkSession(){
+	if(! isset($_SESSION['id']))
+	{
+		header('Location: index.php');
+	}
+}
+function checkDB() {
+	    if( ! $DB_NAME ) die('please create config.php, define $DB_NAME, $DB_USER, $DB_PASS there');
 
+	    try {
+	        $dbh = new PDO($DSN, $DB_USER, $DB_PASS);
+	        $dbh->setAttribute(PDO::ATTR_ERRMODE,            PDO::ERRMODE_EXCEPTION);
+	        $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ); 
+	        $dbh->exec('SET CHARACTER SET utf8') ;
+	    } catch (Exception $e) {
+	        die("Problem connecting to database $DB_NAME as $DB_USER: " . $e->getMessage() );
+	    }
+	}
+	
 
 /**
  *
